@@ -26,7 +26,7 @@
 
   <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="apeirotope Full Atom Feed" />
 
-  <meta name="keywords" content="webdev, css, podcasts, recommendations, politics, history, design, linguistics, science fiction, pelican, research, sysadmin, mastodon, social media, vps, environment, travel, phd, trains, papers, variational inference, evaluation, nips, conference, long beach, california, usa, MLHC, dota, cosplay, costume, foam, sewing, barcelona, spain, AI, law, roller derby, tensorflow, cycling, moving, overwatch, IPA, books, atwood, accent, dogs, gifs, ssl, encryption, icml, nyc, geometry, reinforcement learning, personalistion, EHR, open access, lol, dating, python, phone, so many tags why, unix, tmux, phoenix, aaai, ethics, zotero, evernote, osx, citations, montreal, canada, esperanto, twitter, bot, grammar, opsec, anonymity, tor, class, life, poster, bayesian, awk, bash, shell, ggplot2, R, vis, graphics, categories, LDA, bayesian nonparametrics, pgp, tutorial, cryptography, animation, visualisation, embedding, nlp, irish, ireland, wordpress, time travel, biology, medicine, data, links, meta, golang, pond, gtk, ccc, nostalgia, theano, gpu, optimisation, strings, regex, sed, hangul, sc2, starcraft, alphabet, korean, cut, find, grep">
+  <meta name="keywords" content="environment, board games, webdev, css, podcasts, recommendations, politics, history, design, linguistics, science fiction, pelican, research, sysadmin, mastodon, social media, vps, travel, phd, trains, papers, variational inference, evaluation, nips, conference, long beach, california, usa, MLHC, dota, cosplay, costume, foam, sewing, barcelona, spain, AI, law, roller derby, tensorflow, cycling, moving, overwatch, IPA, books, atwood, accent, dogs, gifs, ssl, encryption, icml, nyc, geometry, reinforcement learning, personalistion, EHR, open access, lol, dating, python, phone, so many tags why, unix, tmux, phoenix, aaai, ethics, zotero, evernote, osx, citations, montreal, canada, esperanto, twitter, bot, grammar, opsec, anonymity, tor, class, life, poster, bayesian, awk, bash, shell, ggplot2, R, vis, graphics, categories, LDA, bayesian nonparametrics, pgp, tutorial, cryptography, animation, visualisation, embedding, nlp, irish, ireland, wordpress, time travel, biology, medicine, data, links, meta, golang, pond, gtk, ccc, nostalgia, theano, gpu, optimisation, strings, regex, sed, hangul, sc2, starcraft, alphabet, korean, cut, find, grep">
 
   <title>apeirotope</title>
 
@@ -53,6 +53,8 @@
 <i class="fa  fa-lg"></i></a></li>
                 <li class="menu-item"><a href="/pages/about.html" >About
 <i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/pages/links.html" >Links
+<i class="fa  fa-lg"></i></a></li>
                 <li class="menu-item"><a href="/categories.html" >Categories
 <i class="fa  fa-lg"></i></a></li>
                 <li class="menu-item"><a href="/tags.html" >Tags
@@ -64,8 +66,6 @@
               <div class="social">   
                 <a href="https://apeiroto.pe/feeds/all.atom.xml" title="Feed" >
 <i class="fa fa-rss fa-lg"></i></a>
-                <a href="test" title="Another link" >
-<i class="fa  fa-lg"></i></a>
               </div>
             </div>
           </div>
@@ -77,14 +77,14 @@
             •
                 <a href="./biomed/" >biomed (2)</a> •
                 <a href="./lang/" >lang (5)</a> •
-                <a href="./life/" >life (7)</a> •
+                <a href="./life/" >life (8)</a> •
                 <a href="./making/" >making (1)</a> •
                 <a href="./meta/" >meta (7)</a> •
                 <a href="./ml/" >ml (9)</a> •
                 <a href="./sec/" >sec (4)</a> •
                 <a href="./tips/" >tips (9)</a> •
 -->
-            <!--                 <a href="./archives.html" >archives (44)</a>
+            <!--                 <a href="./archives.html" >archives (45)</a>
  -->
                 <!--</div>-->
     </div>
@@ -98,6 +98,19 @@
             <div id="primary" class="content-area">
               <div id="main" class="site-main" role="main">
                 <div class="article-container">
+<article class="post">
+	<div class="blog-item-wrap">
+		<div class="post-inner-content">
+			<header class="entry-header page-header">
+                <span class="cat-item ml"><time datetime="2014-09-30 00:00:00+01:00">30 Sep, 2014</time></span>
+                <h1 class="entry-title"><a href="./ml/2014-09-30-updating-shared-variables-in-theano.html">updating shared variables in theano</a></h1>
+			</header><!-- .entry-header -->
+			<div class="entry-content">
+				Background: I am running python with Theano on a GPU, and I care about speed. Scenario: I have a largeish matrix (C) which is stored as a shared variable, and I need to update a subset of the rows (modified_rows) by some other matrix (C_delta). What should I do? Initialising …
+        	</div><!-- .entry-content -->
+		</div>
+	</div>
+</article><!-- #post-## -->
 <article class="post">
 	<div class="blog-item-wrap">
 		<div class="post-inner-content">
@@ -145,7 +158,7 @@
                 <h1 class="entry-title"><a href="./tips/2013-07-22-man-cut.html">man cut and other simple yet useful unix bits</a></h1>
 			</header><!-- .entry-header -->
 			<div class="entry-content">
-				Instead of just reading the man file, you could read this post about cut! Printing columns ('fields') n to m (inclusive) from a file: cut -d [delimiter] -f n-m filename Thus, removing the first n-1 fields from a file: cut -d [delimiter] -f n- filename [delimiter] is automatically a tab …
+				Instead of just reading the man file, you could read this post about cut! Printing columns ('fields') n to m (inclusive) from a file: cut -d [delimiter] -f n-m filename Thus, removing the first n-1 fields from a file: cut -d [delimiter] -f n- filename [delimiter] is automatically a …
         	</div><!-- .entry-content -->
 		</div>
 	</div>

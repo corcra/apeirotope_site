@@ -55,6 +55,8 @@
 <i class="fa  fa-lg"></i></a></li>
                 <li class="menu-item"><a href="/pages/about.html" >About
 <i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/pages/links.html" >Links
+<i class="fa  fa-lg"></i></a></li>
                 <li class="menu-item"><a href="/categories.html" >Categories
 <i class="fa  fa-lg"></i></a></li>
                 <li class="menu-item"><a href="/tags.html" >Tags
@@ -66,8 +68,6 @@
               <div class="social">   
                 <a href="https://apeiroto.pe/feeds/all.atom.xml" title="Feed" >
 <i class="fa fa-rss fa-lg"></i></a>
-                <a href="test" title="Another link" >
-<i class="fa  fa-lg"></i></a>
               </div>
             </div>
           </div>
@@ -79,14 +79,14 @@
             •
                 <a href="../biomed/" >biomed (2)</a> •
                 <a href="../lang/" >lang (5)</a> •
-                <a href="../life/" >life (7)</a> •
+                <a href="../life/" >life (8)</a> •
                 <a href="../making/" >making (1)</a> •
                 <a href="../meta/" >meta (7)</a> •
                 <a href="../ml/" >ml (9)</a> •
                 <a href="../sec/" >sec (4)</a> •
                 <a href="../tips/" >tips (9)</a> •
 -->
-            <!--                 <a href="../archives.html" >archives (44)</a>
+            <!--                 <a href="../archives.html" >archives (45)</a>
  -->
                 <!--</div>-->
     </div>
@@ -110,72 +110,72 @@
       <div class="entry-content">
         <p>Instead of just reading the man file, you could read this post about <code>cut</code>!</p>
 <p>Printing columns ('fields') n to m (inclusive) from a file:</p>
-<div class="highlight"><pre><span></span>    cut -d [delimiter] -f n-m filename
+<div class="highlight"><pre><span></span><span class="w">    </span><span class="n">cut</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="o">[</span><span class="n">delimiter</span><span class="o">]</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">n</span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">filename</span><span class="w"></span>
 </pre></div>
 
 
 <p>Thus, removing the first n-1 fields from a file:</p>
-<div class="highlight"><pre><span></span>    cut -d [delimiter] -f n- filename
+<div class="highlight"><pre><span></span><span class="w">    </span><span class="n">cut</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="o">[</span><span class="n">delimiter</span><span class="o">]</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">n</span><span class="o">-</span><span class="w"> </span><span class="n">filename</span><span class="w"></span>
 </pre></div>
 
 
 <p><code>[delimiter]</code> is automatically a tab space. You could also have ' ' (space), '<code>`'</code>, '<code>:</code>', '<code>-</code>', '<code>_</code>'. Apparently '<code>HELLO</code>' is not an acceptable delimiter, which is some kind of bug I guess.</p>
 <p>If you just want a specific column, you could use <code>awk</code>:</p>
-<div class="highlight"><pre><span></span><span class="x">    awk &#39;</span><span class="err">{</span><span class="x"> print </span><span class="p">$</span><span class="nv">n</span><span class="x"> }&#39; filename</span>
+<div class="highlight"><pre><span></span><span class="err">    awk &#39;{ print $n }&#39; filename</span>
 </pre></div>
 
 
 <p>Or do some fancier things like - say* we have a file containing a list of chromosome numbers and SNPids and some other information separated into columns, and we want to extract just the chromosomes and SNPids, rewriting '<code>2</code>' as '<code>chr02</code>' etc. and including a tab space, we could write</p>
-<div class="highlight"><pre><span></span>    awk &#39;{ if ($1&lt;10) print &quot;chr0&quot; $1 &quot;\t&quot; $2; else print &quot;chr&quot; $1 &quot;\t&quot; $2 }&#39; filename
+<div class="highlight"><pre><span></span><span class="err">    awk &#39;{ if ($1&lt;10) print &quot;chr0&quot; $1 &quot;\t&quot; $2; else print &quot;chr&quot; $1 &quot;\t&quot; $2 }&#39; filename</span>
 </pre></div>
 
 
 <p>The double-quotation marks are necessary here. In <code>awk</code> it's not that column numbering intentionally starts from 1 (note that chromosomes, which are in the first column are accessed via <code>$1</code>), but <code>$0</code> contains the full line. So you could do</p>
-<div class="highlight"><pre><span></span>    awk &#39;{ if ($1+$2 == 3) print $0; else print $1+$2,&quot;is not 3&quot; }&#39; filename
+<div class="highlight"><pre><span></span><span class="err">    awk &#39;{ if ($1+$2 == 3) print $0; else print $1+$2,&quot;is not 3&quot; }&#39; filename</span>
 </pre></div>
 
 
 <p>if for some reason you wanted to pick out lines whose first two columns sum to three. If you try doing that and <code>$2</code> or <code>$1</code> don't contain something which could reasonably be added (e.g. in the SNPid example) <code>awk</code> will just give weird output and not realise the horrible things it's doing, so be careful with that.</p>
 <p>Note the comma (eg in <code>print $1+$2,"is not 3"</code>) just denotes a space. As per earlier, use <code>"\t"</code> to insert a tab.</p>
 <p>You could do something similar to extract all the even or odd columns in a file by silencing those you don't want:</p>
-<div class="highlight"><pre><span></span><span class="x">    awk &#39;</span><span class="err">{</span><span class="x"> for(i=1;i&lt;=NF;i+=2) </span><span class="p">$</span><span class="nv">i</span><span class="x">=&quot;&quot; }1&#39; filename &gt; evencols</span>
+<div class="highlight"><pre><span></span><span class="err">    awk &#39;{ for(i=1;i&lt;=NF;i+=2) $i=&quot;&quot; }1&#39; filename &gt; evencols</span>
 </pre></div>
 
 
 <p>No, the <code>1</code> is not a typo. It just tells <code>awk</code> to print every line. Now, this will produce some unwanted spaces between fields, so we can get rid of the with <code>sed</code>:</p>
-<div class="highlight"><pre><span></span>    sed &quot;s/^ //;s/  / /g&quot; evencols
+<div class="highlight"><pre><span></span><span class="err">    sed &quot;s/^ //;s/  / /g&quot; evencols</span>
 </pre></div>
 
 
 <p>The basic thing going on here is s/string_to_replace/with_this_string, separated by ; indicating a new command for <code>sed</code>. In the first one we're stripping a leading whitespace from each line - <code>^</code> indicates 'start of line', so we're replacing "white space at start" with "nothing". The second command is simply replacing double whitespace with single whitespace. I'm sure there are more rigorous ways to do this, but this worked for me.</p>
 <p>What about finding things? Suppose I have a giant folder - how giant you say?</p>
-<div class="highlight"><pre><span></span>    ls . | wc -l
+<div class="highlight"><pre><span></span><span class="err">    ls . | wc -l</span>
 </pre></div>
 
 
 <p>This just pipes the output of <code>ls .</code> into <code>wc</code> which, with the <code>-l</code> flag counts how many lines we have. The folder I'm looking at has 948 things in it, because I am organised like that. I want to find a file with 'wolf' in the title, so I can do</p>
-<div class="highlight"><pre><span></span>    ls -l . | grep &#39;wolf&#39;
+<div class="highlight"><pre><span></span><span class="err">    ls -l . | grep &#39;wolf&#39;</span>
 </pre></div>
 
 
 <p>I inclued the <code>-l</code> flag on ls because I'm interested in things like the biggest file with <code>wolf</code> in its title. Supposing I had a worryingly large number of wolf-related files, I could get straight to the biggest one by piping more commands together:</p>
-<div class="highlight"><pre><span></span>    ls -l . | grep &#39;wolf&#39; | sort -n | tail -1
+<div class="highlight"><pre><span></span><span class="err">    ls -l . | grep &#39;wolf&#39; | sort -n | tail -1</span>
 </pre></div>
 
 
 <p><code>sort</code> outputs low to high, which is why we take the <code>tail -1</code> one.</p>
 <p>Now, let's suppose I don't know which subdirectory my wolf file is in. I could do</p>
-<div class="highlight"><pre><span></span>    find [directory] -name &#39;*wolf*&#39;
+<div class="highlight"><pre><span></span><span class="w">    </span><span class="n">find</span><span class="w"> </span><span class="o">[</span><span class="n">directory</span><span class="o">]</span><span class="w"> </span><span class="o">-</span><span class="n">name</span><span class="w"> </span><span class="s1">&#39;*wolf*&#39;</span><span class="w"></span>
 </pre></div>
 
 
 <p>to find all files with '<code>wolf</code>' anywhere in their title in the directory <code>[directory]</code> and all subdirectories of it. To search from the current directory, use . as [directory], etc. To only find <code>wolf</code> files over a certain size (say 1 MB) from the current directory, we have</p>
-<div class="highlight"><pre><span></span>    find [directory] -name &#39;*wolf*&#39; -size +1M
+<div class="highlight"><pre><span></span><span class="w">    </span><span class="n">find</span><span class="w"> </span><span class="o">[</span><span class="n">directory</span><span class="o">]</span><span class="w"> </span><span class="o">-</span><span class="n">name</span><span class="w"> </span><span class="s1">&#39;*wolf*&#39;</span><span class="w"> </span><span class="o">-</span><span class="k">size</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="n">M</span><span class="w"></span>
 </pre></div>
 
 
 <p>(use <code>-1k</code> to get <code>wolf</code> files under 1 kB) or to find all wolf files, sort them by size, and pick out the biggest one, we do</p>
-<div class="highlight"><pre><span></span>    find . -name &#39;gray_wolf*&#39; -ls | sort -k5 -n | tail -1
+<div class="highlight"><pre><span></span><span class="err">    find . -name &#39;gray_wolf*&#39; -ls | sort -k5 -n | tail -1</span>
 </pre></div>
 
 

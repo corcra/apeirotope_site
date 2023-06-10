@@ -55,6 +55,8 @@
 <i class="fa  fa-lg"></i></a></li>
                 <li class="menu-item"><a href="/pages/about.html" >About
 <i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/pages/links.html" >Links
+<i class="fa  fa-lg"></i></a></li>
                 <li class="menu-item"><a href="/categories.html" >Categories
 <i class="fa  fa-lg"></i></a></li>
                 <li class="menu-item"><a href="/tags.html" >Tags
@@ -66,8 +68,6 @@
               <div class="social">   
                 <a href="https://apeiroto.pe/feeds/all.atom.xml" title="Feed" >
 <i class="fa fa-rss fa-lg"></i></a>
-                <a href="test" title="Another link" >
-<i class="fa  fa-lg"></i></a>
               </div>
             </div>
           </div>
@@ -79,14 +79,14 @@
             •
                 <a href="../biomed/" >biomed (2)</a> •
                 <a href="../lang/" >lang (5)</a> •
-                <a href="../life/" >life (7)</a> •
+                <a href="../life/" >life (8)</a> •
                 <a href="../making/" >making (1)</a> •
                 <a href="../meta/" >meta (7)</a> •
                 <a href="../ml/" >ml (9)</a> •
                 <a href="../sec/" >sec (4)</a> •
                 <a href="../tips/" >tips (9)</a> •
 -->
-            <!--                 <a href="../archives.html" >archives (44)</a>
+            <!--                 <a href="../archives.html" >archives (45)</a>
  -->
                 <!--</div>-->
     </div>
@@ -139,42 +139,42 @@
 
 
 <p>I think this is when I introduced a new problem, thought 'damn, OK I'll just fix this problem and get back to carefully recording how I fix this GUI error', and in the process fixed the GUI. Naturally. The problem I introduced looked like this:</p>
-<div class="highlight"><pre><span></span><span class="x">&gt; client</span>
+<div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">client</span>
 
-<span class="x">dyld: Library not loaded: /usr/local/lib/libgdk_pixbuf-2.0.0.dylib</span>
-<span class="x">  Referenced from: [</span><span class="p">$</span><span class="nv">GOPATH</span><span class="x">]/bin/client</span>
-<span class="x">    Reason: Incompatible library version: client requires version 3101.0.0 or later, but libgdk_pixbuf-2.0.0.dylib provides version 3001.0.0</span>
-<span class="x">    Trace/BPT trap: 5</span>
+<span class="n">dyld</span><span class="p">:</span> <span class="n">Library</span> <span class="k">not</span> <span class="n">loaded</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libgdk_pixbuf</span><span class="o">-</span><span class="mi">2</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="n">dylib</span>
+  <span class="n">Referenced</span> <span class="k">from</span><span class="p">:</span> <span class="p">[</span><span class="err">$</span><span class="n">GOPATH</span><span class="p">]</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">client</span>
+    <span class="n">Reason</span><span class="p">:</span> <span class="n">Incompatible</span> <span class="n">library</span> <span class="k">version</span><span class="p">:</span> <span class="n">client</span> <span class="n">requires</span> <span class="k">version</span> <span class="mi">3101</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span> <span class="k">or</span> <span class="n">later</span><span class="p">,</span> <span class="n">but</span> <span class="n">libgdk_pixbuf</span><span class="o">-</span><span class="mi">2</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="n">dylib</span> <span class="n">provides</span> <span class="k">version</span> <span class="mi">3001</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span>
+    <span class="n">Trace</span><span class="o">/</span><span class="n">BPT</span> <span class="n">trap</span><span class="p">:</span> <span class="mi">5</span>
 </pre></div>
 
 
 <p>Which looks suspiciously like a version got messed up, maybe because I installed <code>gdk-pixbuf</code> individually, maybe because of magic. So I then uninstalled it, reinstalled <code>gtk+3</code> (which pulled <code>gdk-pixbuf</code> down first; error persisted), reinstalled <code>gtkspell3</code>, all to no avail. Then I did a <code>brew cleanup</code> and it deleted some old versions and cached bottles. Determined to somehow update my <code>gdk-pixbuf</code> (naively believing that the newest version of a thing must be the optimal one), I explored:</p>
-<div class="highlight"><pre><span></span>&gt; brew info gdk-pixbuf
+<div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">brew</span> <span class="n">info</span> <span class="n">gdk</span><span class="o">-</span><span class="n">pixbuf</span>
 
-gdk-pixbuf: stable 2.30.8 (bottled)
-http://gtk.org
-/usr/local/Cellar/gdk-pixbuf/2.30.8 (209 files, 4.3M) *
-  Poured from bottle
-From: https://github.com/Homebrew/homebrew/blob/master/Library/Formula/gdk-pixbuf.rb
-==&gt; Dependencies
-Build: xz ✘, pkg-config ✔
-Required: glib ✔, jpeg ✔, libtiff ✔, libpng ✔, gobject-introspection ✔
-==&gt; Options
---universal
-    Build a universal binary
-==&gt; Caveats
-Programs that require this module need to set the environment variable
-  export GDK_PIXBUF_MODULEDIR=&quot;/usr/local/lib/gdk-pixbuf-2.0/2.10.0/loaders&quot;
-If you need to manually update the query loader cache, set GDK_PIXBUF_MODULEDIR then run
-  /usr/local/Cellar/gdk-pixbuf/2.30.8/bin/gdk-pixbuf-query-loaders --update-cache
+<span class="n">gdk</span><span class="o">-</span><span class="n">pixbuf</span><span class="p">:</span> <span class="k">stable</span> <span class="mi">2</span><span class="p">.</span><span class="mi">30</span><span class="p">.</span><span class="mi">8</span> <span class="p">(</span><span class="n">bottled</span><span class="p">)</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">gtk</span><span class="p">.</span><span class="n">org</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">Cellar</span><span class="o">/</span><span class="n">gdk</span><span class="o">-</span><span class="n">pixbuf</span><span class="o">/</span><span class="mi">2</span><span class="p">.</span><span class="mi">30</span><span class="p">.</span><span class="mi">8</span> <span class="p">(</span><span class="mi">209</span> <span class="n">files</span><span class="p">,</span> <span class="mi">4</span><span class="p">.</span><span class="mi">3</span><span class="n">M</span><span class="p">)</span> <span class="o">*</span>
+  <span class="n">Poured</span> <span class="k">from</span> <span class="n">bottle</span>
+<span class="k">From</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">Homebrew</span><span class="o">/</span><span class="n">homebrew</span><span class="o">/</span><span class="nb">blob</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">gdk</span><span class="o">-</span><span class="n">pixbuf</span><span class="p">.</span><span class="n">rb</span>
+<span class="o">==&gt;</span> <span class="n">Dependencies</span>
+<span class="n">Build</span><span class="p">:</span> <span class="n">xz</span> <span class="err">✘</span><span class="p">,</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span> <span class="err">✔</span>
+<span class="n">Required</span><span class="p">:</span> <span class="n">glib</span> <span class="err">✔</span><span class="p">,</span> <span class="n">jpeg</span> <span class="err">✔</span><span class="p">,</span> <span class="n">libtiff</span> <span class="err">✔</span><span class="p">,</span> <span class="n">libpng</span> <span class="err">✔</span><span class="p">,</span> <span class="n">gobject</span><span class="o">-</span><span class="n">introspection</span> <span class="err">✔</span>
+<span class="o">==&gt;</span> <span class="k">Options</span>
+<span class="c1">--universal</span>
+    <span class="n">Build</span> <span class="n">a</span> <span class="n">universal</span> <span class="nb">binary</span>
+<span class="o">==&gt;</span> <span class="n">Caveats</span>
+<span class="n">Programs</span> <span class="n">that</span> <span class="n">require</span> <span class="n">this</span> <span class="n">module</span> <span class="n">need</span> <span class="k">to</span> <span class="k">set</span> <span class="n">the</span> <span class="n">environment</span> <span class="k">variable</span>
+  <span class="n">export</span> <span class="n">GDK_PIXBUF_MODULEDIR</span><span class="o">=</span><span class="ss">&quot;/usr/local/lib/gdk-pixbuf-2.0/2.10.0/loaders&quot;</span>
+<span class="k">If</span> <span class="n">you</span> <span class="n">need</span> <span class="k">to</span> <span class="n">manually</span> <span class="k">update</span> <span class="n">the</span> <span class="n">query</span> <span class="n">loader</span> <span class="k">cache</span><span class="p">,</span> <span class="k">set</span> <span class="n">GDK_PIXBUF_MODULEDIR</span> <span class="k">then</span> <span class="n">run</span>
+  <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">Cellar</span><span class="o">/</span><span class="n">gdk</span><span class="o">-</span><span class="n">pixbuf</span><span class="o">/</span><span class="mi">2</span><span class="p">.</span><span class="mi">30</span><span class="p">.</span><span class="mi">8</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">gdk</span><span class="o">-</span><span class="n">pixbuf</span><span class="o">-</span><span class="n">query</span><span class="o">-</span><span class="n">loaders</span> <span class="c1">--update-cache</span>
 </pre></div>
 
 
 <h3>maximum <code>gdk-pixbuf</code> installation</h3>
 <p>I don't feel proud of this, but I liked the sound of a 'universal binary' so I went for that.</p>
-<div class="highlight"><pre><span></span>&gt; brew reinstall --universal gdk-pixbuf
+<div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">brew</span> <span class="n">reinstall</span> <span class="c1">--universal gdk-pixbuf</span>
 
-==&gt; Installing dependencies for gdk-pixbuf: sqlite, gdbm, makedepend, openssl, python, xz, gettext, glib, jpeg, libtiff, libpng, gobject-intros
+<span class="o">==&gt;</span> <span class="n">Installing</span> <span class="n">dependencies</span> <span class="k">for</span> <span class="n">gdk</span><span class="o">-</span><span class="n">pixbuf</span><span class="p">:</span> <span class="n">sqlite</span><span class="p">,</span> <span class="n">gdbm</span><span class="p">,</span> <span class="n">makedepend</span><span class="p">,</span> <span class="n">openssl</span><span class="p">,</span> <span class="n">python</span><span class="p">,</span> <span class="n">xz</span><span class="p">,</span> <span class="n">gettext</span><span class="p">,</span> <span class="n">glib</span><span class="p">,</span> <span class="n">jpeg</span><span class="p">,</span> <span class="n">libtiff</span><span class="p">,</span> <span class="n">libpng</span><span class="p">,</span> <span class="n">gobject</span><span class="o">-</span><span class="n">intros</span>
 </pre></div>
 
 
@@ -188,7 +188,7 @@ If you need to manually update the query loader cache, set GDK_PIXBUF_MODULEDIR 
 
 <p>. . . and . . </p>
 <div class="highlight"><pre><span></span>&gt; client
-Feb  <span class="m">1</span> 02:03:50: Starting fetch from home server
+Feb  <span class="m">1</span> <span class="m">02</span>:03:50: Starting fetch from home server
 </pre></div>
 
 

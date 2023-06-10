@@ -55,6 +55,8 @@
 <i class="fa  fa-lg"></i></a></li>
                 <li class="menu-item"><a href="/pages/about.html" >About
 <i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/pages/links.html" >Links
+<i class="fa  fa-lg"></i></a></li>
                 <li class="menu-item"><a href="/categories.html" >Categories
 <i class="fa  fa-lg"></i></a></li>
                 <li class="menu-item"><a href="/tags.html" >Tags
@@ -66,8 +68,6 @@
               <div class="social">   
                 <a href="https://apeiroto.pe/feeds/all.atom.xml" title="Feed" >
 <i class="fa fa-rss fa-lg"></i></a>
-                <a href="test" title="Another link" >
-<i class="fa  fa-lg"></i></a>
               </div>
             </div>
           </div>
@@ -79,14 +79,14 @@
             •
                 <a href="../biomed/" >biomed (2)</a> •
                 <a href="../lang/" >lang (5)</a> •
-                <a href="../life/" >life (7)</a> •
+                <a href="../life/" >life (8)</a> •
                 <a href="../making/" >making (1)</a> •
                 <a href="../meta/" >meta (7)</a> •
                 <a href="../ml/" >ml (9)</a> •
                 <a href="../sec/" >sec (4)</a> •
                 <a href="../tips/" >tips (9)</a> •
 -->
-            <!--                 <a href="../archives.html" >archives (44)</a>
+            <!--                 <a href="../archives.html" >archives (45)</a>
  -->
                 <!--</div>-->
     </div>
@@ -119,19 +119,19 @@
 <li><code>color=NA</code> in the <code>geom_density</code> call</li>
 </ul>
 <p>e.g.</p>
-<div class="highlight"><pre><span></span>ggplot<span class="p">(</span>data<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>value<span class="p">,</span> fill<span class="o">=</span>grouping<span class="p">))</span><span class="o">+</span>geom_density<span class="p">(</span><span class="o">&lt;</span>b<span class="o">&gt;</span>color<span class="o">=</span><span class="kc">NA</span><span class="o">&lt;/</span>b<span class="o">&gt;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">grouping</span><span class="p">))</span><span class="o">+</span><span class="nf">geom_density</span><span class="p">(</span><span class="o">&lt;</span><span class="n">b</span><span class="o">&gt;</span><span class="n">color</span><span class="o">=</span><span class="kc">NA</span><span class="o">&lt;/</span><span class="n">b</span><span class="o">&gt;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Example (this is some real data I'm currently working with, but I've changed the labels so it's hopefully not meaningful):</p>
 <p><img src="../images/density_outline.png" class="center" style="width: 40vw;"/></p>
 <p>Code:</p>
-<div class="highlight"><pre><span></span>ggplot<span class="p">(</span>data<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>variable<span class="p">,</span> fill<span class="o">=</span><span class="kr">switch</span><span class="p">))</span> <span class="o">+</span>
-geom_density<span class="p">(</span>alpha<span class="o">=</span><span class="m">0.7</span><span class="p">,</span> color<span class="o">=</span><span class="kc">NA</span><span class="p">)</span> <span class="o">+</span>
-facet_grid<span class="p">(</span>case<span class="o">~</span>condition<span class="p">)</span> <span class="o">+</span>
-xlim<span class="p">(</span><span class="m">-3</span><span class="p">,</span><span class="m">3</span><span class="p">)</span> <span class="o">+</span> theme_bw<span class="p">()</span> <span class="o">+</span> 
-scale_fill_manual<span class="p">(</span>values<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;darkorchid2&quot;</span><span class="p">,</span><span class="s">&quot;darkturquoise&quot;</span><span class="p">))</span> <span class="o">+</span>
-ggtitle<span class="p">(</span><span class="s">&quot;density plots with no outline&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">variable</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">switch</span><span class="p">))</span> <span class="o">+</span>
+<span class="nf">geom_density</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">NA</span><span class="p">)</span> <span class="o">+</span>
+<span class="nf">facet_grid</span><span class="p">(</span><span class="n">case</span><span class="o">~</span><span class="n">condition</span><span class="p">)</span> <span class="o">+</span>
+<span class="nf">xlim</span><span class="p">(</span><span class="m">-3</span><span class="p">,</span><span class="m">3</span><span class="p">)</span> <span class="o">+</span> <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span> 
+<span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;darkorchid2&quot;</span><span class="p">,</span><span class="s">&quot;darkturquoise&quot;</span><span class="p">))</span> <span class="o">+</span>
+<span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;density plots with no outline&quot;</span><span class="p">)</span>
 </pre></div>
       </div><!-- .entry-content -->
       <br /><br />
