@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="corcra">
+  <meta name="description" content="putting a line in a filename (with sed) | &#34;How can I cut a line from a file and paste the rest into a file whose title is the line I just cut?&#34; If you...">
+<!--
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">  
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+--> 
+  <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="../theme/css/font.css" type="text/css" media="all">
+  <link rel="stylesheet" href="../theme/css/all.css"> <!-- font awesome -->
+  <link rel="stylesheet" href="../theme/css/style.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="../theme/js/modernizr.min.js"></script>
+<script type="text/javascript" src="../theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../theme/js/functions.js"></script>
+
+  
+ 
+
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="apeirotope Full Atom Feed" />
+
+<meta name="keywords" content="sed, shell, bash">
+
+
+
+  <title>putting a line in a filename (with sed) | apeirotope</title>
+
+</head>
+
+<body class="home blog">
+  <div>
+    <header class="site-header">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="row">
+            <div class="site-navigation-inner col-sm-12">
+              <div class="navbar-header">
+                <button type="button" class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse navbar-ex1-collapse">
+              <ul id="menu-all-pages" class="nav navbar-nav">
+                <li class="menu-item"><a href="/index.html" >apeiroto.pe
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/pages/about.html" >About
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/categories.html" >Categories
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/tags.html" >Tags
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/archives.html" >Archive
+<i class="fa  fa-lg"></i></a></li>
+              </ul>
+              </div>
+              <div class="social">   
+                <a href="https://apeiroto.pe/feeds/all.atom.xml" title="Feed" >
+<i class="fa fa-rss fa-lg"></i></a>
+                <a href="test" title="Another link" >
+<i class="fa  fa-lg"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav><!-- .site-navigation -->
+
+      <div class="container">
+        <!--<div class="tagline">
+            •
+                <a href="../biomed/" >biomed (2)</a> •
+                <a href="../lang/" >lang (5)</a> •
+                <a href="../life/" >life (7)</a> •
+                <a href="../making/" >making (1)</a> •
+                <a href="../meta/" >meta (7)</a> •
+                <a href="../ml/" >ml (9)</a> •
+                <a href="../sec/" >sec (4)</a> •
+                <a href="../tips/" >tips (9)</a> •
+-->
+            <!--                 <a href="../archives.html" >archives (44)</a>
+ -->
+                <!--</div>-->
+    </div>
+
+  </header><!-- #masthead -->
+  </div>
+    <div id="content" class="site-content">
+      <div class="container main-content-area">
+        <div class="row">
+          <div class="main-content-inner col-sm-12 col-md-12">
+            <div id="primary" class="content-area">
+              <div id="main" class="site-main" role="main">
+                <div class="article-container">
+<article>
+  <div class="blog-item-wrap">
+    <div class="post-inner-content">
+      <header class="entry-header page-header">
+          <span class="cat-item tips"><time datetime="2013-08-06 00:00:00+01:00">06 Aug, 2013</time></span>
+        <h1 class="entry-title"><a href="../tips/2013-08-06-putting-a-line-sed.html">putting a line in a filename (with sed)</a></h1>
+      </header><!-- .entry-header -->
+      <div class="entry-content">
+        <p><em>"How can I cut a line from a file and paste the rest into a file whose title is the line I just cut?"</em></p>
+<p>If you find yourself asking yourself this question with any degree of regularity, you may have issues. Luckily for you, the help you so desperately need is at hand. It is not the help you want, but it is the help you deserve. For added complication let's assume you want to do this for every line in the file.</p>
+<p>Solution (bash):</p>
+<div class="highlight"><pre><span></span><span class="x">    &gt; for i in </span><span class="p">$(</span><span class="err">seq</span> <span class="err">`wc</span> <span class="err">-l</span> <span class="err">&lt;</span> <span class="err">FILENAME`</span><span class="p">)</span><span class="x"></span>
+<span class="x">    &gt; do</span>
+<span class="x">    &gt;   sed &#39;&#39;</span><span class="p">$</span><span class="nv">i</span><span class="x">&#39;d&#39; FILENAME &gt; something_else_maybe-`sed -n &#39;&#39;</span><span class="p">$</span><span class="nv">i</span><span class="x">&#39;p&#39; FILENAME`</span>
+<span class="x">    &gt; done</span>
+</pre></div>
+
+
+<p>What is going on here is the following:</p>
+<ul>
+<li><code>seq N</code> prints a sequence of integers, 1 to N.</li>
+<li><code>wc -l &lt; FILENAME</code> produces the number of lines in <code>FILENAME</code>. The normal way I do this is <code>wc -l FILENAME</code>, but that also prints the name of the file, which would confuse <code>seq</code>.</li>
+<li>Enclosing a bash command in ` ` (note these are not ' or ", these are backticks (also known as grave accents (bracket nesting))) replaces the command string with the output of the command. <code>$()</code> also does this. Why are there two ways to do this, and why did I use both of them in my solution? We may never know.</li>
+<li><code>sed 'Md' FILENAME</code>, as per the rules of <code>sed</code>, has <code>FILENAME</code> as output, having deleted line <code>M</code> (in our case, <code>'$i'</code>).</li>
+<li><code>sed -n 'Qp' FILENAME</code> runs through <code>FILENAME</code>, printing nothing (the <code>-n</code>) flag unless otherwise instructed (with <code>p</code>), as occurs for line <code>Q</code>.</li>
+<li>The <code>"something_else_maybe"</code> just demonstrates that you could include other elements in the output filename. Further complication could be introduced here (say replacing it with <code>$i</code> or whatever you want), but that is too far. Too damn far.</li>
+</ul>
+      </div><!-- .entry-content -->
+      <br /><br />
+      <div class="article_meta">
+        Tags:
+          <a href="../tag/sed.html">sed</a>,          <a href="../tag/shell.html">shell</a>,          <a href="../tag/bash.html">bash</a>      </div>
+    </div>
+  </div>
+</article><!-- #post-## -->
+                </div>
+              </div><!-- #main -->
+          </div><!-- #primary -->
+        </div>
+      </div><!-- close .row -->
+    </div><!-- close .container -->
+  </div><!-- close .site-content -->
+
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="scroll-to-top" style="display: none;"><i class="fa fa-angle-up"></i></div><!-- .scroll-to-top -->
+    </footer><!-- #colophon -->
+
+  <script type="text/javascript">
+    window.addEventListener('load', function(){
+    if (window.location.pathname != '/' && window.location.pathname != '/index.html'){
+      window.scroll(0, document.getElementById('main').offsetTop);
+    }})
+  </script>
+
+
+</body>
+</html>

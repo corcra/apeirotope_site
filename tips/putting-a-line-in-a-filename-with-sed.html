@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>putting a line in a filename (with sed)</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/theme/css/pure-min.css" />
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css" />
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/atom/tips.xml" type="application/atom+xml" rel="alternate" title="apeirotope Categories Atom Feed" />
+        <link href="/feeds/rss/tips.xml" type="application/rss+xml" rel="alternate" title="apeirotope Categories RSS Feed" />
+
+
+</head>
+<body>
+
+    <div class="navigation pure-menu pure-menu-horizontal">
+        <a href="/" class="pure-menu-heading  pure-menu-link apeirotope">apeirotope</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"></li>
+
+            <li class="pure-menu-item"><a href="/pages/about.html" class="pure-menu-link pages">about</a></li>
+            <li class="pure-menu-item"><a href="/biomed/" class="pure-menu-link biomed">biomed</a></li>
+            <li class="pure-menu-item"><a href="/lang/" class="pure-menu-link lang">lang</a></li>
+            <li class="pure-menu-item"><a href="/life/" class="pure-menu-link life">life</a></li>
+            <li class="pure-menu-item"><a href="/making/" class="pure-menu-link making">making</a></li>
+            <li class="pure-menu-item"><a href="/meta/" class="pure-menu-link meta">meta</a></li>
+            <li class="pure-menu-item"><a href="/ml/" class="pure-menu-link ml">ml</a></li>
+            <li class="pure-menu-item"><a href="/sec/" class="pure-menu-link sec">sec</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="/tips/" class="pure-menu-link tips">tips</a></li>
+        </ul>
+    </div>
+
+
+<div class="page-container">
+    <div class="entry-content">
+        <div class="post-meta pure-g">
+            <div class="pure-u-3-4 meta-data">
+                <a href="/tips/" class="tips">tips</a><br />
+
+                <a class="author" href="/author/corcra.html">corcra</a>
+                &mdash; <abbr title="2013-08-06T00:00:00+01:00">Tue 06 August 2013</abbr>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-header-container">
+        <div class="background-image-container">
+
+            <div class="background-image-small">
+                <div class="title-container">
+                    <h1>putting a line in a filename (with sed)</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="entry-content">
+        <p><em>"How can I cut a line from a file and paste the rest into a file whose title is the line I just cut?"</em></p>
+<p>If you find yourself asking yourself this question with any degree of regularity, you may have issues. Luckily for you, the help you so desperately need is at hand. It is not the help you want, but it is the help you deserve. For added complication let's assume you want to do this for every line in the file.</p>
+<p>Solution (bash):</p>
+<div class="highlight"><pre><span></span><span class="err">    &gt; for i in $(seq `wc -l &lt; FILENAME`)</span>
+<span class="err">    &gt; do</span>
+<span class="err">    &gt;   sed &#39;&#39;$i&#39;d&#39; FILENAME &gt; something_else_maybe-`sed -n &#39;&#39;$i&#39;p&#39; FILENAME`</span>
+<span class="err">    &gt; done</span>
+</pre></div>
+
+
+<p>What is going on here is the following:</p>
+<ul>
+<li><code>seq N</code> prints a sequence of integers, 1 to N.</li>
+<li><code>wc -l &lt; FILENAME</code> produces the number of lines in <code>FILENAME</code>. The normal way I do this is <code>wc -l FILENAME</code>, but that also prints the name of the file, which would confuse <code>seq</code>.</li>
+<li>Enclosing a bash command in ` ` (note these are not ' or ", these are backticks (also known as grave accents (bracket nesting))) replaces the command string with the output of the command. <code>$()</code> also does this. Why are there two ways to do this, and why did I use both of them in my solution? We may never know.</li>
+<li><code>sed 'Md' FILENAME</code>, as per the rules of <code>sed</code>, has <code>FILENAME</code> as output, having deleted line <code>M</code> (in our case, <code>'$i'</code>).</li>
+<li><code>sed -n 'Qp' FILENAME</code> runs through <code>FILENAME</code>, printing nothing (the <code>-n</code>) flag unless otherwise instructed (with <code>p</code>), as occurs for line <code>Q</code>.</li>
+<li>The <code>"something_else_maybe"</code> just demonstrates that you could include other elements in the output filename. Further complication could be introduced here (say replacing it with <code>$i</code> or whatever you want), but that is too far. Too damn far.</li>
+</ul>
+    </div>
+
+    <footer>
+        <div class="tags">
+            <a href="/tag/sed.html">sed</a>
+            <a href="/tag/shell.html">shell</a>
+            <a href="/tag/bash.html">bash</a>
+        </div>
+        <div class="pure-g post-footer">
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="pure-g poster-info">
+                    <div class="pure-u-3-4">
+                        <h3 class="author-name"><a href="/author/corcra.html">corcra</a></h3>
+                        <p class="author-description">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+
+    <footer class="index-footer">
+
+        <a href="/" title="apeirotope" class="apeirotope">apeirotope</a>
+        <a href="/biomed/" class="biomed">biomed</a>
+        <a href="/lang/" class="lang">lang</a>
+        <a href="/life/" class="life">life</a>
+        <a href="/making/" class="making">making</a>
+        <a href="/meta/" class="meta">meta</a>
+        <a href="/ml/" class="ml">ml</a>
+        <a href="/sec/" class="sec">sec</a>
+        <a href="/tips/" class="tips">tips</a>
+
+    </footer>
+
+</body>
+</html>

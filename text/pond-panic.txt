@@ -1,0 +1,113 @@
+Jan 31 01:03:38: Saving state
+Jan 31 01:03:38: Starting fetch from home server
+panic: (*gdkpixbuf._Ctype_struct__GError) (0x4383380,0x5c6be20)
+
+    goroutine 1 [running, locked to thread]:
+main.Indicator.Image(0x0, 0x44e08a0)
+    [$GOPATH]/src/github.com/agl/pond/client/gtk.go:690 +0x82
+main.(*GTKUI).createWidget(0xc20809e080, 0x44e08a0, 0xc20806c870, 0x0, 0x0)
+    [$GOPATH]/src/github.com/agl/pond/client/gtk.go:420 +0x3d29
+main.(*GTKUI).newWidget(0xc20809e080, 0x5bac7f8, 0xc20806c870, 0x0, 0x0)
+    [$GOPATH]/src/github.com/agl/pond/client/gtk.go:175 +0x6f
+main.(*GTKUI).createWidget(0xc20809e080, 0x44dd460, 0xc20805d180, 0x0, 0x0)
+    [$GOPATH]/src/github.com/agl/pond/client/gtk.go:265 +0x31bf
+main.(*GTKUI).newWidget(0xc20809e080, 0x5ba31b8, 0xc20805d180, 0x0, 0x0)
+    [$GOPATH]/src/github.com/agl/pond/client/gtk.go:175 +0x6f
+main.(*GTKUI).createWidget(0xc20809e080, 0x44dd960, 0xc20805d220, 0x0, 0x0)
+    [$GOPATH]/src/github.com/agl/pond/client/gtk.go:254 +0xec4
+main.(*GTKUI).newWidget(0xc20809e080, 0x5ba3278, 0xc20805d220, 0x0, 0x0)
+    [$GOPATH]/src/github.com/agl/pond/client/gtk.go:175 +0x6f
+main.(*GTKUI).createWidget(0xc20809e080, 0x44dbbe0, 0xc20806c900, 0x0, 0x0)
+    [$GOPATH]/src/github.com/agl/pond/client/gtk.go:272 +0x1cb5
+main.(*GTKUI).newWidget(0xc20809e080, 0x5ba3218, 0xc20806c900, 0x0, 0x0)
+    [$GOPATH]/src/github.com/agl/pond/client/gtk.go:175 +0x6f
+main.(*GTKUI).handle(0xc20809e080, 0x449f3e0, 0xc20c107ec0)
+    [$GOPATH]/src/github.com/agl/pond/client/gtk.go:557 +0x1edc
+main.(*GTKUI).onAction(0xc20809e080)
+    [$GOPATH]/src/github.com/agl/pond/client/gtk.go:99 +0x12a
+main.func·018(0x1, 0x0)
+    [$GOPATH]/src/github.com/agl/pond/client/gtk.go:60 +0x2a
+reflect.Value.call(0x440a520, 0xc20800a970, 0x13, 0x45306a0, 0x4, 0xc2080e22e0, 0x1, 0x1, 0x0, 0x0, ...)
+    /usr/local/Cellar/go/1.4.1/libexec/src/reflect/value.go:419 +0x10e5
+reflect.Value.Call(0x440a520, 0xc20800a970, 0x13, 0xc2080e22e0, 0x1, 0x1, 0x0, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/reflect/value.go:296 +0xbc
+github.com/agl/go-gtk/glib._go_glib_sourcefunc(0x5f58d40)
+    [$GOPATH]/src/github.com/agl/go-gtk/glib/glib.go:886 +0x30d
+github.com/agl/go-gtk/gtk._Cfunc_gtk_main()
+    [$GOPATH]/src/github.com/agl/go-gtk/gtk/:2834 +0x45
+github.com/agl/go-gtk/gtk.Main()
+    [$GOPATH]/src/github.com/agl/go-gtk/gtk/gtk.go:910 +0x1b
+main.(*GTKUI).Run(0xc20809e080)
+    [$GOPATH]/src/github.com/agl/pond/client/gtk.go:80 +0x1b
+main.main()
+    [$GOPATH]/src/github.com/agl/pond/client/main_darwin.go:51 +0x43d
+
+    goroutine 5 [syscall]:
+os/signal.loop()
+    /usr/local/Cellar/go/1.4.1/libexec/src/os/signal/signal_unix.go:21 +0x1f
+    created by os/signal.init·1
+    /usr/local/Cellar/go/1.4.1/libexec/src/os/signal/signal_unix.go:27 +0x35
+
+    goroutine 17 [syscall, locked to thread]:
+runtime.goexit()
+    /usr/local/Cellar/go/1.4.1/libexec/src/runtime/asm_amd64.s:2232 +0x1
+
+    goroutine 7 [select]:
+main.(*guiClient).nextEvent(0xc208060280, 0x0, 0x0, 0x0, 0x0)
+    [$GOPATH]/src/github.com/agl/pond/client/gui.go:101 +0x7f1
+main.(*guiClient).mainUI(0xc208060280)
+    [$GOPATH]/src/github.com/agl/pond/client/gui.go:620 +0x26c3
+main.(*client).loadUI(0xc208060280, 0x0, 0x0)
+    [$GOPATH]/src/github.com/agl/pond/client/client.go:881 +0xe6b
+    created by main.(*guiClient).Start
+    [$GOPATH]/src/github.com/agl/pond/client/gui.go:3662 +0x39
+
+    goroutine 8 [syscall]:
+syscall.Syscall(0x3, 0xb, 0xc20c186000, 0x7ff8, 0x1eec3, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/syscall/asm_darwin_amd64.s:20 +0x5
+syscall.read(0xb, 0xc20c186000, 0x7ff8, 0x7ff8, 0x1eec3, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/syscall/zsyscall_darwin_amd64.go:970 +0x6e
+syscall.Read(0xb, 0xc20c186000, 0x7ff8, 0x7ff8, 0x1eec3, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/syscall/syscall_unix.go:136 +0x58
+os.(*File).read(0xc2080a0010, 0xc20c186000, 0x7ff8, 0x7ff8, 0x1eec3, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/os/file_unix.go:191 +0x86
+os.(*File).Read(0xc2080a0010, 0xc20c186000, 0x7ff8, 0x7ff8, 0xc208062000, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/os/file.go:95 +0x91
+bufio.(*Reader).Read(0xc2080b2000, 0xc20c186000, 0x7ff8, 0x7ff8, 0x420000000001eec3, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/bufio/bufio.go:164 +0x13a
+crypto/rand.(*devReader).Read(0xc20803a510, 0xc20c186000, 0x7ff8, 0x7ff8, 0x0, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/crypto/rand/rand_unix.go:64 +0x2f2
+io.ReadAtLeast(0x5ba2bf0, 0xc20803a510, 0xc20c186000, 0x7ff8, 0x7ff8, 0x7ff8, 0x0, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/io/io.go:298 +0xf1
+io.ReadFull(0x5ba2bf0, 0xc20803a510, 0xc20c186000, 0x7ff8, 0x7ff8, 0x7ff8, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/io/io.go:316 +0x6d
+github.com/agl/pond/client/disk.(*StateFile).StartWriter(0xc2080b0000, 0xc2080b3620, 0xc2080b3680)
+    [$GOPATH]/src/github.com/agl/pond/client/disk/disk.go:330 +0xec7
+    created by main.(*client).loadUI
+    [$GOPATH]/src/github.com/agl/pond/client/client.go:865 +0xd5a
+
+    goroutine 9 [runnable]:
+syscall.Syscall(0x3, 0xe, 0xc20c148040, 0x2, 0x2, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/syscall/asm_darwin_amd64.s:20 +0x5
+syscall.read(0xe, 0xc20c148040, 0x2, 0x1c, 0x72, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/syscall/zsyscall_darwin_amd64.go:970 +0x6e
+syscall.Read(0xe, 0xc20c148040, 0x2, 0x1c, 0x5ba2a01, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/syscall/syscall_unix.go:136 +0x58
+net.(*netFD).Read(0xc20c12e070, 0xc20c148040, 0x2, 0x1c, 0x0, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/net/fd_unix.go:238 +0x314
+net.(*conn).Read(0xc20c14c000, 0xc20c148040, 0x2, 0x1c, 0x0, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/net/net.go:121 +0xdc
+io.ReadAtLeast(0x5bac4d0, 0xc20c14c000, 0xc20c148040, 0x2, 0x1c, 0x2, 0x0, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/io/io.go:298 +0xf1
+io.ReadFull(0x5bac4d0, 0xc20c14c000, 0xc20c148040, 0x2, 0x1c, 0x0, 0x0, 0x0)
+    /usr/local/Cellar/go/1.4.1/libexec/src/io/io.go:316 +0x6d
+golang.org/x/net/proxy.(*socks5).Dial(0xc20c134000, 0x45407c0, 0x3, 0xc20c128060, 0x1c, 0x0, 0x0, 0x0, 0x0)
+    [$GOPATH]/src/golang.org/x/net/proxy/socks5.go:131 +0x1614
+main.(*client).dialServer(0xc208060280, 0xc2080b22a0, 0x58, 0xc208058200, 0x40b8dab, 0x0, 0x0)
+    [$GOPATH]/src/github.com/agl/pond/client/network.go:774 +0x26c
+main.func·042(0x0, 0xc208058100)
+    [$GOPATH]/src/github.com/agl/pond/client/network.go:924 +0x8e
+main.(*client).transact(0xc208060280)
+    [$GOPATH]/src/github.com/agl/pond/client/network.go:954 +0x331
+    created by main.(*client).loadUI
+    [$GOPATH]/src/github.com/agl/pond/client/client.go:866 +0xd7a

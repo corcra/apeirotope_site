@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>NIPS 2017</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/theme/css/pure-min.css" />
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css" />
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/atom/ml.xml" type="application/atom+xml" rel="alternate" title="apeirotope Categories Atom Feed" />
+        <link href="/feeds/rss/ml.xml" type="application/rss+xml" rel="alternate" title="apeirotope Categories RSS Feed" />
+
+
+</head>
+<body>
+
+    <div class="navigation pure-menu pure-menu-horizontal">
+        <a href="/" class="pure-menu-heading  pure-menu-link apeirotope">apeirotope</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"></li>
+
+            <li class="pure-menu-item"><a href="/pages/about.html" class="pure-menu-link pages">about</a></li>
+            <li class="pure-menu-item"><a href="/biomed/" class="pure-menu-link biomed">biomed</a></li>
+            <li class="pure-menu-item"><a href="/lang/" class="pure-menu-link lang">lang</a></li>
+            <li class="pure-menu-item"><a href="/life/" class="pure-menu-link life">life</a></li>
+            <li class="pure-menu-item"><a href="/making/" class="pure-menu-link making">making</a></li>
+            <li class="pure-menu-item"><a href="/meta/" class="pure-menu-link meta">meta</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="/ml/" class="pure-menu-link ml">ml</a></li>
+            <li class="pure-menu-item"><a href="/sec/" class="pure-menu-link sec">sec</a></li>
+            <li class="pure-menu-item"><a href="/tips/" class="pure-menu-link tips">tips</a></li>
+        </ul>
+    </div>
+
+
+<div class="page-container">
+    <div class="entry-content">
+        <div class="post-meta pure-g">
+            <div class="pure-u-3-4 meta-data">
+                <a href="/ml/" class="ml">ml</a><br />
+
+                <a class="author" href="/author/corcra.html">corcra</a>
+                &mdash; <abbr title="2017-12-20T00:00:00+00:00">Wed 20 December 2017</abbr>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-header-container">
+        <div class="background-image-container">
+
+            <div class="background-image-small">
+                <div class="title-container">
+                    <h1>NIPS 2017</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="entry-content">
+        <p><em>I'm continuing my tradition of summarising conferences I attend. Previous posts: <a href="/ml/nips-2016.html">NIPS 2016</a>, <a href="/ml/nips-2015-by-the-day.html">NIPS 2015</a>, <a href="/ml/aaai-2016-by-the-day.html">AAAI 2016</a>, <a href="/ml/icml-2016-not-by-the-day.html">ICML 2016</a>. I also went to AAAI 2017 to present my <a href="https://arxiv.org/abs/1607.04903">work on unitary recurrent neural networks</a>, but didn't write a summary.</em></p>
+<p>This was my third time attending NIPS, but my first time attending NIPS with jetlag. The advantage of jetlag is that it provides a topic of small talk less agonisingly self aware than the weather (weather readily avoided by waking up at 6am). The downside of jetlag is me standing glassy-eyed in front of a poster, trying to formulate intelligent thoughts but just yawning really, really obviously. </p>
+<p>After a few days of complaining about the jetlag I realised I was probably exhausted because <em>NIPS is exhausting</em>. The problem is early mornings, listening to talks, bumping into people I know, talking to people I don't know, having meetings, talking to recruiters, talking over dinner, going to poster sessions, talking at posters, finding people who I had previously talked to as strangers but who are now acquaintances and talking to them again, and so on. Having gone twice before did not teach me moderation, and I was hoarse by Thursday. I also experienced an interesting fluctuation in my desire to do research, which I have depicted in the following graph: <em>(enthusiasm has since returned, luckily)</em></p>
+<figure style="display: block; float: none; margin: auto; width: 50vw;">
+<img src="/images/2017/nips/graph.jpg" style="width: 35vw;">
+<figcaption>
+Figure 1: We observe that research enthusiasm of the PhD student is a nonlinear function of Days of NIPS (dNIPS), with two local maxima attained towards the ends of day 3 and 5. Data beyond day 6 could not be reliably collected due to hostility from the test subject.
+</figcaption>
+</figure>
+
+<p>This analysis clearly indicates that the optimal length of NIPS (including tutorials and workshops) is three days. Recent work (private communication) suggests that "taking breaks" can prolong the research-excitement peak, sustaining the individual beyond the end of the conference, providing hope for 2018. When I got back to Zurich I slept for 7 hours, arose for 7 (during which time I did a roller derby exam, but that's another blog post), then went back to bed for another 10. My body had no idea what was going on.</p>
+<p>As in 2016, I'll organise this by topic. This post is rather long, but each section is largely independent so feel free to pick and choose.</p>
+<ul>
+<li><a href="#tutorials">Tutorials</a></li>
+<li><a href="#wiml">Women in Machine Learning</a></li>
+<li>Main Conference<ul>
+<li><a href="#invited">Invited Talks</a></li>
+<li><a href="#spotlights">Spotlights and Orals</a></li>
+<li><a href="#posters">Posters</a></li>
+</ul>
+</li>
+<li><a href="#ml4h">Machine Learning for Health</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<h2><a name="tutorials"></a>Tutorials</h2>
+<p>The first day of WiML actually coincided with the tutorials, so I was only able to attend those in the morning. I went to <a href="https://optimaltransport.github.io/">A Primer on Optimal Transport</a>. I then got <a href="https://en.wikipedia.org/wiki/List_of_cognitive_biases#Frequency_illusion">Baader-Meinhof'd</a> about it for the rest of the conference.</p>
+<p><img src="/images/2017/nips/skating.png" style="float: right; width: 24vw; margin: 1.5vw 1.5vw 1.5vw 1.5vw;"></p>
+<p>I was twenty minutes late to the tutorial. This is decided to commute to the conference on roller skates (see frame from snapchat selfie video, right), and on the first day I misjudged how long it would take (my Airbnb was about 3 miles away). </p>
+<p>Unfortunately missing the start of a tutorial, especially a mathematical tutorial, can be fatal. I arrived in the middle of an explanation of how Kantorovich's formulation of optimal transport relates to Monge's formulation and I had no reference for what was going on. I tried to sneakily look things up on Wikipedia to catch up, but all was lost and I came away from the tutorial with only an intuitive understanding of the optimal transport problem, and that Wasserstein barycentres are better than l2 averages for combining distributions, usually. In case you missed it, here are the <a href="https://www.dropbox.com/s/55tb2cf3zipl6xu/aprimeronOT.pdf?dl=0">slides (pdf)</a>. I said to myself that I'd go and learn optimal transport real quick and give a coherent summary of it here, but I also want to write this post before I graduate.</p>
+<h2><a name="wiml"></a>Women in Machine Learning Workshop</h2>
+<p>WiML took place on the tutorial day (Monday), and also on symposia day (Thursday). I am not sure why they split it up like this.</p>
+<p>Last year I said that 15% of the 6000 NIPS attendees were women. I don't recall them releasing statistics about attendee demographics this year, but apparently 10% of unique authors amongst submissions were women (amongst accepted submissions? unknown), so the gender situation in ML is still pretty dire. Fixing this is a hard problem and not really my area of expertise (except for what I know from invariably being involved in conversations about Women in STEM), but I'm pretty sure events like this help. Why do I think that? Well, this year was the first instance of the <a href="https://blackinai.github.io/">Black in AI</a> workshop, and while I didn't attend (I was at the healthcare workshop), even seeing people tweeting about it made me way more aware of the work being done by Black researchers. So hopefully WiML also alerts people to the existence of good work getting done by women. Oh, and travel grants! I could imagine in this era of NIPS-selling-out-rapidly that pre-purchasing tickets to redistribute to minority groups could also play a part in promoting diversity. Weird to think of women as minority group, but apparently we only comprise <a href="https://data.worldbank.org/indicator/SP.POP.TOTL.FE.ZS">49.58%</a> of the world's population these days.</p>
+<h3>Interesting talks/posters:</h3>
+<ul>
+<li>
+<p>(contributed talk) <a href="https://www.linkedin.com/in/peyton-greenside-298a5881">Peyton Greenside</a> spoke about using graph convolutional networks to model Hi-C and also ATAC-seq data. I wanted to talk to her at the poster session, and once again (<a href="http://apeiroto.pe/ml/nips-2016.html">this happened last year too</a>) her poster was on the other side of the board to mine. You can find her talk at 1:14 into <a href="https://www.facebook.com/WomenInMachineLearning/videos/1956846487664316/">this video</a>.</p>
+</li>
+<li>
+<p>(invited talk) <a href="http://www.cs.mcgill.ca/~jpineau/">Joelle Pineau</a> spoke about <strong>Improving health-care: challenges and opportunities for reinforcement learning</strong>. The talk focused on <em>slow and small research</em>: research with small sample sizes, acquired slowly. She spoke about designing treatment strategies for epilepsy, probably referencing this paper: <a href="http://www.cs.mcgill.ca/~jpineau/files/panuccio-expneur13.pdf">Adaptive Control of Epileptiform Excitability in an <em>in vivo</em> Model of Limbic Seizures</a> (or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4884089/">this one</a> but I can't find the PDF). The idea is that brain stimulation can prevent seizures (cool!), and you can use reinforcement learning to build a controller (controlling the frequency of applied stimulation) to achieve the same level of seizure control while minimising the required amount of stimulation. One lesson she highlighted from this work is that models (in the 'animal model' sense) are important (they use a seizure model from mouse brain cells, I think), and having existing baselines to build from also helps. She also described some work on bandits to do cancer treatment optimisation, which I think I actually already wrote about in my <a href="http://apeiroto.pe/ml/icml-2016-not-by-the-day.html">ICML 2016 post</a>.</p>
+</li>
+<li>
+<p>(invited talk) <a href="http://theory.stanford.edu/~nmishra/">Nina Mishra</a> spoke about <strong>Time-Critical Machine Learning</strong>. She spoke about anomaly detection on huge streams of data, using <a href="http://proceedings.mlr.press/v48/guha16.html">Random Cut Forests</a>, and she spoke about machine learning in medical emergencies (probably this paper: <a href="http://theory.stanford.edu/~nmishra/Papers/timeCriticalSearch.pdf">Time-Critical Search</a>). When faced with a medical emergency, people will ring the relevant emergency number, and then, a lot of people will turn to Google for help. This isn't always the most efficient way to get useful information, so they did some work on trying to detect (using search query and other metadata such as time, location, query history) whether or not a person was in an emergency situation, with the intention to give more relevant results. Someone asked if it wouldn't be easier to just make a special emergency-search app, but Nina pointed out that nobody wants to download an app in an emergency situation. (I do wonder if phones could come with such an app by default, but making that standard is a whole other challenge). She <em>did</em> however describe a possible emergency app, which I think was called Samaritan (reminding me of the very cool <a href="https://www.goodsamapp.org/">GoodSAM app</a>), that guides a user through performing CPR. Part of the procedure involves putting the phone on the person's chest and using its accelerometer to guide CPR compressions. Nice use of ubiquitous smartphone tech.</p>
+</li>
+</ul>
+<p>Regarding the poster sessions, I spent all of the Monday session presenting my poster (see the Healthcare workshop below), and much of the Thursday session talking at my friend's poster (<a href="https://arxiv.org/abs/1712.00643">Learning the Probability of Activation in the Presence of Latent Spreaders</a>) and sneaking peeks at the <em>Interpretable Machine Learning</em> symposium - video of a panel session <a href="https://www.youtube.com/watch?v=kruwzfvKt3w">here</a>, and video of the debate <a href="https://www.youtube.com/watch?v=2hW05ZfsUUo">here</a>.</p>
+<h3>Roundtables</h3>
+<p>As in previous years, the roundtables were one of the highlights of WiML for me. It's a great opportunity to meet senior scientists I might not otherwise be able to, and also to get to know some of the other WiML attendees.</p>
+<p>I ended up going to four tables - two career-based, two topic-based:</p>
+<ul>
+<li>
+<p><em>Choosing between academia and industry</em> - I went to the same topic last year, but this time the table mentors were both in academia, so I got a somewhat different perspective. This is also a question I've spoken to people about and thought about, so I didn't learn much, but it's useful to have one's thoughts externally validated. The gist is that academia gives more freedom, at the cost of stability, potentially having to teach, having to supervise students, and having to <s>beg for money</s> write grants. Not all of these are necessarily negatives - some people like teaching and supervising (nobody likes writing grants). Meanwhile, industry may limit research freedom, but provides <em>more</em> stability, and (usually) freedom from having to run your own lab with all that entails.</p>
+</li>
+<li>
+<p><em>Establishing collaborators/long-term career planning</em> - the roundtable I attended wasn't especially enlightening on this topic, but the talk from <a href="http://raiahadsell.com/index.html">Raia Hadsell</a> touched on it, and gave some good long-term career advice. The advice was this (taken from one of her slides):</p>
+<ul>
+<li>If you like to go deep, make some room for novelty and risk.</li>
+<li>If you are a renaissance woman, try going deep.</li>
+<li>NIPS and WiML are <em>your</em> community - be a participant.</li>
+<li>speak loudly. ask questions. be strong</li>
+</ul>
+<p>I'd not self-identify as a 'renaissance woman' (I go for 'attempted polymath'), but I tend to aim for <em>multifaceted</em> (see the name of this website), so the advice to go deep was hard to hear, and therefore useful. (I just love when people tell me things I don't want to hear, it's why I use twitter.)</p>
+</li>
+<li>
+<p><em>Generative models</em> - a lot of this roundtable consisted of me discussing evaluation of GANs with Ian Goodfellow. This was a bit selfish because it's a topic of direct relevance to my <a href="https://arxiv.org/abs/1706.02633">current work on recurrent GANs for medical data</a> (see also below) and maybe less interesting to others. However, I also think evaluation is one of the most interesting GAN-related questions right now. There's understandably a lot of focus on the GAN objective and optimisation procedure, thinking about convergence and stability and so on, but optimisation without evaluation seems foolish.</p>
+</li>
+<li>
+<p><em>Machine learning for healthcare</em> - we discussed some of the big challenges facing MLHC, like data sharing, causality, and something else I've forgotten but lists should always contain three elements. I've not worked on causality before, but I'm increasingly aware of how causal reasoning (especially counterfactual reasoning) plays a role in trying to understand observational medical data. More about healthcare in the section on the healthcare workshop.</p>
+</li>
+</ul>
+<h1>The Main Conference</h1>
+<h2><a name="invited"></a>Invited Talks</h2>
+<figure>
+<img src="/images/2017/nips/longbeach.jpg">
+<figcaption>
+Long Beach in December: not bad
+</figcaption>
+</figure>
+
+<p><a href="https://research.google.com/pubs/JohnPlatt.html">John Platt</a> spoke about <strong>Powering the next 100 years</strong> (<a href="https://youtu.be/L1jLpkvKPh0?t=1727">video</a>), which was less environmentalist than I was hoping, and more about economics (also important, less exciting). He also spoke about nuclear fusion, which is very exciting, and possibly important (in the future). One issue I had with the premise of this talk is that I don't think we should be <em>trying</em> to expand US power usage to the rest of the world - the US uses disproportionately much energy relative to other developed nations  (even with high standards of living, see also the <a href="https://en.wikipedia.org/wiki/2000-watt_society">2000-watt society</a>), so while it would be nice if we <em>could</em>, I would personally rather focus on minimising our energy consumption until it is sustainable to consume more. But anyway, assuming the premise, they use machine learning to optimise both the economics of power usage, and for identifying promising (and safe) experiments to run on fusion reactors.</p>
+<p>I missed <a href="http://www.psi.toronto.edu/~frey/">Brendan Frey</a>'s talk about reprogramming the human genome, and <em>also</em> <a href="https://keysduplicated.com/~ali/">Ali Rahimi</a>'s talk for the <strong>Test of Time Award</strong>. I sorely regret missing the latter talk because people kept asking me about it. I had to wait until I got back to Zurich to rectify the matter, but having now watched it (available <a href="https://www.youtube.com/watch?v=ORHFOnaEzPc">here</a>), I get the fuss. </p>
+<p>So, regarding <strong>Rahimi's talk</strong>: Yann LeCun quickly posted <a href="https://www.facebook.com/yann.lecun/posts/10154938130592143">a response</a>, and Ferenc Huszár posted <a href="http://www.inference.vc/my-thoughts-on-alchemy/">another response</a>, and I should make a separate blog post to add my incredibly important opinions on the matter, but I'll just cram them right in here. Ali Rahimi's talk claimed that much of machine learning these days is alchemy - people are building models that work, seemingly by magic, which we don't quite understand. As a relative newcomer (remember, only my third NIPS) I can't hark back to any golden days of rigour and understanding, but I can certainly say that the things he suggested - simple experiments, simple theorems - are appealing.</p>
+<p>My take: We should not make unsubstantiated claims in science. We should design experiments to test claims we make about our models, and we should not accept speculatory claims from others as fact. How often do papers today fail by these measures? Rahimi's talk implies this happens often enough to be worth calling out. I <em>feel</em> like I have read papers which make unsubstantiated claims, or over-explain their results, or introduce poorly-defined concepts, but I can't recall any to mind, so my claim must remain purely <em>speculative</em>.</p>
+<p>What really resonated with me from Rahimi and also Huszár's points is that <em>empiricism does not imply lack of rigour</em>. A lot of what I do is quite empirical. A lot of what I do is somewhat applied. I've struggled with feeling like it's less scientific as a result. I've felt like I am "just" doing engineering. But the best way I have come to understand this work, which was captured in this point about empiricism, is that rigour does not need to be <em>mathematical</em> (forgive me, I am a former theoretical physicist, so this has taken me some time to realise). Experimental design is also rigorous when done well. Building a model to solve a problem may be a kind of engineering, but trying to <em>understand</em> it afterwards, forming hypotheses about its behaviour and then testing them - this can, and indeed should, be done rigorously. Otherwise, you show that a model exists which can achieve a certain performance on a certain task on a certain dataset, and little else.</p>
+<p>The next talk I actually attended was <strong>The Trouble with Bias</strong> from <a href="http://www.katecrawford.net/">Kate Crawford</a> (video <a href="https://www.youtube.com/watch?v=fMym_BKWQzk">here</a>). This was a great talk, and I'm glad it got a prime spot in the program. Not only was her public speaking skill commendable (the slides just vanished near the end and she barely skipped a beat), but the talk was really interesting. I admit I was worried I'd already know most of the contents, since I read things about bias on a semi-regular basis (somehow). Even if I'd known everything she was going to say (which I didn't), I'd consider this talk a good distillation and overview of the pressing issues. She made an illuminating distinction which I shall now paraphrase.</p>
+<p>When it comes to bias, there are harms of <em>allocation</em> and harms of <em>representation</em>. Biased allocation is easy to see - someone got a loan someone else didn't, someone got bail and someone else didn't, etc. These are concrete and tangible, immediate, and easy to quantify. <em>Representation</em> on the other hand relates to impressions and stereotypes. Google searches for 'CEO' returning all white men is a <em>representational</em> bias, and its effect is much harder to measure. Images of Black people being labelled as 'gorillas' is <em>representational</em> bias and while clearly hurtful, the impact of <em>allocation</em> is not immediately obvious. Many people generally accept that this kind of representation is bad, but can we blame it for any <em>particular</em> instance of allocation bias? Usually not. Representational bias is diffuse across culture, difficult to measure, and may not have any immediately obvious impacts. An example from me: We as a society are starting to suspect that something about how women are represented in society may be influencing the rates of women going on to study STEM subjects. This representational bias may be slowly manifesting as a tangible absence of female engineers, but it is difficult to formalise or prove that these observations are causally related. And of course, machine learning algorithms (like literally any algorithm) can be biased in either of these ways (and presumably more). Once again: <a href="https://www.youtube.com/watch?v=fMym_BKWQzk">watch the talk</a>.</p>
+<p><a href="https://people.eecs.berkeley.edu/~pabbeel/">Pieter Abbeel</a> spoke about <strong>Deep Learning for Robotics</strong> - really, (deep) reinforcement learning for robotics. Probably the most important takeaway from this talk was the 1 second clip of Dota 2 1v1 mid he showed, establishing an important moment in both Dota 2 and NIPS keynote history. The non-Dota content of the talk was largely focused about meta-reinforcement learning, or 'learning to reinforcement learn', and architectures to achieve this. The idea is that you want to build agents which can adapt quickly to new environments, as humans do. One interesting idea was 'Hindsight Experience Replay', which assumes whatever ended up happening was actually the goal, and deriving reward from that. </p>
+<figure style="width: 20vw;">
+<img src="/images/2017/nips/skinner.jpg">
+<figcaption>
+Reinforcement learning agent re-evaluating its experience.
+</figcaption>
+</figure>
+
+<p>This converts the usually sparse reward in RL to plentiful reward signals, given the Q-function is augmented with a notion of a goal. He used the cake metaphor that everyone loved from Yann LeCun's keynote at NIPS last year, converting the cherry on top of a cake to multiple cherries on a cake. People can't get enough of the cake joke. It's Portal all over again.</p>
+<p>I missed the talks from <a href="https://getoor.soe.ucsc.edu/">Lise Getoor</a>, <a href="http://www.princeton.edu/~yael/">Yael Niv</a>, and <a href="https://www.stats.ox.ac.uk/~teh/">Yee Whye Teh</a> because there is only so much time in a day.</p>
+<h2><a name="spotlights"></a> Spotlights and Orals</h2>
+<p><em>First, a brief rant.</em></p>
+<p>I was quite impressed by the quality of the spotlights and orals this year. Coming from the rather low bar of 'mumbling at a slide covered in equations' of previous years, I was glad to see that many presenters really put time into preparing their talk. These talks give people the opportunity to explain their work to potentially <em>thousands</em> of fellow researchers, so giving a terrible talk is insulting both to the audience and to the people who didn't get that opportunity.</p>
+<p>I've thought about the implications of having an additional selection process for determining orals and spotlights. There's a trade-off between highlighting really good papers (with possibly terrible speakers) and highlighting less meritorious work (with a good communicator). There's also a challenge of being fair to non-native English speakers when assessing presentation quality - it would not be acceptable to condemn a talk on the basis of the speaker's command of English. </p>
+<p>I try to assess talks by how much they have considered the audience - considering what the audience already knows, what may be obvious (or not, usually), what the really important things in the work are, and what can be skipped without degrading the story. But how to do this without (subconsciously) judging the fluency of the speaker's language and delivery is not entirely clear. I'm sure there is already bias in how the quality of one's English influences paper acceptance (either through clarity or unknowingly discriminatory reviewers), so adding an additional layer on the presentation quality may exacerbate the issue. On the other hand, communication is really important for scientists, and the conference should do what they can to ensure the content is high quality. Maybe some sort of (optional) pre-conference speaking workshop for those invited to give orals and spotlights?</p>
+<p>Ranting aside, a selection of talks I took note of:</p>
+<ul>
+<li>
+<p><a href="https://arxiv.org/abs/1703.04389">Bayesian Optimisation with Gradients</a> - <em>Jian Wu, Matthias Poloczek, Andrew Gordon Wilson, Peter I. Frazier</em>.  Augment Bayesian optimisation using gradient information - 'derivative-enabled knowledge-gradient (dKG)'. They put a Gaussian process prior over the function to be optimised, resulting in a multi-output GP for both function and gradient (the gradient of a GP is a GP). It works better than methods not using derivatives, but I rarely have access to derivatives when I'm doing hyperparameter optimisation in deep networks, so I'm not sure how useful it would be for me.</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/1705.07874">A Unified Approach to Interpreting Model Predictions</a> - <em>Scott Lundberg, Su-In Lee</em>. The framework is called 'SHAP' (SHapley Additive exPlanations). The idea is to interpret the model by assigning features importance values for a given prediction. This work unifies six existing methods by proposing a notion of a 'additive feature attribution method'. They also find that their approach agrees well with human-derived feature attribution scores.</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/1709.01894">Convolutional Gaussian Processes</a> - <em>Mark van der Wilk, Carl Edward Rasmussen, James Hensman</em>. They consider a <em>patch-response</em> function, which maps from image patches to real values, and place a Gaussian process prior on this function. Considering the sum of the patch-response function on all patches of the image as another function, its prior is also a Gaussian process. Computational complexity is a huge barrier here, which they address by using inducing points in the <em>patch</em> space, corresponding to using inter-domain inducing points (an idea which is already understood, if not by me).</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/1703.06856">Counterfactual Fairness</a> - <em>Matt J. Kusner, Joshua R. Loftus, Chris Russell, Ricardo Silva</em>. Consider predictors as counterfactually fair if they produce the same result if a sensitive attribute were different. This means that any nodes downstream (in the causal graph) of that sensitive attribute may also be different. This implies that a predictor will necessarily be counterfactually fair if it is only a function of nodes which are <em>not</em> descendants of the sensitive attribute, unsurprisingly enough. They address the fact that this is rarely feasible (almost everything in a person's life may be affected by their race, for example), by considering other models. For example, using residuals of variables, after accounting for (using a linear model) the sensitive attributes. One nitpick: I take issue with the example they give in Figure 2 (level 2). They introduce a latent variable which is predictive of success (GPA, LSAT, first year law school average grade) independent of sex and race, and call this <em>knowledge</em>. I think this is a weird choice - <em>surely</em> knowledge is affected by sex/race, if only by influencing available educational opportunities and ability to study unimpeded (for example, the need to work during school/college, the need to look after family members). I am trying to think of another name for this node which is <em>not</em> plausibly influenced by sex or race, some sort of intrinsic attribute of the person - 'grit'? 'general intelligence'? 'luck'? (But who wants to base law school admissions on luck?) I can't imagine the authors were intending to make any kind of political statement about the nature of knowledge here, but it seems like a weird error(?) in a paper dealing with social issues.</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/1708.02183">Multiresolution Kernel Approximation for Gaussian Process Regression</a> - <em>Yi Ding, Risi Kondor, Jonathan Eskreis-Winkler</em>. The popular method for scaling GPs is to approximate the kernel function using a low-rank approximation (the Nyström approximation). There are some issues with that: is a low-rank approximation reasonable? Which part of the eigenvalue spectrum of K' (that is, K + sigma I, which appears in the MAP estimate of the function) is the most important? This work proposes and develops a different kind of kernel approximation, depending on the data, where local factorisations are used, and it can be assumed that 'distant clusters [of data] only interact in a low rank fashion'. My cursory skim of the paper wasn't enough to get exactly what they're doing, but I love to see work questioning common practices and trying to understand/improve on them.</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/1705.08933">Doubly Stochastic Variational Inference for Deep Gaussian Processes</a> - <em>Hugh Salimbeni, Marc Deisenroth</em>. Why do I always end up reading about GPs? I'm not even using them (right now?!). The tl;dr on this paper is that they got deep (that is, multi-layer generalisations of) GPs to work. Previously they didn't work particularly well because the variational posterior required each layer to be independent, an assumption which this work drops by introducing a new variational inference procedure (hence the title). They show that this model works even on datasets with a billion examples.</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/1705.09655">Style Transfer from Non-Parallel Text by Cross-Alignment</a> - <em>Tianxiao Shen, Tao Lei, Regina Barzilay, Tommi Jaakola</em>. Separate content from style, in text. This is interesting to me because, like <em>years ago</em>, (2014) we had discussed using language embeddings to remove stylistic choices from the language of doctors, to try to standardise text across multiple authors. I'm not saying we have any claim whatsoever to the idea - ideas are cheap, implementation matters - but I'm interested to see that someone has - sort of - achieved something like what we wanted. They assume they have corpora with roughly the same <em>content</em> distribution but different <em>style</em> distributions, and try to learn a latent representation (which they formulate using a probabilistic model).  I have a big armchair-linguist issue with the idea that style is independent of content, because if you consider content as meaning then a <em>lot</em> of meaning is conveyed through <em>how</em> someone says something, and indeed even in their examples, they consider 'sentiment' as style, in which case I actually don't know what they mean by content. They actually mention in the introduction that one can only hope to approximately separate style and content even with parallel data, but they never really clearly define what they mean by 'content' of a sentence.</p>
+</li>
+<li>
+<p><a href="http://papers.nips.cc/paper/6827-deep-multi-task-gaussian-processes-for-survival-analysis-with-competing-risks">Deep Multi-task Gaussian Processes for Survival Analysis with Competing Risks</a> - <em>Ahmed M. Alaa · Mihaela van der Schaar</em>. The risks are competing because the patient can only die from one thing. The model attempts to produce survival times (time-to-event) using a deep, multi-task (since multiple risks) Gaussian process. They use an intrinsic coregionalisation model for the kernel functions to account for multiple outputs, which models task(=output) dependence independently of input dependence, but simplifies calculations a lot (I tried to build a more complicated multi-task kernel function once and it was a big mess). They also point out that using a deep GP alleviates some dependence on the exact form of the kernel function. This work (unsurprisingly) uses the 'old' (2013) work on deep GPs, so I wonder how much it would benefit from the improved deep GPs (see above).</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/1705.10915">Unsupervised Learning of Disentangled Representations from Video</a> - <em>Emily Denton, Vighnesh Birodkar</em>. They want to separate time-varying and stationary parts of a video. Then you can predict future frames by applying a LSTM to the time-varying components. That's pretty neat! How do they achieve this? They use four networks - two encoders (one for scene (stationary information), one for pose (time-varying)), a decoder which maps pose and scene vectors to produce a frame, and a scene discriminator which tries to tell if pose vectors came from the same video. They construct loss terms to impose their constraints (separating time-varying and static elements), including some interesting adversarial loss terms.</p>
+</li>
+</ul>
+<h2><a name="posters"></a> Posters</h2>
+<figure style="width: 40vw; float: none; display: block; margin: auto;">
+<img src="/images/2017/nips/posters.jpg">
+<figcaption>
+The quiet poster hall on Monday morning.
+</figcaption>
+</figure>
+
+<p>My experience of the poster sessions suffered the most as a result of jetlag, so I ended up looking at far fewer posters than I would have liked (even accounting for my eternally overambitious plans for poster sessions). This was also the first year where I got invited to ~cool parties~, so I went to some of those, too.</p>
+<p>The hall for the posters included what seemed like gratuitous space between rows, but it filled up rapidly (the crowd at the Capsules poster was sizeable). I admit I always think about roller derby these days when I'm trying to get past crowds of people, but hip checking strangers isn't a great way to do poster sessions (I <em>assume</em>).</p>
+<p>My poster session strategy is the following:</p>
+<ul>
+<li>before the conference: go through the list of papers and note the interesting ones</li>
+<li>don't leave any time to actually read the papers</li>
+<li>forget about the list, fight through crowds of large men to peer at poster titles</li>
+<li>eventually, learn things</li>
+</ul>
+<p>A humble plea to poster presenters: please don't stand directly in front of your poster while you're talking about it, I can't see and I don't want to get so close to you that you start talking to me.</p>
+<p>Here's a little caveat about this part of the blog post: I didn't visit all these posters. I'm just taking the opportunity to mention more interesting papers.</p>
+<ul>
+<li>
+<p><a href="https://arxiv.org/abs/1612.09328">The Neural Hawkes Process: A Neurally Self-Modulating Multivariate Point Process</a> - <em>Hongyuan Mei, Jason Eisner</em>. Alongside optimal transport, Hawkes processes appeared in my radar of possibly-interesting terms this NIPS, so I decided to take a look at this paper. I got so engrossed that I realised I was actually <em>reading</em> the paper (I usually do a cursory skim to produce these summaries), so I've had to stop myself in the interest of giving other papers a chance. In short: a Hawkes process is a kind of non-homogeneous Poisson process (the rate of the process can vary in time) where events can <em>increase</em> the probability of future events (the events are self-exciting). In this work they generalise the Hawkes process (allowing for inhibitory events, for example) and use a <em>continuous-time LSTM</em> to model the intensity functions of the given events. Also, they use a <em>meme dataset</em> (amongst others) to train the model, so the paper includes amusing lines like</p>
+<blockquote>
+<p>"We attribute the poor performance of the [non-neural] Hawkes process to its failure to capture the latent properties of memes, such as their topic, political stance, or interestingness".</p>
+</blockquote>
+<p>The idea of trying to study memes computationally is funny, because even humans barely understand memes.</p>
+</li>
+</ul>
+<figure style="display: block; width: 40vw; margin: auto; float: none;">
+<img src="/images/2017/nips/rqadsnzazfqz.jpg" 
+<figcaption>
+Example of a typical "meme"
+</figcaption>
+</figure>
+
+<ul>
+<li>
+<p><a href="https://arxiv.org/abs/1710.02224">Dilated Recurrent Neural Networks</a> - <em>Shiyu Chang, Yang Zhang, Wei Han, Mo Yu, Xiaoxiao Guo, Wei Tan, Xiaodong Cui, Michael Witbrock, Mark Hasegawa-Johnson, Thomas S. Huang</em>. Like a dilated CNN, but... an RNN. They achieve this using dilated recurrent skip connections. This is different to the usual skip connection (which takes information from some previous state of the RNN) in that it <em>doesn't</em> rely on the immediately previous state. That's what makes it a dilation. You can stack layers with different dilation lengths to get a sort of 'multiresolution' RNN. If this sounds similar to the <a href="https://arxiv.org/abs/1402.3511">Clockwork RNN</a>, you're right, but see section 3.4.</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/1711.05411">Z-Forcing: Training Stochastic Recurrent Networks</a> - <em>Anirudh Goyal, Alessandro Sordoni, Marc-Alexandre Côté, Nan Rosemary Ke, Yoshua Bengio</em>. Yes, I care a lot about RNNs. I work on (medical) time series data, if that wasn't already apparent. This paper adds to the growing work on combining deterministic RNN architectures with stochastic elements (like state space models), hitting an intractable inference problem, and using variational inference with a RNN-parametrised posterior approximation. So what's new here? They observe that these models can often neglect to use the 'latent' part (the stochastic elements), so they add a regularisation term to the ELBO which 'forces' the latent state at time <em>t</em> to be predictive of the hidden state of the backwards-running inference network. And this works better, empirically. When I first saw this paper I panicked because the title makes it sound very similar to an idea I have been cooking up, an idea which I got stuck on because I was trying to explain an additional regularisation term in terms of a prior (on <em>something</em>). But these authors just go ahead and use a regulariser without any probabilistic interpretation, so it's probably fine to do that. Note to self: not everything has to be mathematically beautiful.</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/1703.04977">What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision?</a> - <em>Alex Kendall, Yarin Gal</em>. I first learned about (and immediately loved) aleatoric and epistemic uncertainty in my applied Bayesian statistics class back in Cambridge, so despite not featuring RNNs, I was interested in this work. In this context, aleatoric uncertainty is the uncertainty inherent to the observations, whereas epistemic uncertainty arises from uncertainty about the model parameters (which could in principle be reduced with more training). So this work studies epistemic and aleatoric uncertainty in deep networks (for computer vision), and shows that modelling aleatoric uncertainty improves performance in semantic segmentation and depth regression.</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/1705.08639">Fast-Slow Recurrent Neural Networks</a> - <em>Asier Mujika, Florian Meier, Angelika Steger</em>. Phew, back to RNNs. This work proposes a RNN architecture attempting to combine the advantages of multiscale RNNs and deep transition RNNs. Basically, it's a 'new model architecture' paper. They show good results on two language modelling tasks, and do further analyses of the properties of their model. Multiscale (temporally speaking) data is extremely common in medicine, so something like MIMIC-III would have been a great test-case for this model as well. Maybe I'll find a masters student to explore this (I obviously don't have time because I spend all my time writing blog posts).</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/1705.10888">Identification of Gaussian Process State Space Models</a> - <em>Stefanos Eleftheriadis, Thomas F.W. Nicholson, Marc Peter Deisenroth, James Hensman</em>. A lot of work focuses on inferring the latent states of a GP state space model. Here, they (also) look at learning the model itself. An important difference between your typical GP setting and the GP-SSM is that the <em>inputs</em> to the GP in the latter case are <em>latent</em> states (of the state space model), so they have to infer <em>both</em> the latent states <em>and</em> the transition dynamics (that's the model). They use variational inference with a bidirectional RNN as the recognition network, so you know I'm on board.</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/1709.02012">On Fairness and Calibration</a> - <em>Geoff Pleiss, Manish Raghavan, Felix Wu, Jon Kleinberg, Kilian Q. Weinberger</em>.  This work seems to be a follow-up to <a href="https://arxiv.org/abs/1609.05807">this paper</a> which was written to analyse <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">this piece on bias in criminal sentencing from ProPublica</a> (ProPublica also <a href="https://www.propublica.org/article/bias-in-criminal-risk-scores-is-mathematically-inevitable-researchers-say">followed up</a> on this and other research following their investigation). So first up: it's awesome to see academic research and investigative journalism interacting in this way. In the precursor paper they provide an impossibility proof (which is given a simplified geometric proof in this paper) for simultaneously satisfying calibration and equalized odds (equal false positive and false negative rates between groups). As hinted in the precursor paper, relaxing the notion of equalized odds (for example, sacrificing equal false positive rates) may allow you to keep calibration, and that's what they show in this paper.</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/1705.08821">Causal Effect Inference with Deep Latent-Variable Models</a> - <em>Christos Louizos, Uri Shalit, Joris Mooij, David Sontag, Richard Zemel, Max Welling</em>. The focus of this work is in account for <em>confounders</em> (by modelling them as latent variables) while doing effect inference, particularly in the presence of noisy proxies of true confounders. They achieve this using a 'causal effect variational autoencoder' (CEVAE).</p>
+</li>
+</ul>
+<h1><a name="ml4h"></a>Machine Learning for Health (<a href="https://ml4health.github.io/2017/">ML4H</a>)</h1>
+<p>I speculate that they're moving away from the previous acronym (MLHC - machine learning for health care) due to a collision with the <a href="http://mucmd.org/">MLHC conference</a> (previously abbreviated MUCMD). Apparently MLHC (the conference) will be in Stanford in 2018, which is a shame because I feel I should attend it, but I really didn't enjoy travelling to/from California for NIPS. Also, I think conference organisers should be avoiding the USA (or any other country with restrictive or racist visa policies) if at all possible right now. </p>
+<p><em>Anyway</em>. The workshop, unrelated to the MLHC conference, was an all-day affair on the Friday of NIPS. There were all the usual things: invited talks, spotlight talks, (frustratingly short) poster sessions, and people crammed into one room for 8 hours. I missed the panel because I was stuck at lunch, and I missed Jure Leskovec's talk because I was ~ networking ~. For the rest, I took some notes.</p>
+<p>Talks:</p>
+<ul>
+<li>
+<p><a href="http://dbmi.hms.harvard.edu/person/faculty/zak-kohane">Zak Kohane</a> - <strong>AI in Medicine That Counts</strong>. He distinguished between AI that does what doctors do, AI that does what doctors <em>could</em> do (but don't), and AI that does what doctors can't do. I am reminded of <a href="https://lukeoakdenrayner.wordpress.com/2016/11/27/do-computers-already-outperform-doctors/">this post</a> from Luke Oakden-Rayner which distinguishes between tasks we're building ML systems to solve, and tasks which doctors actually do. They're not the same, and Kohane made the point that they need not be, in general. We can see gains in outperforming doctors on e.g. diagnostics, but we can also see gains in doing analyses doctors simply can't do (because they're not computers). Kohane gave an example of a child with ulcerative colitis who was saved from colonectomy after they ran a gene expression analysis on children with similar irritable bowel disease and identified an effective drug (indirubin). He also provided a good comparison between medicine and what Deepmind has been achieving with AlphaZero (on Go and other games). Achievements like AlphaZero make people think AI is about to take over the world (from what I can tell), but medicine is far from AI-led mastery:</p>
+<ul>
+<li>it's non-deterministic</li>
+<li>it's not fully observable</li>
+<li>the action space is not discrete</li>
+<li>we have no perfect simulators</li>
+<li>'episodes' in medicine are not short (consider the number of seconds in a typical ICU stay, consider a person's entire life...)</li>
+<li>evaluation is unclear and slow</li>
+<li>trial and error is not an option (outside of controlled trials, and even then the trial is highly constrained)</li>
+</ul>
+<p>In his list he also included that we have huge datasets of human play (for games like Go), but I think medicine is getting there towards having large datasets (at least locally), so I don't count this as a <em>fundamental</em> limitation. He then went on to discuss the money end of medicine, which I'm <em>not</em> a fan of, but if you're to be pragmatic, you gotta understand the game you're playing. He made a point that we may come up with cool technology to improve medicine in different ways, but unless a business argument can be made for it, it likely won't be adopted. This is more clearly true in the US where healthcare is more of profit-oriented than in other countries (e.g. those with socialised healthcare systems) - ML4H @ Socialised Healthcare edition, anyone? We can have it in a neutral country! <em>(Joking aside, I am legitimately interested in the opportunities for ML to benefit from and improve socialised healthcare systems - data centralisation is an obvious point, but perhaps other types of problems are more immediately pressing in systems like the NHS, than they would be in the USA...)</em></p>
+</li>
+<li>
+<p><a href="https://www.microsoft.com/en-us/research/people/jchayes/">Jennifer Chayes</a> - <strong>Opportunities for Machine Learning in Cancer Immunotherapy</strong>. The immune system is an incredibly complicated and therefore cool system, and cancer immunotherapy is a very very cool use of the immune system. With the caveat that I'm <em>not</em> an immunologist, the tl;dr of cancer immunotherapy is: tell your immune system to target and kill cancer cells. This may be what the immune system does already, to some extent. T-cells identify specific antigens, and direct the rest of the immune system to kill cells presenting those antigens. (How do T-cells know what to identify? <a href="https://en.wikipedia.org/wiki/Thymus">The thymus is the coolest organ you've never heard of.</a>) So the challenge is to train T-cells to specifically recognise your cancer cells, but there are <em>lots</em> of possible (neo)antigens. You can formulate this as a matrix completion problem (T-cells v. antigens) to predict the response of new T-cells. She also described work they did for predicting response to checkpoint inhibitors (a type of cancer immunotherapy), highlighting the value of building relatively simple models on small data.</p>
+</li>
+<li>
+<p><a href="https://www.seas.harvard.edu/directory/samurphy">Susan Murphy</a> - <strong>Challenges in Developinging Learning Algorithms to Personalise mHealth Treatments</strong>. This was about the <a href="http://www.heartsteps.net/">HeartSteps</a> project, which tries to encourage physical activity in people who have completed cardiac rehabilitation. That is, it's an app that encourages you to go for a walk. This is a problem of sequential decision making. To maximise positive outcome (more time walking), what sort of notifications should the app send, and when? If someone is driving, you shouldn't bother them. If they just walked somewhere, or are in the middle of walking, you shouldn't tell them to go for a walk. They model it as a (contextual) bandit problem, and have to deal with noise in the data, nonstationarity (the expected reward function changes over time), and that there are longer-term delayed effects from actions. Unsurprisingly (to anyone who's used apps that send them push notifications), after a while people just start ignoring them, and the result of interventions diminish. While the intentions in this work are noble, I can see creepy unintended uses of research like this into user engagement (like <a href="https://usedopamine.com/">this horrible startup</a>). Technology is always a double-edged sword, but if we have to be subjected to personalised advertising and addiction mechanics in games, and so on, at least fewer people should die of heart disease, right?</p>
+</li>
+<li>
+<p><a href="http://vision.stanford.edu/feifeili/">Fei-Fei Li</a> - <strong>Illuminating the Dark Spaces of Healthcare</strong>. I think that was the title. She spoke about three projects in healthcare that use computer vision, and the room was <em>packed</em>. At first I thought everyone suddenly loves healthcare, but then I remembered that Fei-Fei Li is famous. The projects were all about activity recognition from non-RGB video (they had depth sensors and IR video if I recall - these alleviate <em>some</em> privacy concerns). First she spoke about identifying hand-washing to tackle hospital acquired infection. One challenge was in activity recognition given unusual (for research) viewpoints, e.g. cameras on ceilings looking directly down. The second project was about ICU activity recognition, to better understand what people spend time doing in the ICU. The priority here was <em>efficiency</em>, so they developed methods to analyse video which don't require analysis of every single frame, saving a lot of compute while still achieving high performance (on standard video understanding datasets). Finally, she spoke about applications in independent senior living, such as fall detection. This in particular is challenging due to limited training data and rare events (thankfully). They propose to use domain transfer to aid in the data scarcity issues, but she pointed out that much of this work is still in progress.</p>
+</li>
+<li>
+<p><a href="https://healthsciences.ucsd.edu/som/medicine/divisions/med-genetics/research/Pages/Mesirov-Lab.aspx">Jill Mesirov</a> - <strong>From Data to Knowledge</strong>. I am doubtful this was the title of her talk, but we'll run with it. The topic was medulloblastoma, which is one of the most common forms of paediatric brain tumour. 70% of children <em>survive</em>, but only 10% go on to leave independent lives. Their focus is in predicting relapse, which they achieve using a probabilistic model incorporating various clinical and genomic features. She then went on to describe a project to identify novel therapeutics for an aggressive subtype of medulloblastoma driven by Myc (this is a gene). Through mouse xenograft experiments and expression profiling, they found this subtype is likely sensitive to CDK-inhibitors, and found they could extend survival (in mice) by 20% with palbociclib, suggesting a candidate treatment. This sort of analysis is sort of 'well known' to me because my lab (alongside machine learning) works on cancer genomics, but I'd also like to pause for a moment to reflect on two things:</p>
+<ol>
+<li>As with the example from Zak Kohane (about indirubin), a lot of the time (translational) computational biologists are hunting for threads - persistent patterns in the disease which indicate possible vulnerabilities, which they can then follow up by looking for matches in drugs with known targets. If you can optimise any point in that process, you can probably save someone's life, some day.</li>
+<li>A 20% extension in survival is clinically significant, but it's not a cure as we think of it. For mice it's measured in days, for humans probably one or two years if not months. For some cancers, especially brain cancers, this is still where we're at. Fighting cancer is really, really hard.</li>
+</ol>
+</li>
+<li>
+<p><a href="https://research.google.com/pubs/GregCorrado.html">Greg Corrado</a>. I just stopped writing down the titles at some point. He spoke about a few different projects:</p>
+<ul>
+<li>Diagnostics: doctors working alongside algorithms to work better/faster. Examples from Google Brain: screening for diabetic retinopathy (on par with ophthamologists), reading breast cancer biopsies.</li>
+<li>Care management/decision support: the idea is to have smart electronic medical records, to help reduce errors and improve care quality. Having observed clinicians interacting with EMRs, I see a lot of potential for improvement here.</li>
+</ul>
+<p>He mentioned challenges with processing medical data because of how messy it is and I just laughed and laughed and then cried (silently). Apparently they built some sort of <a href="https://www.hl7.org/fhir/">FHIR</a>-based pipeline to integrate data from six healthcare systems, and it worked well, but I didn't write down what they were doing at the end of the pipeline.
+ He also gave a shout-out to Google's newly open-sourced variant caller, <a href="https://www.biorxiv.org/content/early/2016/12/21/092890">DeepVariant</a>.</p>
+</li>
+<li>
+<p><a href="http://www.oxford-man.ox.ac.uk/~mvanderschaar/">Mihaela van der Schaar</a> - <strong>Dynamical Disease Modelling</strong>. Her work focuses on <em>dynamical</em> modelling, assuming some hidden clinical state which informs observable physiological variables. You could approach this using a hidden Markov model, but she observed that transition probabilities typically depend on sojourn times, necessitating a semi-Markov model. Furthermore, patterns of missingness are informative, suggesting to model observation times, e.g. as a Hawkes process. The informativeness of measurements in medicine may not be immediately obvious, but the rationale (at least in the ICU, my area of focus) is that some measurements are only taken when needed, and they're only needed when the doctor suspects something is up. Even if a measurement is routinely performed, the rate of measurement may increase when patients become more critical. So you have a huge case of missing-not-at-random. She also mentioned their work on modelling competing risks, which I described earlier in this blog post.</p>
+</li>
+<li>
+<p><a href="http://buttelab.ucsf.edu/">Atul Butte</a> - <strong>Translating a Trillion Points of Data into Diagnostics, Therapies and New Insights in Health and Disease</strong>. I didn't take notes for this talk, but his slides are <a href="https://www.slideshare.net/atulbutte/atul-butte-nips-2017-ml4h">here</a> - I'd recommend slide 29. In case that link at some point goes dead, that slide summarises lessons he's learned in MLHC over the years, and these are (paraphrased):</p>
+<ul>
+<li>Solve the problems that health care professionals need solved, don't just guess</li>
+<li>Watch out for models limited by bad inputs (e.g. from patients, from doctors)</li>
+<li>Learn what IRB, HIPAA, BAA, ICD-10 codes, CPT codes, CLIA, and CAP are.</li>
+<li>Learn patience.</li>
+<li>Not everything needs deep learning.</li>
+<li>Having all the data on someone is super rare.</li>
+<li>Health care inefficiency is not about friction. (He made a point that everywhere there's a cost, someone is making money and will push back against losing that money.)</li>
+<li>Data integration <em>can</em> happen, if there's a business reason for it.</li>
+<li>Platforms and companies are commoditized. (As subpoints to that he suggests the ML people should come with some medical knowledge, to demonstrate we care about healthcare, and so we don't cost medical collaborators time training us.)</li>
+</ul>
+<p>Another point he made was that there's a <em>lot</em> of freely-accessible data out there, which is ripe for analysis. And possibly founding startups.</p>
+</li>
+</ul>
+<p><a href="https://github.com/ratschlab/RGAN/blob/master/presentations/nips_ml4h.pdf"><img src="/images/2017/nips/nips_ml4h.png" style="float: right; width: 30vw; margin: 1.5vw 1.5vw 1.5vw 1.5vw;"></a></p>
+<p>As I mentioned, there were two poster sessions. I spent the first one presenting my poster, and much of the second one talking to people, so I didn't get to <em>see</em> too many posters. I've described a lot of work from other people in this post, so let me do the same for myself. At WiML and ML4H I was presenting (variations on) this poster: (right)</p>
+<p>Summary of the related paper:</p>
+<ul>
+<li>
+<p><a href="https://arxiv.org/abs/1706.02633">Real-valued (Medical) Time Series Generation with Recurrent Conditional GANs</a> - <em>Stephanie L. Hyland (that's me) and Cristóbal Esteban, Gunnar Rätsch</em>. (For disclosure: the version that was accepted by ML4H was a 4-page version of this preprint, focusing on the medical data and aspects. They asked us to give links to the arXiv versions of our work, but I couldn't in good faith link to the full version as it wasn't reviewed by them. In case you noticed and were wondering why there's no link to the paper the workshop page, it's because of my conscience). </p>
+<p>The motivation for this work was that MLHC struggles with data sharing. Medical data is hard to share, with good reason. But it means a <em>lot</em> of work in MLHC is completely unreproducible, and nobody can directly build on it, because they don't have access to the data/task a model was built for. This stifles our progress, and MLHC is hard enough already. So wouldn't it be great if we had a <em>synthetic</em> dataset (without privacy concerns) that we could use to benchmark models and approaches? Shoutout to this related paper with similar motivation from Choi et al.: <a href="https://arxiv.org/abs/1703.06490">Generating Multi-label Discrete Patient Records using Generative Adversarial Networks</a> (they focus on binary and count-valued data, hence our focus on real-valued time-series data).</p>
+<p>I'd summarise what we did in this work in three points:</p>
+<ol>
+<li>Devise a GAN architecture to generate real-valued time series. We call this a 'recurrent' GAN, or RGAN, because it uses RNNs for both discriminator and generator networks (yes, RNNs!). We also have a conditional version which takes label information, allowing the RGAN to generate data from labels.</li>
+<li>Devise an evaluation scheme for GANs tailored to our setting. We do this by generating a synthetic training dataset from the RCGAN (labels + features), training a classifier (e.g. CNN, random forest) on it, and reporting its performance on a held-out <em>real</em> test set. We call this the <em>TSTR</em> (train on synthetic, test on real) score. Since we want to use the RGAN to generate synthetic medical data, the TSTR score is of particular relevance.</li>
+<li>Analyse empirically whether the RGAN is 'overfitting'. By this I mean, we ask (roughly) if the GAN is more likely to produce samples <em>very similar</em> to training samples than it is to produce other samples (from the same distribution, e.g. the test set). If it is, then we have a problem. Firstly because reproducing the training set is boring and does <em>not</em> require a GAN, and secondly (more importantly) because reproducing the training data set would constitute a serious privacy breach in our setting.</li>
+</ol>
+<p>On the final point, we also experimented with training the RGAN using differential privacy, <em>just to be extra safe</em>. If you're willing to sacrifice performance you can get some privacy, but it's a harsh trade-off and requires further research.</p>
+</li>
+</ul>
+<p>I held a small reading group in my lab about interesting contributions from the ML4H workshop, so I'll briefly summarise two papers of interest to me:</p>
+<ul>
+<li>
+<p><a href="https://arxiv.org/abs/1712.00164">Generative Adversarial Networks for Electronic Health Records: A Framework for Exploring and Evaluating Methods for Predicting Drug-Induced Laboratory Test Trajectories</a> - <em>Alexandre Yahi, Rami Vanguri, Noémie Elhadad, Nicholas P. Tatonetti</em>. My reason for interest should be obvious. Also, the first author emailed me to get help with <a href="https://github.com/ratschlab/RGAN/">our code</a>, which possibly means they used it. I spent some time answering issues on GitHub and responding to emails, and I'm still quite a junior scientist, so it's really exciting for me to see people taking interest in and actually trying to use my work. Anyways, in this paper, <em>as far a I understand it</em>, they're generating cholesterol time-course data before and during exposure to statins. They do two interesting things: 1) Clustering patients based on a large set of clinical attributes, then training separate GANs on each cluster. 2) Evaluating the performance of the GAN by measuring how well it 'predicts' cholesterol level during statins exposure. They do this by matching generated samples to the closest real (hopefully test-set) sample based on the <em>pre-exposure</em> part of the sequence, then measuring the similarity of the synthetic and real samples during statins exposure. This evaluation method seems a little brittle - imagine there are multiple real samples that look similar to the synthetic one, but respond to statins quite differently, but it's an interesting idea.</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/1712.00181">Personalized Gaussian Processes for Future Prediction of Alzheimer's Disease Progression</a> - <em>Kelly Peterson, Ognjen (Oggi) Rudovic, Ricardo Guerrero, Rosalind W. Picard</em>. I haven't spent enough time with this paper to fully understand it, but the most interesting aspects are: fitting a GP model to a source population, and personalising (i.e. tuning) it to an individual based on their observed data to date using domain-adaptive GPs, and using auto-regressive GPs. Various kinds of GPs. No RNNs.</p>
+</li>
+</ul>
+<h1><a name="conclusion"></a>Conclusion</h1>
+<p>This has been an exceedingly long blog post and I hope you're not as exhausted as I am, but this is basically an accurate depiction of my experience of NIPS. A lot of stuff, all the time. I have not even mentioned the <a href="http://bayesiandeeplearning.org/">Bayesian Deep Learning workshop</a>. During the lunch break on the final day I grabbed a burrito and almost fell asleep. I was not the only one. The convention centre by that point was gradually emptying, with scattered people dozing off in chairs, and a prominent left-luggage zone where the registration tables had been. There was a clear sense of winding down, perhaps because the process had already begun for me. I stayed only briefly at the closing party (missing some unpleasantness, it sounds like), and instead walked/skated thoughtfully back to my Airbnb along the beach, pausing to look at the stars and listen to the Pacific Ocean.</p>
+<p><Img src="/images/2017/nips/longbeach_2.jpg" style="display: block; width: 45vw; margin: auto;"></p>
+    </div>
+
+    <footer>
+        <div class="tags">
+            <a href="/tag/nips.html">nips</a>
+            <a href="/tag/conference.html">conference</a>
+            <a href="/tag/long-beach.html">long beach</a>
+            <a href="/tag/california.html">california</a>
+            <a href="/tag/usa.html">usa</a>
+            <a href="/tag/mlhc.html">MLHC</a>
+        </div>
+        <div class="pure-g post-footer">
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="pure-g poster-info">
+                    <div class="pure-u-3-4">
+                        <h3 class="author-name"><a href="/author/corcra.html">corcra</a></h3>
+                        <p class="author-description">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+
+    <footer class="index-footer">
+
+        <a href="/" title="apeirotope" class="apeirotope">apeirotope</a>
+        <a href="/biomed/" class="biomed">biomed</a>
+        <a href="/lang/" class="lang">lang</a>
+        <a href="/life/" class="life">life</a>
+        <a href="/making/" class="making">making</a>
+        <a href="/meta/" class="meta">meta</a>
+        <a href="/ml/" class="ml">ml</a>
+        <a href="/sec/" class="sec">sec</a>
+        <a href="/tips/" class="tips">tips</a>
+
+    </footer>
+
+</body>
+</html>

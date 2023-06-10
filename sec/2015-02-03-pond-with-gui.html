@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="corcra">
+  <meta name="description" content="into the gui pond | In my previous post about getting Pond running on Yosemite, I ran into an issue with the GUI. The CLI interface seems to be...">
+<!--
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">  
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+--> 
+  <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="../theme/css/font.css" type="text/css" media="all">
+  <link rel="stylesheet" href="../theme/css/all.css"> <!-- font awesome -->
+  <link rel="stylesheet" href="../theme/css/style.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="../theme/js/modernizr.min.js"></script>
+<script type="text/javascript" src="../theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../theme/js/functions.js"></script>
+
+  
+ 
+
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="apeirotope Full Atom Feed" />
+
+<meta name="keywords" content="osx, golang, pond, anonymity, gtk">
+
+
+
+  <title>into the gui pond | apeirotope</title>
+
+</head>
+
+<body class="home blog">
+  <div>
+    <header class="site-header">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="row">
+            <div class="site-navigation-inner col-sm-12">
+              <div class="navbar-header">
+                <button type="button" class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse navbar-ex1-collapse">
+              <ul id="menu-all-pages" class="nav navbar-nav">
+                <li class="menu-item"><a href="/index.html" >apeiroto.pe
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/pages/about.html" >About
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/categories.html" >Categories
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/tags.html" >Tags
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/archives.html" >Archive
+<i class="fa  fa-lg"></i></a></li>
+              </ul>
+              </div>
+              <div class="social">   
+                <a href="https://apeiroto.pe/feeds/all.atom.xml" title="Feed" >
+<i class="fa fa-rss fa-lg"></i></a>
+                <a href="test" title="Another link" >
+<i class="fa  fa-lg"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav><!-- .site-navigation -->
+
+      <div class="container">
+        <!--<div class="tagline">
+            •
+                <a href="../biomed/" >biomed (2)</a> •
+                <a href="../lang/" >lang (5)</a> •
+                <a href="../life/" >life (7)</a> •
+                <a href="../making/" >making (1)</a> •
+                <a href="../meta/" >meta (7)</a> •
+                <a href="../ml/" >ml (9)</a> •
+                <a href="../sec/" >sec (4)</a> •
+                <a href="../tips/" >tips (9)</a> •
+-->
+            <!--                 <a href="../archives.html" >archives (44)</a>
+ -->
+                <!--</div>-->
+    </div>
+
+  </header><!-- #masthead -->
+  </div>
+    <div id="content" class="site-content">
+      <div class="container main-content-area">
+        <div class="row">
+          <div class="main-content-inner col-sm-12 col-md-12">
+            <div id="primary" class="content-area">
+              <div id="main" class="site-main" role="main">
+                <div class="article-container">
+<article>
+  <div class="blog-item-wrap">
+    <div class="post-inner-content">
+      <header class="entry-header page-header">
+          <span class="cat-item sec"><time datetime="2015-02-03 13:37:00+00:00">03 Feb, 2015</time></span>
+        <h1 class="entry-title"><a href="../sec/2015-02-03-pond-with-gui.html">into the gui pond</a></h1>
+      </header><!-- .entry-header -->
+      <div class="entry-content">
+        <p>In my <a href="https://corcra.github.io/sec/2015/01/30/pond-on-yosemite.html">previous post</a> about getting <a href="https://pond.imperialviolet.org/">Pond</a> running on Yosemite, I ran into an issue with the GUI. The CLI interface seems to be fully-functional and pleasant enough for me, but GUI-errors are no guid. So yesterday I tried to figure out what the problem was, and somehow fixed it in the process. Naturally I was not keeping detailed logs.</p>
+<p>It went something like this.</p>
+<h3>gtk3</h3>
+<p>First, I made sure I could run something else using GTK, so:</p>
+<div class="highlight"><pre><span></span>&gt; gtk3-demo
+</pre></div>
+
+
+<p>This technically ran, but produced a lot of warnings and errors, e.g.</p>
+<div class="highlight"><pre><span></span>(gtk3-demo:99098): Gtk-WARNING **: Error loading theme icon &#39;image-missing&#39; for stock: Icon &#39;image-missing&#39; not present in theme
+(gtk3-demo:99098): GLib-GObject-CRITICAL **: g_object_ref: assertion &#39;G_IS_OBJECT (object)&#39; failed
+</pre></div>
+
+
+<p>which is possibly a related problem to the one I had with Pond, but given Pond now works for me, and I still get these errors, I suspect they have different origins/are not directly causally related.</p>
+<h3>becoming one with the error</h3>
+<p>So I tried to understand the actual error I was getting (from <a href="https://corcra.github.io/assets/pond-panic.txt">this log</a>):</p>
+<div class="highlight"><pre><span></span>panic: (*gdkpixbuf._Ctype_struct__GError) (0x4383380,0x5c6be20)
+</pre></div>
+
+
+<p>This involved following the golden braid <a href="https://github.com/agl/pond/blob/master/client/gtk.go">deeper</a> into <a href="https://github.com/agl/go-gtk/blob/master/gdkpixbuf/gdkpixbuf.go">the</a> inner <a href="https://git.gnome.org/browse/gdk-pixbuf/tree/gdk-pixbuf/gdk-pixbuf-loader.c">workings</a> of <code>go</code> <a href="https://git.gnome.org/browse/gdk-pixbuf/tree/gdk-pixbuf/gdk-pixbuf-io.c">and</a> <code>gdk-pixbuf</code>, in the hopes that something would start to make sense.</p>
+<p>Clarity was not forthcoming. I got to look at non-scientific code for a while, and I decided <code>gdk-pixbuf</code> was to blame, but otherwise learned little. This isn't terribly surprising given my lack of knowledge of Go/gtk/OSX/etc. I tried. At least I had a witch (<code>gdk-pixbuf</code>) to burn.</p>
+<h3>fun with reinstalling everything repeatedly</h3>
+<p>I thought about trying to test <code>gdkpixbuf.PixbufLoaderWithType("png")</code> on its own, but I was lazy and foolish, so I just tried reinstalling <code>gdk-pixbuf</code> instead.</p>
+<div class="highlight"><pre><span></span>brew install gdk-pixbuf
+/usr/local/Cellar/gdk-pixbuf/2.30.8/bin/gdk-pixbuf-query-loaders --update-cache
+</pre></div>
+
+
+<p>I think this is when I introduced a new problem, thought 'damn, OK I'll just fix this problem and get back to carefully recording how I fix this GUI error', and in the process fixed the GUI. Naturally. The problem I introduced looked like this:</p>
+<div class="highlight"><pre><span></span><span class="x">&gt; client</span>
+
+<span class="x">dyld: Library not loaded: /usr/local/lib/libgdk_pixbuf-2.0.0.dylib</span>
+<span class="x">  Referenced from: [</span><span class="p">$</span><span class="nv">GOPATH</span><span class="x">]/bin/client</span>
+<span class="x">    Reason: Incompatible library version: client requires version 3101.0.0 or later, but libgdk_pixbuf-2.0.0.dylib provides version 3001.0.0</span>
+<span class="x">    Trace/BPT trap: 5</span>
+</pre></div>
+
+
+<p>Which looks suspiciously like a version got messed up, maybe because I installed <code>gdk-pixbuf</code> individually, maybe because of magic. So I then uninstalled it, reinstalled <code>gtk+3</code> (which pulled <code>gdk-pixbuf</code> down first; error persisted), reinstalled <code>gtkspell3</code>, all to no avail. Then I did a <code>brew cleanup</code> and it deleted some old versions and cached bottles. Determined to somehow update my <code>gdk-pixbuf</code> (naively believing that the newest version of a thing must be the optimal one), I explored:</p>
+<div class="highlight"><pre><span></span>&gt; brew info gdk-pixbuf
+
+gdk-pixbuf: stable 2.30.8 (bottled)
+http://gtk.org
+/usr/local/Cellar/gdk-pixbuf/2.30.8 (209 files, 4.3M) *
+  Poured from bottle
+From: https://github.com/Homebrew/homebrew/blob/master/Library/Formula/gdk-pixbuf.rb
+==&gt; Dependencies
+Build: xz ✘, pkg-config ✔
+Required: glib ✔, jpeg ✔, libtiff ✔, libpng ✔, gobject-introspection ✔
+==&gt; Options
+--universal
+    Build a universal binary
+==&gt; Caveats
+Programs that require this module need to set the environment variable
+  export GDK_PIXBUF_MODULEDIR=&quot;/usr/local/lib/gdk-pixbuf-2.0/2.10.0/loaders&quot;
+If you need to manually update the query loader cache, set GDK_PIXBUF_MODULEDIR then run
+  /usr/local/Cellar/gdk-pixbuf/2.30.8/bin/gdk-pixbuf-query-loaders --update-cache
+</pre></div>
+
+
+<h3>maximum <code>gdk-pixbuf</code> installation</h3>
+<p>I don't feel proud of this, but I liked the sound of a 'universal binary' so I went for that.</p>
+<div class="highlight"><pre><span></span>&gt; brew reinstall --universal gdk-pixbuf
+
+==&gt; Installing dependencies for gdk-pixbuf: sqlite, gdbm, makedepend, openssl, python, xz, gettext, glib, jpeg, libtiff, libpng, gobject-intros
+</pre></div>
+
+
+<p>. . . But then it was taking too long, so I cancelled it during <code>gettext</code>. <em>I'm so, so sorry.</em></p>
+<p>The next event I have recorded in my logs was me <em>uninstalling</em> <code>gdk-pixbuf</code> and <code>gtk+3</code>, then reinstalling <code>gtk+3</code>. All for good measure. I then tried to cleanly reinstall pond, so</p>
+<div class="highlight"><pre><span></span>&gt; <span class="nb">cd</span> <span class="nv">$GOPATH</span>
+&gt; rm -r *
+&gt; go get github.com/agl/pond/client
+</pre></div>
+
+
+<p>. . . and . . </p>
+<div class="highlight"><pre><span></span>&gt; client
+Feb  <span class="m">1</span> 02:03:50: Starting fetch from home server
+</pre></div>
+
+
+<p>It Just Worked.</p>
+<p>I was hoping the <code>dylib</code> problem would go away and I could return to my GUI issues, but nope. All fixed. I tried uninstalling things (<code>gtk+3</code>, <code>go</code>, <code>gtkspell3</code>, <code>mercurial</code>, <code>gdk-pixbuf</code>, <code>pond</code>) in an attempt to recreate the original (or subsequent) issue(s), but it refused to be broken. I have a list of all the dependencies I installed during this fiasco, so I could <em>in theory</em> spend more time trying to break it again, or I could not.</p>
+<p><a href="http://beesandbombs.tumblr.com/post/106618422479/funnel">at the end of the magical vortex, a thousand bald yaks</a><br>
+<a href="http://beesandbombs.tumblr.com/post/106618422479/funnel"><img src="http://38.media.tumblr.com/2671206c90dbe899d8bcd2116cbd7cb4/tumblr_nhem70bBYT1r2geqjo1_500.gif" style="width: 40vw;"></a></p>
+<p>Incidentally, after all of this, it transpires that that One Weird Trick:</p>
+<div class="highlight"><pre><span></span>&gt; gdk-pixbuf-query-loaders &gt; <span class="nv">$GOPATH</span>/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+</pre></div>
+
+
+<p>is no longer required for <code>client</code> to run. So that's fewer files and more GUIs, what could be better?</p>
+      </div><!-- .entry-content -->
+      <br /><br />
+      <div class="article_meta">
+        Tags:
+          <a href="../tag/osx.html">osx</a>,          <a href="../tag/golang.html">golang</a>,          <a href="../tag/pond.html">pond</a>,          <a href="../tag/anonymity.html">anonymity</a>,          <a href="../tag/gtk.html">gtk</a>      </div>
+    </div>
+  </div>
+</article><!-- #post-## -->
+                </div>
+              </div><!-- #main -->
+          </div><!-- #primary -->
+        </div>
+      </div><!-- close .row -->
+    </div><!-- close .container -->
+  </div><!-- close .site-content -->
+
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="scroll-to-top" style="display: none;"><i class="fa fa-angle-up"></i></div><!-- .scroll-to-top -->
+    </footer><!-- #colophon -->
+
+  <script type="text/javascript">
+    window.addEventListener('load', function(){
+    if (window.location.pathname != '/' && window.location.pathname != '/index.html'){
+      window.scroll(0, document.getElementById('main').offsetTop);
+    }})
+  </script>
+
+
+</body>
+</html>

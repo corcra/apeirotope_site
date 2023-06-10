@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>linking between zotero and evernote (in OSX)</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/theme/css/pure-min.css" />
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css" />
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/atom/tips.xml" type="application/atom+xml" rel="alternate" title="apeirotope Categories Atom Feed" />
+        <link href="/feeds/rss/tips.xml" type="application/rss+xml" rel="alternate" title="apeirotope Categories RSS Feed" />
+
+
+</head>
+<body>
+
+    <div class="navigation pure-menu pure-menu-horizontal">
+        <a href="/" class="pure-menu-heading  pure-menu-link apeirotope">apeirotope</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"></li>
+
+            <li class="pure-menu-item"><a href="/pages/about.html" class="pure-menu-link pages">about</a></li>
+            <li class="pure-menu-item"><a href="/biomed/" class="pure-menu-link biomed">biomed</a></li>
+            <li class="pure-menu-item"><a href="/lang/" class="pure-menu-link lang">lang</a></li>
+            <li class="pure-menu-item"><a href="/life/" class="pure-menu-link life">life</a></li>
+            <li class="pure-menu-item"><a href="/making/" class="pure-menu-link making">making</a></li>
+            <li class="pure-menu-item"><a href="/meta/" class="pure-menu-link meta">meta</a></li>
+            <li class="pure-menu-item"><a href="/ml/" class="pure-menu-link ml">ml</a></li>
+            <li class="pure-menu-item"><a href="/sec/" class="pure-menu-link sec">sec</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="/tips/" class="pure-menu-link tips">tips</a></li>
+        </ul>
+    </div>
+
+
+<div class="page-container">
+    <div class="entry-content">
+        <div class="post-meta pure-g">
+            <div class="pure-u-3-4 meta-data">
+                <a href="/tips/" class="tips">tips</a><br />
+
+                <a class="author" href="/author/corcra.html">corcra</a>
+                &mdash; <abbr title="2015-12-18T00:00:00+00:00">Fri 18 December 2015</abbr>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-header-container">
+        <div class="background-image-container">
+
+            <div class="background-image-small">
+                <div class="title-container">
+                    <h1>linking between zotero and evernote (in OSX)</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="entry-content">
+        <p>I'm upgrading my paper-management workflow from 'labyrinth of folders' to an
+<a href="https://evernote.com/">Evernote</a> + <a href="https://www.zotero.org/">Zotero</a> mix. I
+already use Evernote a little for this by writing paper summaries in
+it, but I would rather do the 'heavy duty' management and organisation in
+Zotero. So, I'd like to easily switch between the Evernote note about a paper and
+the Zotero reference on it. I need:</p>
+<ul>
+<li>Zotero → Evernote  </li>
+<li>Evernote → Zotero</li>
+</ul>
+<p><em>Note: This is all with OSX 10.11.1 (El Capitan), Evernote 6.3, and Zotero 4.0.28.10. YMMV.</em></p>
+<h2>Zotero to Evernote</h2>
+<p>My solution here is to add an attachment to the reference which is a link to 
+the Evernote URI. Zotero gracefully handles this, you just right-click on the
+reference and Add Attachment → Attach Link to URI...</p>
+<p>The hard part is then <em>getting</em> the URI. In (my currently-up-to-date version of)
+Evernote, the Copy Note Link gives you a HTTP(S) link:</p>
+<div class="highlight"><pre><span></span><span class="c">https://www.evernote.com/shard/asdfgh</span>
+</pre></div>
+
+
+<p><em>This converts to the Evernote URI link if you paste it <strong>inside</strong> Evernote,
+which is pretty cool I guess but also not useful here.</em></p>
+<p>I use the Evernote client and I don't want this, I want the URI like:</p>
+<div class="highlight"><pre><span></span><span class="c">evernote:///view/adfgh</span>
+</pre></div>
+
+
+<p>This is (for now, probably) known as <strong>Classic</strong> Note Link in Evernote, and you
+get it by holding down <code>Alt</code> on the menu after right-clicking on the note.
+Bizarre and annoying, but whatever. It works.</p>
+<p>Now I can just double-click on the Evernote URI attachment on my reference in
+Zotero and it'll open the note (in my Evernote client) with my notes on it.</p>
+<h2>Evernote to Zotero</h2>
+<p>Now, we want to get the Zotero URI (to the reference) and include it in an
+Evernote note. The 'normal' URI you'd get from Zotero (using Item URI as your
+Default Output Format under Preferences → Export → Quick Copy) is:</p>
+<div class="highlight"><pre><span></span><span class="c">http://zotero.org/users/local/asdfgh/items/asdfgh</span>
+</pre></div>
+
+
+<p>What I really want is the non-HTTP URI, e.g.</p>
+<div class="highlight"><pre><span></span><span class="c">zotero://select/items/asdfgh</span>
+</pre></div>
+
+
+<p><em>However</em>, if you paste that into Evernote it doesn't recognise it as a URI
+or anything that should be linkish. It just sits there, flat and idle and useless. <em>This is pretty annoying given it can
+do this for Evernote URIs, as above, but whatever...</em></p>
+<h3>Solution Sketch</h3>
+<p><em>This solution is from <code>brain.flush()</code>; <a href="http://blog.cdhq.de/archive/1366">
+Connecting Zotero and Evernote</a> and <a href="http://blog.cdhq.de/archive/1396">RTF-Links from Zotero in Evernote</a>. This post isn't just a link to that blog because I fear link rot.</em></p>
+<p>The workaround is pretty gross but bear with me. First, you modify Zotero
+so that its Quick Copy gives you a HTML-formatted URI, e.g.</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;zotero://select/items/asdfgh&quot;</span><span class="nt">&gt;</span>Paper Title<span class="nt">&lt;/a&gt;&lt;br</span> <span class="nt">/&gt;</span>
+</pre></div>
+
+
+<p>then convert the HTML in your clipboard to RTF, which can be pasted into Evernote and will act 'as desired'. The intermediate RTF representation looks something like this, btw, so clearly there's scope for further customisation:</p>
+<div class="highlight"><pre><span></span>{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf130  
+{\fonttbl\f0\froman\fcharset0 Times-Roman;}  
+{\colortbl;\red255\green255\blue255;\red0\green0\blue233;\red0\green0\blue0;}  
+\deftab720  
+\pard\pardeftab720\sl280\partightenfactor0  
+{\field{\*\fldinst{HYPERLINK &quot;zotero://select/items/asdfgh&quot;}}{\fldrslt  
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0  
+\ul \ulc2 \outl0\strokewidth0 \strokec2 Paper Title}}  
+\f0\fs24 \cf3 \expnd0\expndtw0\kerning0  
+\outl0\strokewidth0 \strokec3 \  
+</pre></div>
+
+
+<p>Ew. But you never need to look at this.</p>
+<h3>Specific Steps</h3>
+<ul>
+<li>Modifying Quick Copy:</li>
+<li>Put <a href="https://gist.github.com/ColdDevil/9145021">this script</a> in your <code>translators</code> folder wherever your Zotero is.</li>
+<li>Tell Zotero to use it for Quick Copy: Preferences → Export → Default Output Format: select <code>ZotSelect Link (HTML)</code> from the dropdown.</li>
+<li>Now <code>Cmd + Shift + C</code> will put the HTML-formatted link in your clipboard.</li>
+<li>Converting HTML to RTF:</li>
+<li>The script to do the transformation is (choose your favourite <code>UTF-8</code> region...)
+  <code>export LANG=en_US.UTF-8; pbpaste | textutil -stdin -stdout -format html -convert rtf -inputencoding utf-8 | pbcopy</code></li>
+<li>You can automate this with <a href="https://en.wikipedia.org/wiki/Automator_%28software%29">Automator</a>, (OSX tool):<ul>
+<li>Create a Service, add an action of <code>Run Shell Script</code>, paste in above code.</li>
+<li>Make sure set the "Service receives selected..." dropdown to "no input".</li>
+<li>Call the service whatever you want - following the source blog I called mine "Convert HTML clipboard to RTF".</li>
+</ul>
+</li>
+<li>Set a keyboard shortcut for the new service under Keyboard → Shortcuts → Services. Also following the blog, I used <code>Cmd + Shift + Ctrl + C</code>.</li>
+</ul>
+<p>So now the workflow is:</p>
+<ul>
+<li>[in Zotero] <code>Cmd + Shift + C</code> on desired reference  </li>
+<li>[wherever] <code>Cmd + Shift + Ctrl + C</code> to transform contents of clipboard     </li>
+<li>[in Evernote] paste normally to get a link which opens the reference in Zotero.</li>
+</ul>
+    </div>
+
+    <footer>
+        <div class="tags">
+            <a href="/tag/zotero.html">zotero</a>
+            <a href="/tag/evernote.html">evernote</a>
+            <a href="/tag/osx.html">osx</a>
+            <a href="/tag/citations.html">citations</a>
+        </div>
+        <div class="pure-g post-footer">
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="pure-g poster-info">
+                    <div class="pure-u-3-4">
+                        <h3 class="author-name"><a href="/author/corcra.html">corcra</a></h3>
+                        <p class="author-description">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+
+    <footer class="index-footer">
+
+        <a href="/" title="apeirotope" class="apeirotope">apeirotope</a>
+        <a href="/biomed/" class="biomed">biomed</a>
+        <a href="/lang/" class="lang">lang</a>
+        <a href="/life/" class="life">life</a>
+        <a href="/making/" class="making">making</a>
+        <a href="/meta/" class="meta">meta</a>
+        <a href="/ml/" class="ml">ml</a>
+        <a href="/sec/" class="sec">sec</a>
+        <a href="/tips/" class="tips">tips</a>
+
+    </footer>
+
+</body>
+</html>

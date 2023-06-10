@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="corcra">
+  <meta name="description" content="databases all the way down | I&#39;m (arguably) a data scientist, so I need data to do science. A problem with data is that it&#39;s all over the place, a...">
+<!--
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">  
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+--> 
+  <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="../theme/css/font.css" type="text/css" media="all">
+  <link rel="stylesheet" href="../theme/css/all.css"> <!-- font awesome -->
+  <link rel="stylesheet" href="../theme/css/style.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="../theme/js/modernizr.min.js"></script>
+<script type="text/javascript" src="../theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../theme/js/functions.js"></script>
+
+  
+ 
+
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="apeirotope Full Atom Feed" />
+
+<meta name="keywords" content="biology, medicine, data, links, meta">
+
+
+
+  <title>databases all the way down | apeirotope</title>
+
+</head>
+
+<body class="home blog">
+  <div>
+    <header class="site-header">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="row">
+            <div class="site-navigation-inner col-sm-12">
+              <div class="navbar-header">
+                <button type="button" class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse navbar-ex1-collapse">
+              <ul id="menu-all-pages" class="nav navbar-nav">
+                <li class="menu-item"><a href="/index.html" >apeiroto.pe
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/pages/about.html" >About
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/categories.html" >Categories
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/tags.html" >Tags
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/archives.html" >Archive
+<i class="fa  fa-lg"></i></a></li>
+              </ul>
+              </div>
+              <div class="social">   
+                <a href="https://apeiroto.pe/feeds/all.atom.xml" title="Feed" >
+<i class="fa fa-rss fa-lg"></i></a>
+                <a href="test" title="Another link" >
+<i class="fa  fa-lg"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav><!-- .site-navigation -->
+
+      <div class="container">
+        <!--<div class="tagline">
+            •
+                <a href="../biomed/" >biomed (2)</a> •
+                <a href="../lang/" >lang (5)</a> •
+                <a href="../life/" >life (7)</a> •
+                <a href="../making/" >making (1)</a> •
+                <a href="../meta/" >meta (7)</a> •
+                <a href="../ml/" >ml (9)</a> •
+                <a href="../sec/" >sec (4)</a> •
+                <a href="../tips/" >tips (9)</a> •
+-->
+            <!--                 <a href="../archives.html" >archives (44)</a>
+ -->
+                <!--</div>-->
+    </div>
+
+  </header><!-- #masthead -->
+  </div>
+    <div id="content" class="site-content">
+      <div class="container main-content-area">
+        <div class="row">
+          <div class="main-content-inner col-sm-12 col-md-12">
+            <div id="primary" class="content-area">
+              <div id="main" class="site-main" role="main">
+                <div class="article-container">
+<article>
+  <div class="blog-item-wrap">
+    <div class="post-inner-content">
+      <header class="entry-header page-header">
+          <span class="cat-item biomed"><time datetime="2015-02-12 14:20:00+00:00">12 Feb, 2015</time></span>
+        <h1 class="entry-title"><a href="../biomed/2015-02-12-databases.html">databases all the way down</a></h1>
+      </header><!-- .entry-header -->
+      <div class="entry-content">
+        <p>I'm (arguably) a data scientist, so I need data to do science. A problem with data is that it's all over the place, a natural and unsurprising consequence of its many origins. Producing databases seems to be a hobby for bioinformaticians, which also includes <a href="http://metadatabase.org/wiki/Main_Page">databases of databases</a> (<a href="http://nar.oxfordjournals.org/content/40/D1/D1250.long">Bolser et al., 2012</a>), so I think it's fair to say some nontrivial effort is expended in trying to deal with this data problem. Large collaborations are pretty good for creating big datasets (e.g. <a href="http://genome.ucsc.edu/ENCODE/downloads.html">ENCODE</a>, <a href="https://tcga-data.nci.nih.gov/tcga/">TCGA</a>), which can lessen the appearance of scattered data (or at least, heighten the attractiveness of centralised data), but these efforts are less about data curation and more about data generation. One notable effort towards more efficient (genomic) data discovery/sharing is the <a href="http://genomicsandhealth.org/">Global Alliance for Genomics and Health</a>, which is working on defining standards, data formats, APIs, things like that. It's not the only project thinking about APIs and formats (of course). Skimming my notes from the <a href="http://meetings.cshl.edu/meetings/2014/data14.shtml">Biological Data Science</a> meeting at CSHL last year, I see: <a href="http://osdf.igs.umaryland.edu/">Open Science Data Framework</a>, the NIH's <a href="https://biocaddie.org/">bioCADDIE</a>, Ensembl's <a href="http://rest.ensembl.org/">REST API</a>, and so on<a href="#1">[1]</a>. For the sake of efficiency I hope the community can come to some consensus on how best to store/index data and metadata, although a quote from Richard Durbin comes to mind<a href="#2">[2]</a>,</p>
+<blockquote>
+<p>"In science, always there are lots of people looking at the same thing in different ways. There are people trying out all sorts of crazy things. It's extremely successful to not have top-down control. It can look a little bit redundant when you have a person write yet another read mapper, but sometimes things will be influential. New ideas will come. Sometimes things can be relevant to individual projects. I think for sure things are done inefficiently. I accept that. It's a bit like evolution. Random mutation and testing is very powerful." <a href="http://www.nature.com/nbt/journal/v31/n10/full/nbt.2721.html">The anatomy of successful computational biology software (Nature Biotech, 2013)</a></p>
+</blockquote>
+<p>Which is to say I'm excessively justifying my decision to create yet another list of resources (but just a list, I have no intention of actually <em>serving</em> any data). In this case it's something I wanted to do for myself anyway, and <em>more importantly</em> I'm starting a new category of non-blog pages on my site (although technically the <a href="https://corcra.github.io/contact/">contact</a> page was first). The idea is to separate pages which I feel are more time-insensitive (like tutorials), or which I intend to keep updated (like my contact details), and treat things on the blog as an unmodifiable record that will likely become outdated. So <a href="https://corcra.github.io/datasets.html"><strong>here</strong></a> is my dataset database. It covers 'things which are relevant to me', which you might find useful, if you're me. It might also be useful for people using convoluted methods to infer my research interests.</p>
+<hr>
+<p><a name="1">[1]</a> It's reasonably likely these are not equivalent projects. I'm not really familiar with any of them, so YMMV.</p>
+<p><a name="2">[2]</a> Duplication of effort is something I think about a lot in the context of bioinformatics/computational biology/computers. This quote makes me feel better about it.</p>
+      </div><!-- .entry-content -->
+      <br /><br />
+      <div class="article_meta">
+        Tags:
+          <a href="../tag/biology.html">biology</a>,          <a href="../tag/medicine.html">medicine</a>,          <a href="../tag/data.html">data</a>,          <a href="../tag/links.html">links</a>,          <a href="../tag/meta.html">meta</a>      </div>
+    </div>
+  </div>
+</article><!-- #post-## -->
+                </div>
+              </div><!-- #main -->
+          </div><!-- #primary -->
+        </div>
+      </div><!-- close .row -->
+    </div><!-- close .container -->
+  </div><!-- close .site-content -->
+
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="scroll-to-top" style="display: none;"><i class="fa fa-angle-up"></i></div><!-- .scroll-to-top -->
+    </footer><!-- #colophon -->
+
+  <script type="text/javascript">
+    window.addEventListener('load', function(){
+    if (window.location.pathname != '/' && window.location.pathname != '/index.html'){
+      window.scroll(0, document.getElementById('main').offsetTop);
+    }})
+  </script>
+
+
+</body>
+</html>

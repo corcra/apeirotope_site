@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>apeirotope - sec</title><link href="/" rel="alternate"></link><link href="/feeds/atom/sec.xml" rel="self"></link><id>/</id><updated>2015-10-27T13:37:00+00:00</updated><entry><title>I will [not] follow you into the darknet (radical networks)</title><link href="/sec/2015-10-27-radical-networks.html" rel="alternate"></link><published>2015-10-27T13:37:00+00:00</published><updated>2015-10-27T13:37:00+00:00</updated><author><name>corcra</name></author><id>tag:None,2015-10-27:/sec/2015-10-27-radical-networks.html</id><summary type="html">&lt;p&gt;Last weekend I presented with two friends (&lt;a href="https://twitter.com/huertanix/"&gt;huertanix&lt;/a&gt; and &lt;a href="https://twitter.com/carolinesinders"&gt;Caroline Sinders&lt;/a&gt;) at the first ever &lt;a href="http://radicalnetworks.org/"&gt;Radical Networks&lt;/a&gt; conference. Our talk was originally called 'Blogging on the Darknet' but after a questionably productive co-working session we changed it to 'I Will Follow You Into the Darknet', after a Death Cab for …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Last weekend I presented with two friends (&lt;a href="https://twitter.com/huertanix/"&gt;huertanix&lt;/a&gt; and &lt;a href="https://twitter.com/carolinesinders"&gt;Caroline Sinders&lt;/a&gt;) at the first ever &lt;a href="http://radicalnetworks.org/"&gt;Radical Networks&lt;/a&gt; conference. Our talk was originally called 'Blogging on the Darknet' but after a questionably productive co-working session we changed it to 'I Will Follow You Into the Darknet', after a Death Cab for Cutie song. Caroline even &lt;a href="https://twitter.com/carolinesinders/status/651509665705127936"&gt;wrote lyrics&lt;/a&gt; for it. I sort of hate the term 'darknet' but until the Tor Project settle on a nomenclature for location-hidden services (and their related -ome&lt;a href="#1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;) it'll have to do. And that is how terms become accepted. Sorry, world.&lt;/p&gt;
+&lt;p&gt;Anyway, the slides are &lt;a href="http://fu.io/followdarknet"&gt;here&lt;/a&gt; (warning: gifs, dank memes) and there is a video recording &lt;a href="http://livestream.com/internetsociety/radicalnetworks/videos/102829121"&gt;here&lt;/a&gt;, and have an embedded version too:&lt;/p&gt;
+&lt;iframe src="https://livestream.com/accounts/686369/events/4317418/videos/102829121/player?width=640&amp;height=360&amp;autoPlay=false&amp;mute=false" width="640" height="360" frameborder="0" scrolling="no"&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Full disclosure: we didn't practice and most of our working sessions devolved into expeditions into giphy, in case that wasn't obvious. I think the last section could have done with being an interactive/hands-on workshop, but we only had an hour slot. And then &lt;a href="https://twitter.com/brianloveswords"&gt;@brianloveswords&lt;/a&gt; turned (the technical part of) our talk into &lt;a href="https://github.com/brianloveswords/onion-ghost-blog"&gt;two commands&lt;/a&gt;. Also, in case there was &lt;em&gt;any uncertainty&lt;/em&gt;, I'm not an opsec professional. Do those even exist?&lt;/p&gt;
+&lt;p&gt;The rest of the conference was really good, although I missed a lot of Saturday due to occupying a table of cannolis and devising grandiose schemes. Events like this are great for inspiring ideas, so my todo list is ever-growing. In an attempt to avoid the lure of shiny new projects, I'm disallowing myself from starting new things before I've cleared some of my backlog. Let's see how well that goes.&lt;/p&gt;
+&lt;p&gt;Relevant to this website, one result of the conference was (after much discussion of TLDs) learning that .io belongs to the British Indian Ocean Territory, which has an unpleasant colonial history: the native Chagossians were forced out by the British in the 60s/70s so that the USA could set up a military base, which has &lt;a href="http://www.theguardian.com/world/2015/jan/30/cia-interrogation-diego-garcia-lawrence-wilkerson"&gt;apparently been used in the CIA's rendition (and torture) program!&lt;/a&gt; It's unclear how much actually &lt;em&gt;having&lt;/em&gt; a .io domain contributes to any of this, of course, but I'm ashamed I didn't know any of this before. It's easy to forget that country TLDs come with political baggage.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a name="1"&gt;[1]&lt;/a&gt; An awful idea which just occurred to me is 'onion'-ome, after genome and proteome and transcriptome and epitranscriptome and connectome and interactome and literome, etc. In the grim future of Hello Kitty, everything is an ome.&lt;/p&gt;</content><category term="opsec"></category><category term="anonymity"></category><category term="tor"></category></entry><entry><title>pgp 101</title><link href="/sec/2015-04-28-pgp-101.html" rel="alternate"></link><published>2015-04-28T13:37:00+01:00</published><updated>2015-04-28T13:37:00+01:00</updated><author><name>corcra</name></author><id>tag:None,2015-04-28:/sec/2015-04-28-pgp-101.html</id><summary type="html">&lt;p&gt;I gave an 'Introduction to PGP'-type talk/tutorial at &lt;a href="https://twitter.com/cryptoharlem"&gt;CryptoHarlem&lt;/a&gt; last night. PGP can be a little confusing and it gets a lot of criticism for being unusable, so I tried to focus on the higher-level aspects, like how it works and why you want that. I fear it ended …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I gave an 'Introduction to PGP'-type talk/tutorial at &lt;a href="https://twitter.com/cryptoharlem"&gt;CryptoHarlem&lt;/a&gt; last night. PGP can be a little confusing and it gets a lot of criticism for being unusable, so I tried to focus on the higher-level aspects, like how it works and why you want that. I fear it ended up being a little too theoretical, but my rationale was that a person who understands how PGP achieves what it does will find it less confusing overall. That said, I have always fallen on the 'theory then application' side of the fence when this comes up, so I admit my bias.&lt;/p&gt;
+&lt;p&gt;I resisted the temptation to make it insufferably long and all-encompassing, so an observer may note that many details have been glossed over. My plan is to incrementally improve it until I can't stand it, so feedback is greatly appreciated. I'm also thinking to make a &lt;code&gt;pgp_102&lt;/code&gt; which covers things like subkeys, key-signing, and anything else that seems advanced-but-actually-useful.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="/pdfs/pgp_101.pdf"&gt;Link to the slides&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I think it also bears mentioning that the entire presentation was an excuse to personally indulge in &lt;a href="https://thenounproject.com/"&gt;The Noun Project&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And unrelatedly...&lt;br&gt;
+&lt;a href='https://twitter.com/corcra/status/592772656878977024'&gt;&lt;img src="/images/pgpond.png" style='width: 350px;'&gt;&lt;/a&gt;&lt;/p&gt;</content><category term="pgp"></category><category term="tutorial"></category><category term="encryption"></category><category term="cryptography"></category></entry><entry><title>into the gui pond</title><link href="/sec/2015-02-03-pond-with-gui.html" rel="alternate"></link><published>2015-02-03T13:37:00+00:00</published><updated>2015-02-03T13:37:00+00:00</updated><author><name>corcra</name></author><id>tag:None,2015-02-03:/sec/2015-02-03-pond-with-gui.html</id><summary type="html">&lt;p&gt;In my &lt;a href="https://corcra.github.io/sec/2015/01/30/pond-on-yosemite.html"&gt;previous post&lt;/a&gt; about getting &lt;a href="https://pond.imperialviolet.org/"&gt;Pond&lt;/a&gt; running on Yosemite, I ran into an issue with the GUI. The CLI interface seems to be fully-functional and pleasant enough for me, but GUI-errors are no guid. So yesterday I tried to figure out what the problem was, and somehow fixed it …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my &lt;a href="https://corcra.github.io/sec/2015/01/30/pond-on-yosemite.html"&gt;previous post&lt;/a&gt; about getting &lt;a href="https://pond.imperialviolet.org/"&gt;Pond&lt;/a&gt; running on Yosemite, I ran into an issue with the GUI. The CLI interface seems to be fully-functional and pleasant enough for me, but GUI-errors are no guid. So yesterday I tried to figure out what the problem was, and somehow fixed it in the process. Naturally I was not keeping detailed logs.&lt;/p&gt;
+&lt;p&gt;It went something like this.&lt;/p&gt;
+&lt;h3&gt;gtk3&lt;/h3&gt;
+&lt;p&gt;First, I made sure I could run something else using GTK, so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; gtk3-demo
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This technically ran, but produced a lot of warnings and errors, e.g.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(gtk3-demo:99098): Gtk-WARNING **: Error loading theme icon &amp;#39;image-missing&amp;#39; for stock: Icon &amp;#39;image-missing&amp;#39; not present in theme
+(gtk3-demo:99098): GLib-GObject-CRITICAL **: g_object_ref: assertion &amp;#39;G_IS_OBJECT (object)&amp;#39; failed
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;which is possibly a related problem to the one I had with Pond, but given Pond now works for me, and I still get these errors, I suspect they have different origins/are not directly causally related.&lt;/p&gt;
+&lt;h3&gt;becoming one with the error&lt;/h3&gt;
+&lt;p&gt;So I tried to understand the actual error I was getting (from &lt;a href="https://corcra.github.io/assets/pond-panic.txt"&gt;this log&lt;/a&gt;):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;panic: (*gdkpixbuf._Ctype_struct__GError) (0x4383380,0x5c6be20)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This involved following the golden braid &lt;a href="https://github.com/agl/pond/blob/master/client/gtk.go"&gt;deeper&lt;/a&gt; into &lt;a href="https://github.com/agl/go-gtk/blob/master/gdkpixbuf/gdkpixbuf.go"&gt;the&lt;/a&gt; inner &lt;a href="https://git.gnome.org/browse/gdk-pixbuf/tree/gdk-pixbuf/gdk-pixbuf-loader.c"&gt;workings&lt;/a&gt; of &lt;code&gt;go&lt;/code&gt; &lt;a href="https://git.gnome.org/browse/gdk-pixbuf/tree/gdk-pixbuf/gdk-pixbuf-io.c"&gt;and&lt;/a&gt; &lt;code&gt;gdk-pixbuf&lt;/code&gt;, in the hopes that something would start to make sense.&lt;/p&gt;
+&lt;p&gt;Clarity was not forthcoming. I got to look at non-scientific code for a while, and I decided &lt;code&gt;gdk-pixbuf&lt;/code&gt; was to blame, but otherwise learned little. This isn't terribly surprising given my lack of knowledge of Go/gtk/OSX/etc. I tried. At least I had a witch (&lt;code&gt;gdk-pixbuf&lt;/code&gt;) to burn.&lt;/p&gt;
+&lt;h3&gt;fun with reinstalling everything repeatedly&lt;/h3&gt;
+&lt;p&gt;I thought about trying to test &lt;code&gt;gdkpixbuf.PixbufLoaderWithType("png")&lt;/code&gt; on its own, but I was lazy and foolish, so I just tried reinstalling &lt;code&gt;gdk-pixbuf&lt;/code&gt; instead.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install gdk-pixbuf
+/usr/local/Cellar/gdk-pixbuf/2.30.8/bin/gdk-pixbuf-query-loaders --update-cache
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I think this is when I introduced a new problem, thought 'damn, OK I'll just fix this problem and get back to carefully recording how I fix this GUI error', and in the process fixed the GUI. Naturally. The problem I introduced looked like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;&amp;gt; client&lt;/span&gt;
+
+&lt;span class="x"&gt;dyld: Library not loaded: /usr/local/lib/libgdk_pixbuf-2.0.0.dylib&lt;/span&gt;
+&lt;span class="x"&gt;  Referenced from: [&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;GOPATH&lt;/span&gt;&lt;span class="x"&gt;]/bin/client&lt;/span&gt;
+&lt;span class="x"&gt;    Reason: Incompatible library version: client requires version 3101.0.0 or later, but libgdk_pixbuf-2.0.0.dylib provides version 3001.0.0&lt;/span&gt;
+&lt;span class="x"&gt;    Trace/BPT trap: 5&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Which looks suspiciously like a version got messed up, maybe because I installed &lt;code&gt;gdk-pixbuf&lt;/code&gt; individually, maybe because of magic. So I then uninstalled it, reinstalled &lt;code&gt;gtk+3&lt;/code&gt; (which pulled &lt;code&gt;gdk-pixbuf&lt;/code&gt; down first; error persisted), reinstalled &lt;code&gt;gtkspell3&lt;/code&gt;, all to no avail. Then I did a &lt;code&gt;brew cleanup&lt;/code&gt; and it deleted some old versions and cached bottles. Determined to somehow update my &lt;code&gt;gdk-pixbuf&lt;/code&gt; (naively believing that the newest version of a thing must be the optimal one), I explored:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; brew info gdk-pixbuf
+
+gdk-pixbuf: stable 2.30.8 (bottled)
+http://gtk.org
+/usr/local/Cellar/gdk-pixbuf/2.30.8 (209 files, 4.3M) *
+  Poured from bottle
+From: https://github.com/Homebrew/homebrew/blob/master/Library/Formula/gdk-pixbuf.rb
+==&amp;gt; Dependencies
+Build: xz ✘, pkg-config ✔
+Required: glib ✔, jpeg ✔, libtiff ✔, libpng ✔, gobject-introspection ✔
+==&amp;gt; Options
+--universal
+    Build a universal binary
+==&amp;gt; Caveats
+Programs that require this module need to set the environment variable
+  export GDK_PIXBUF_MODULEDIR=&amp;quot;/usr/local/lib/gdk-pixbuf-2.0/2.10.0/loaders&amp;quot;
+If you need to manually update the query loader cache, set GDK_PIXBUF_MODULEDIR then run
+  /usr/local/Cellar/gdk-pixbuf/2.30.8/bin/gdk-pixbuf-query-loaders --update-cache
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;maximum &lt;code&gt;gdk-pixbuf&lt;/code&gt; installation&lt;/h3&gt;
+&lt;p&gt;I don't feel proud of this, but I liked the sound of a 'universal binary' so I went for that.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; brew reinstall --universal gdk-pixbuf
+
+==&amp;gt; Installing dependencies for gdk-pixbuf: sqlite, gdbm, makedepend, openssl, python, xz, gettext, glib, jpeg, libtiff, libpng, gobject-intros
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;. . . But then it was taking too long, so I cancelled it during &lt;code&gt;gettext&lt;/code&gt;. &lt;em&gt;I'm so, so sorry.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The next event I have recorded in my logs was me &lt;em&gt;uninstalling&lt;/em&gt; &lt;code&gt;gdk-pixbuf&lt;/code&gt; and &lt;code&gt;gtk+3&lt;/code&gt;, then reinstalling &lt;code&gt;gtk+3&lt;/code&gt;. All for good measure. I then tried to cleanly reinstall pond, so&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; &lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$GOPATH&lt;/span&gt;
+&amp;gt; rm -r *
+&amp;gt; go get github.com/agl/pond/client
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;. . . and . . &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; client
+Feb  &lt;span class="m"&gt;1&lt;/span&gt; 02:03:50: Starting fetch from home server
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It Just Worked.&lt;/p&gt;
+&lt;p&gt;I was hoping the &lt;code&gt;dylib&lt;/code&gt; problem would go away and I could return to my GUI issues, but nope. All fixed. I tried uninstalling things (&lt;code&gt;gtk+3&lt;/code&gt;, &lt;code&gt;go&lt;/code&gt;, &lt;code&gt;gtkspell3&lt;/code&gt;, &lt;code&gt;mercurial&lt;/code&gt;, &lt;code&gt;gdk-pixbuf&lt;/code&gt;, &lt;code&gt;pond&lt;/code&gt;) in an attempt to recreate the original (or subsequent) issue(s), but it refused to be broken. I have a list of all the dependencies I installed during this fiasco, so I could &lt;em&gt;in theory&lt;/em&gt; spend more time trying to break it again, or I could not.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://beesandbombs.tumblr.com/post/106618422479/funnel"&gt;at the end of the magical vortex, a thousand bald yaks&lt;/a&gt;&lt;br&gt;
+&lt;a href="http://beesandbombs.tumblr.com/post/106618422479/funnel"&gt;&lt;img src="http://38.media.tumblr.com/2671206c90dbe899d8bcd2116cbd7cb4/tumblr_nhem70bBYT1r2geqjo1_500.gif" style="width: 40vw;"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Incidentally, after all of this, it transpires that that One Weird Trick:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; gdk-pixbuf-query-loaders &amp;gt; &lt;span class="nv"&gt;$GOPATH&lt;/span&gt;/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;is no longer required for &lt;code&gt;client&lt;/code&gt; to run. So that's fewer files and more GUIs, what could be better?&lt;/p&gt;</content><category term="osx"></category><category term="golang"></category><category term="pond"></category><category term="anonymity"></category><category term="gtk"></category></entry><entry><title>setting up pond on yosemite</title><link href="/sec/2015-01-30-pond-on-yosemite.html" rel="alternate"></link><published>2015-01-30T00:00:00+00:00</published><updated>2015-01-30T00:00:00+00:00</updated><author><name>corcra</name></author><id>tag:None,2015-01-30:/sec/2015-01-30-pond-on-yosemite.html</id><summary type="html">&lt;p&gt;This is about &lt;a href="https://pond.imperialviolet.org/"&gt;Pond&lt;/a&gt;. If you have no idea what that is but don't want to click on the link, I shall quote directly;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Pond is not email. Pond is forward secure, asynchronous messaging for the discerning. Pond messages are asynchronous, but are not a record; they expire automatically a …&lt;/em&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is about &lt;a href="https://pond.imperialviolet.org/"&gt;Pond&lt;/a&gt;. If you have no idea what that is but don't want to click on the link, I shall quote directly;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Pond is not email. Pond is forward secure, asynchronous messaging for the discerning. Pond messages are asynchronous, but are not a record; they expire automatically a week after they are received. Pond seeks to prevent leaking traffic information against everyone except a global passive attacker.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;If that seems interesting, go back and click on the link. Otherwise get out while you still can.&lt;/p&gt;
+&lt;p&gt;My goal here is to get Pond running. I unfortunately don't have any Pond secrets to hand right now, so testing its messaging functionality will have to come later. The instructions on the main Pond page for OSX are fairly good, so this is just a slight elaboration/modification on those. This is going to look longer than it should because I haven't solved formatting code snippets on this blog yet.&lt;/p&gt;
+&lt;h2&gt;System&lt;/h2&gt;
+&lt;p&gt;I'm using a ~2012 Macbook Pro 13inch Retina blah blah, running OSX Yosemite (version 10.10.1). It's a fairly recent install, so I haven't had time to ruin everything yet. That said, I have &lt;a href="https://www.torproject.org/projects/torbrowser.html.en"&gt;Tor Browser&lt;/a&gt; installed and running. Obviously.&lt;/p&gt;
+&lt;h2&gt;tl;dr&lt;/h2&gt;
+&lt;p&gt;GUI is b0rked, CLI seems to work. From &lt;a href="https://pond.imperialviolet.org/"&gt;the site&lt;/a&gt;, for a CLI-version:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; brew install go
+&amp;gt; &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;GOPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/gopkg
+&amp;gt; &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;:&lt;span class="nv"&gt;$GOPATH&lt;/span&gt;/bin
+&amp;gt; go get -tags nogui github.com/agl/pond/client
+&amp;gt; &lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;pond&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$GOPATH&lt;/span&gt;&lt;span class="s2"&gt;/bin/client&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;But now for &lt;em&gt;how I spent my Friday evening:&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Dependencies&lt;/h2&gt;
+&lt;h3&gt;Go&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; brew install go
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Painless success, version: go1.4.1 darwin/amd64. Then make a folder for &lt;a href="http://golang.org/doc/code.html#GOPATH"&gt;Go packages&lt;/a&gt;,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; mkdir &lt;span class="nv"&gt;$HOME&lt;/span&gt;/gopkg
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Export some environment variables to keep Go happy, (I also added these to my .bash_profile)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;GOPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/gopkg
+&amp;gt; &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;:&lt;span class="nv"&gt;$GOPATH&lt;/span&gt;/bin
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;One more for good measure,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PKG_CONFIG_PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/opt/X11/lib/pkgconfig:/usr/local/lib/pkgconfig:&lt;span class="nv"&gt;$PKG_CONFIG_PATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;gtk+3&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;(These other dependencies are probably a bit pointless until I figure out how to get the GUI to reliably work, but for the sake of completeness they are here.)&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; brew install gtk+3
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It complains that it needs XQuartz 2.5, so that is resolved (as it suggests) with&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; brew install Caskroom/cask/xquartz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;gtkspell3&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; brew install gtkspell3
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This installed a whole pile of dependencies (including, concerningly, Python: the number of Pythons I have installed grows by the day), and my laptop crashed shortly after they finished, but I think that was random.&lt;/p&gt;
+&lt;h3&gt;mercurial&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; brew install mercurial
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Pond&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; go get github.com/agl/pond/client
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It produces lots of warnings, but seemingly no errors. And who reads warnings? Since it's already in my path (see above), running it is simply (I think this could do with being more descriptive):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; client
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Disaster strikes.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt;Dynamic session lookup supported but failed: launchd did not provide a socket path, verify that org.freedesktop.dbus-session.plist is loaded!
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;&amp;lt;unknown&amp;gt;:917&lt;span class="o"&gt;)&lt;/span&gt;: GdkPixbuf-WARNING **: Cannot open pixbuf loader module file &lt;span class="s1"&gt;&amp;#39;[$GOPATH]/bin/../lib/gdk-pixbuf-2.0/2.10.0/loaders.cache&amp;#39;&lt;/span&gt;: No such file or directory
+
+&amp;gt;This likely means that your installation is broken.
+&amp;gt;Try running the &lt;span class="nb"&gt;command&lt;/span&gt; gdk-pixbuf-query-loaders &amp;gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;$GOPATH&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;/bin/../lib/gdk-pixbuf-2.0/2.10.0/loaders.cache to make things work again &lt;span class="k"&gt;for&lt;/span&gt; the &lt;span class="nb"&gt;time&lt;/span&gt; being.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;(I'm using rectangular brackets to denote that I manually replaced its output with the logical meaning, so you don't have to look at my home directory path :)&lt;/p&gt;
+&lt;h3&gt;dbus&lt;/h3&gt;
+&lt;p&gt;First problem is where in the hell is &lt;code&gt;org.freedesktop.dbus-session.plist&lt;/code&gt;?&lt;/p&gt;
+&lt;p&gt;(it's not in in /Library/LaunchAgents or /Library/LaunchDaemons, or ~/Library/LaunchAgents)&lt;/p&gt;
+&lt;p&gt;The answer, if you &lt;code&gt;brew reinstall dbus&lt;/code&gt; to find out (or use some other kind of sorcery) is:&lt;/p&gt;
+&lt;p&gt;To have launchd start d-bus at login:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -sfv /usr/local/opt/d-bus/*.plist ~/Library/LaunchAgents
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That's where it is.&lt;/p&gt;
+&lt;p&gt;Then to load d-bus now:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;launchctl load ~/Library/LaunchAgents/org.freedesktop.dbus-session.plist
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;pixbuf&lt;/h3&gt;
+&lt;p&gt;So the folder it's expecting (&lt;code&gt;lib/gdk-pixbuf...&lt;/code&gt;) is certainly not found at &lt;code&gt;[$GOPATH]/bin/...&lt;/code&gt;, since that's just &lt;code&gt;$GOPATH&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;By running &lt;code&gt;gdk-pixbuf-query-loaders&lt;/code&gt; I can see it's probably expecting this path or something:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/usr/local/Cellar/gdk-pixbuf/2.31.2/lib/gdk-pixbuf-2.0/2.10.0/loaders/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Which would only be appropriate if &lt;code&gt;$GOPATH=/usr/local/Cellar/gdk-pixbuf/2.31.2/&lt;/code&gt;, which it is not by construction. I can get around this as it suggests by creating a bunch of empty folders and then running&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; gdk-pixbuf-query-loaders &amp;gt; &lt;span class="nv"&gt;$GOPATH&lt;/span&gt;/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Which gets rid of the warnings. Now when I run&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; client
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I get no (immediate) errors! Success! Maybe!&lt;/p&gt;
+&lt;h2&gt;GUI-sadness&lt;/h2&gt;
+&lt;p&gt;Empowered by the graphics, I set a password and create an account on the default server.&lt;/p&gt;
+&lt;p&gt;. . . and it &lt;em&gt;panics&lt;/em&gt;. That is to say, the GUI vanishes (although X11 is still running) and I get a &lt;a href="https://corcra.github.io/assets/pond-panic.txt"&gt;lot of errors&lt;/a&gt;. Not only that, but now if I try to run it again,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; client
+    Jan &lt;span class="m"&gt;30&lt;/span&gt; 23:46:58: Fatal error: state file is too small to be valid
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Shit.&lt;/p&gt;
+&lt;p&gt;Maybe I just need the gentle embrace of the command line?&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; client -cli&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+
+&amp;gt;&amp;gt;&amp;gt; Pond...
+&amp;gt;&amp;gt;&amp;gt; &amp;gt;&amp;gt;&amp;gt; state file is too small to be valid
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Abort, abort!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; rm &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.pond
+&amp;gt; client -cli&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And now, everything is beautiful and nothing hurts.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://corcra.github.io/assets/pond_screenshot.png" style="width: 40vw; border:5px solid #000000;"/&gt;&lt;/p&gt;</content><category term="osx"></category><category term="golang"></category><category term="pond"></category><category term="anonymity"></category></entry></feed>

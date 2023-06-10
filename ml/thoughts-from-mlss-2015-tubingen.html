@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>thoughts from mlss 2015 tübingen</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/theme/css/pure-min.css" />
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css" />
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/atom/ml.xml" type="application/atom+xml" rel="alternate" title="apeirotope Categories Atom Feed" />
+        <link href="/feeds/rss/ml.xml" type="application/rss+xml" rel="alternate" title="apeirotope Categories RSS Feed" />
+
+
+</head>
+<body>
+
+    <div class="navigation pure-menu pure-menu-horizontal">
+        <a href="/" class="pure-menu-heading  pure-menu-link apeirotope">apeirotope</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"></li>
+
+            <li class="pure-menu-item"><a href="/pages/about.html" class="pure-menu-link pages">about</a></li>
+            <li class="pure-menu-item"><a href="/biomed/" class="pure-menu-link biomed">biomed</a></li>
+            <li class="pure-menu-item"><a href="/lang/" class="pure-menu-link lang">lang</a></li>
+            <li class="pure-menu-item"><a href="/life/" class="pure-menu-link life">life</a></li>
+            <li class="pure-menu-item"><a href="/making/" class="pure-menu-link making">making</a></li>
+            <li class="pure-menu-item"><a href="/meta/" class="pure-menu-link meta">meta</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="/ml/" class="pure-menu-link ml">ml</a></li>
+            <li class="pure-menu-item"><a href="/sec/" class="pure-menu-link sec">sec</a></li>
+            <li class="pure-menu-item"><a href="/tips/" class="pure-menu-link tips">tips</a></li>
+        </ul>
+    </div>
+
+
+<div class="page-container">
+    <div class="entry-content">
+        <div class="post-meta pure-g">
+            <div class="pure-u-3-4 meta-data">
+                <a href="/ml/" class="ml">ml</a><br />
+
+                <a class="author" href="/author/corcra.html">corcra</a>
+                &mdash; <abbr title="2015-07-30T13:37:00+01:00">Thu 30 July 2015</abbr>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-header-container">
+        <div class="background-image-container">
+
+            <div class="background-image-small">
+                <div class="title-container">
+                    <h1>thoughts from mlss 2015 tübingen</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="entry-content">
+        <p>I recently attended the <a href="http://mlss.tuebingen.mpg.de/2015/index.html">Machine Learning Summer School at the MPI in Tübingen</a>. This wasn't my first time at an event like this - I attended the <a href="http://ml.dcs.shef.ac.uk/gpss/gpss14/">Gaussian Process 'Summer' School</a> in September 2014 - but the MLSS is a lot bigger/diverse. I'm fairly sure I didn't even speak to all the other participants (unfortunately).</p>
+<p>The basic format is lectures all day (9am til roughly 5pm) and various academic or social activities in the evenings. I foolishly though it would be possible to get lots of work done in the free time, which was wrong on two counts: free time was limited, and the hostel had essentially no WiFi. By that I mean it was impressively bad: pings of the order 5s, packet loss above 50%. Free café WiFi is also harder to find in Tübingen than in NYC (somehow!), so by the end of the two weeks, MLSS participants could be found sitting near eduroam hotspots across the town.</p>
+<p>Luckily there are better things to do at a summer school than struggle with laggy ssh tunnels. The lectures provided good exposure various topics within machine learning, although a 3-hour course is necessarily limited in depth. Most of the lectures were recorded and will probably be <a href="http://webdav.tuebingen.mpg.de/mlss2013/2015/speakers.html">here</a> eventually. Those from 2013 are still available <a href="http://webdav.tuebingen.mpg.de/mlss2013/2013/index.html">here</a>. There are also more from other MLSS venues <a href="http://videolectures.net/site/search/?q=mlss">here</a>.</p>
+<p>My favourites were Tamara Broderick's <em>Bayesian Nonparametrics</em> and Zoubin Ghahramani's <em>Bayesian Inference</em> (note my bias). Michael Hirsch's <em>Computational Imaging</em> and Michael Black's <em>Learning Human Body Shape</em> were also enjoyable, largely due to demonstrations. The former briefly covered MIT's <a href="https://people.csail.mit.edu/mrub/VisualMic/">visual microphone</a> which prompted a similar level of disquiet as it did on infosec twitter, although more fascination. The unearthly sounds of the reconstructions do little to ease the creep level.</p>
+<p>My favourite session overall was the practical from Frank Wood and Brooks Paige on <em>Probabilistic Programming</em> (<a href="https://bitbucket.org/probprog/mlss2015">bitbucket repo</a>), possibly because I am a nascent Clojure fan, or maybe I just love sampling. I'm also quite enthusiastic about abstracting away implementation details and focusing on models, which <a href="http://www.robots.ox.ac.uk/~fwood/anglican/">Anglican</a> facilitates. How much use I'll make of it in my own research has yet to be determined.</p>
+<p>Something which cannot be replicated via video lectures or git repos (yet) is interaction with other participants. As I mentioned, there were a lot of us (about 100), and the poster sessions were probably the best opportunity to talk science. I'm not sure how participants were selected but I was impressed by the diversity of research represented. It turns out not <em>everyone</em> is throwing convnets at everything (but maybe they should be?). There was also a lot more theory than I was expecting, which is what happens when you assume your biased sample (of largely-applied colleagues) is representative of the whole. Lesson learned. I didn't take any notes at the poster sessions (nor did I read all of the posters), so I'll just mention a few that stand out in my memory (and have something concrete to link to).</p>
+<ul>
+<li><a href="http://www.mpi-sws.org/~mzafar/">Muhammad Bilal Zafar</a> had a poster about <a href="http://www.mpi-sws.org/~mzafar/papers/fatml_15.pdf">Fairness Constraints: A Mechanism for Fair Classification</a>. Quoting from the paper,  </li>
+</ul>
+<blockquote>
+<p><em>"Fairness prevents a classifier from outputting predictions correlated with certain sensitive attributes in the data."</em></p>
+</blockquote>
+<p>I was really excited to see a poster about fairness, especially having just read <a href="http://jeremykun.com/2015/07/13/what-does-it-mean-for-an-algorithm-to-be-fair/">"What Does it Mean for an Algorithm to be Fair?"</a>. The danger exists for people to believe that the recommendations from a machine learning algorithm are 'fair' (for some nebulous definition of fair, likely including 'not racist' and 'not sexist'), which could be used to avoid addressing systemic social injustices. It's important for machine learning researchers/users to stress that the output of learning algorithm is a function of its training data (madness, I know), and as long as our historical data contains biases, models trained on it will have them too. That is, unless we do something about it. I'm sure there are more subtle factors at play that I'm not aware of, but I'm glad that these issues are being considered by the research community.</p>
+<ul>
+<li>
+<p><a href="http://people.idsia.ch/~greff/index.html">Klaus Greff</a> presented a poster about an experiment-management tool he created called <a href="https://github.com/IDSIA/sacred">Sacred</a>. (The name is a reference to Monty Python's <a href="https://www.youtube.com/watch?v=fUspLVStPbk">Every Sperm is Sacred</a>). This obviously isn't research, but it seems extremely useful. It records things like config options, a snapshot of the source code(!), runtime trace(s), and saves them in a (mongoDB) database. I already have a semi-elaborate setup for running reproducible experiments (the details of which are too gory and shameful to provide), but this seems more pleasant and sane.</p>
+</li>
+<li>
+<p><a href="http://www.robots.ox.ac.uk/~twgr/">Tom Rainforth</a> had a poster about <a href="http://arxiv.org/pdf/1507.05444v2.pdf">Canonical Correlation Forests</a> which I didn't actually get to look at (I was in the same poster session), but the gist I got from a chat in the pub is that they're better than random forests (my brain has a very aggressive compression algorithm, clearly). I'll need to read the paper. I have a picture of him explaining the poster to someone on the bus after the poster session, demonstrating that science never rests.</p>
+</li>
+<li>
+<p>My friend <a href="http://www.maillard.it/">Jean Maillard</a> had a poster on <a href="https://aclweb.org/anthology/K/K15/K15-1035.pdf">Learning Adjective Meanings with a Tensor-Based Skip-Gram Model</a>. This was by far the most similar to mine (my poster was also on distributional semantics), although this paper focuses moreso on language-modelling, by representing adjectives as matrices. I'm amused that Jean and I started off doing something entirely different (at the time, Part III in Mathematics at Cambridge, mostly flipping tables over quantum algorithms) and then converged (if only temporarily, for me) on something that is (at least by MLSS standards) <em>somewhat</em> obscure. Maybe there was something in the water at St. John's.</p>
+</li>
+</ul>
+<p>There were also lots of opportunities to talk non-science. On the last afternoon, a straw poll was conducted on the viability of human-level AI during our lifetime. The majority present (n ~ 10) felt it wasn't going to happen, which seems to go against popular opinion on the matter (at least judging by recent articles about the threat of such AIs). Maybe grad students are too pessimistic (optimistic?) a group, or we succumbed to our small sample size. The poll wasn't even conducted in secret.</p>
+<p>Another outcome of the MLSS is that I reaffirmed my desire to write a <em>Gaussian Processes for Biologists</em> tutorial. <em>Biologist</em> here really means 'anyone lacking a strong mathematical background' (hopefully in the future it will be offensive for me to use biologist as a proxy for that). I'd originally planned to do this after the GPSS last year, partially out of GP evangelism (all the people doing simple linear regression could be doing GP regression!) and partially to deepen my own understanding (one learns much through teaching), but progress stalled due to lack of interest. Interest is briefly re-ignited, so maybe I'll actually do it this time[citation needed].</p>
+    </div>
+
+    <footer>
+        <div class="tags">
+            <a href="/tag/class.html">class</a>
+            <a href="/tag/life.html">life</a>
+            <a href="/tag/poster.html">poster</a>
+            <a href="/tag/ai.html">AI</a>
+            <a href="/tag/bayesian.html">bayesian</a>
+        </div>
+        <div class="pure-g post-footer">
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="pure-g poster-info">
+                    <div class="pure-u-3-4">
+                        <h3 class="author-name"><a href="/author/corcra.html">corcra</a></h3>
+                        <p class="author-description">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+
+    <footer class="index-footer">
+
+        <a href="/" title="apeirotope" class="apeirotope">apeirotope</a>
+        <a href="/biomed/" class="biomed">biomed</a>
+        <a href="/lang/" class="lang">lang</a>
+        <a href="/life/" class="life">life</a>
+        <a href="/making/" class="making">making</a>
+        <a href="/meta/" class="meta">meta</a>
+        <a href="/ml/" class="ml">ml</a>
+        <a href="/sec/" class="sec">sec</a>
+        <a href="/tips/" class="tips">tips</a>
+
+    </footer>
+
+</body>
+</html>

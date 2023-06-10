@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="corcra">
+  <meta name="description" content="setting up mastodon with hometown | This is a &#39;how to do something&#39; sort of blog post, I might write about why later. The something is running a social...">
+<!--
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">  
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+--> 
+  <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="../theme/css/font.css" type="text/css" media="all">
+  <link rel="stylesheet" href="../theme/css/all.css"> <!-- font awesome -->
+  <link rel="stylesheet" href="../theme/css/style.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="../theme/js/modernizr.min.js"></script>
+<script type="text/javascript" src="../theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../theme/js/functions.js"></script>
+
+  
+ 
+
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="apeirotope Full Atom Feed" />
+
+<meta name="keywords" content="sysadmin, mastodon, social media, vps">
+
+
+
+  <title>setting up mastodon with hometown | apeirotope</title>
+
+</head>
+
+<body class="home blog">
+  <div>
+    <header class="site-header">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="row">
+            <div class="site-navigation-inner col-sm-12">
+              <div class="navbar-header">
+                <button type="button" class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse navbar-ex1-collapse">
+              <ul id="menu-all-pages" class="nav navbar-nav">
+                <li class="menu-item"><a href="/index.html" >apeiroto.pe
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/pages/about.html" >About
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/categories.html" >Categories
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/tags.html" >Tags
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/archives.html" >Archive
+<i class="fa  fa-lg"></i></a></li>
+              </ul>
+              </div>
+              <div class="social">   
+                <a href="https://apeiroto.pe/feeds/all.atom.xml" title="Feed" >
+<i class="fa fa-rss fa-lg"></i></a>
+                <a href="test" title="Another link" >
+<i class="fa  fa-lg"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav><!-- .site-navigation -->
+
+      <div class="container">
+        <!--<div class="tagline">
+            •
+                <a href="../biomed/" >biomed (2)</a> •
+                <a href="../lang/" >lang (5)</a> •
+                <a href="../life/" >life (7)</a> •
+                <a href="../making/" >making (1)</a> •
+                <a href="../meta/" >meta (7)</a> •
+                <a href="../ml/" >ml (9)</a> •
+                <a href="../sec/" >sec (4)</a> •
+                <a href="../tips/" >tips (9)</a> •
+-->
+            <!--                 <a href="../archives.html" >archives (44)</a>
+ -->
+                <!--</div>-->
+    </div>
+
+  </header><!-- #masthead -->
+  </div>
+    <div id="content" class="site-content">
+      <div class="container main-content-area">
+        <div class="row">
+          <div class="main-content-inner col-sm-12 col-md-12">
+            <div id="primary" class="content-area">
+              <div id="main" class="site-main" role="main">
+                <div class="article-container">
+<article>
+  <div class="blog-item-wrap">
+    <div class="post-inner-content">
+      <header class="entry-header page-header">
+          <span class="cat-item tips"><time datetime="2020-05-07 00:00:00+01:00">07 May, 2020</time></span>
+        <h1 class="entry-title"><a href="../tips/2020-05-07-leafytown.html">setting up mastodon with hometown</a></h1>
+      </header><!-- .entry-header -->
+      <div class="entry-content">
+        <p>This is a 'how to do something' sort of blog post, I might write about why later. The something is running a social network for my friends.</p>
+<p>The starting point is probably <a href="https://runyourown.social/">run your own social</a>, which covers a lot of the 'why' and some of the 'what'. Chances are if you are reading this post you already know about it, but if not it's a good read and probably a prerequisite for caring about the rest of this post.</p>
+<p>In case it wasn't apparent from this website, I like running my own things. I decided that lockdown (<em>metadata: it has been approximately 55 days since I had a face-to-face conversation with someone I know</em>) would be a good opportunity to find new ways of interacting with my friends. Maybe that's getting too far into the why, though. I grabbed another VPS (total VPS count: 3) and decided to set up a <a href="https://docs.joinmastodon.org/">mastodon</a> server running the <a href="https://github.com/hometown-fork/hometown">hometown</a> fork.</p>
+<p>The basic gist of running mastodon with hometown is to follow two sets of instructions:</p>
+<ul>
+<li><a href="https://docs.joinmastodon.org/admin/prerequisites/">the mastodon server installation guide</a></li>
+<li><a href="https://github.com/hometown-fork/hometown/wiki/Initial-migration">the migrating from mastodon to hometown doc</a></li>
+</ul>
+<p>This is basically comprehensive but I still messed it up the first time, so in this post I will walk through the steps with some inane recipe-tier flavour-text on the side.
+Also, the hometown migration doc warns that it's not for beginners, so maybe I can help pseudo-beginners? Semi-nerds like myself still deserve autonomous social networks.</p>
+<h3>Step 1: Procure a server</h3>
+<p>My existing VPSes are with <a href="https://www.heficed.com/">Heficed</a>, which I knew as Host1Plus. I originally got a VPS with them many years ago because I wanted to run a Tor exit out of an African country, and they had a data centre in Johannesburg and didn't seem to care about the Tor exit thing.</p>
+<p>For reasons I price I opted for <a href="https://www.ovh.co.uk/">OVH</a> this time. In case it's useful, my VPS has 8GB of RAM and 160 GB of storage, and is running Ubuntu 18.04 (this is the recommended OS from the Mastodon guide). I put it in a London data centre, maybe one day I can visit it.</p>
+<p>Full disclosure: I initally only paid for one month of the VPS, then ignored 2 weeks worth of warning emails, and everything from I T E R A T I O N 1 got wiped. There was nothing I could do, in such an unprecedented time. In the current iteration I've paid for a year up front. This isn't immensely cheap (it cost about 200 pounds), but I'm one of the lucky ones right now because I have a job. Maybe if it takes off I'll ask for donations from the users.</p>
+<h3>Step 2: Install Mastodon version 2.9.3</h3>
+<p>This is where we approximately follow the <a href="https://docs.joinmastodon.org/admin/prerequisites/">mastodon installation instructions</a>, but make sure to end up with version 2.9.3 installed. This is (at time of writing) necessary for the subsequent hometown migration*. <em>update from 30 minutes after I wrote that: the hometown wiki looks a bit out of date, there are versions of hometown that are aligned with recent versions of Mastodon e.g. <a href="https://github.com/hometown-fork/hometown/releases/tag/v1.0.3%2B3.1.2">v3.1.2</a>, but I don't want to rewrite this entire blog post so ???</em></p>
+<p>This was the hardest part because you have to deviate slightly from the provided instructions. I'm assuming you're looking at them (time of writing: 7th May 2020) and basically following along, so I don't have to reproduce all the steps here. By the time that page is out of date, this one will be too.</p>
+<p><a href="https://docs.joinmastodon.org/admin/prerequisites/">Preparing the machine</a> is all fine.</p>
+<p><a href="https://docs.joinmastodon.org/admin/install/">Installing from source</a> is fine <em>until</em> it comes to installing Ruby.
+They recommend this:</p>
+<div class="highlight"><pre><span></span>&gt; RUBY_CONFIGURE_OPTS=--with-jemalloc rbenv install 2.6.6
+&gt; rbenv global 2.6.6
+</pre></div>
+
+
+<p>This version of Ruby is too new! I went for version 2.6.1. I don't remember how I figured out this version would work, a dream maybe?</p>
+<p>Postgres installation instructions are all fine. Be careful if you already have the remnants of failed installations lying around (who would have that?!) with misleading table names. In a way, losing everything to the big VPS wipe was a gift.</p>
+<p>Vigilance is once again required while checking out the Mastodon codebase. They tell you to do this:</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/tootsuite/mastodon.git live &amp;&amp; cd live
+git checkout $(git tag -l | grep -v &#39;rc[0-9]*$&#39; | sort -V | tail -n 1)
+</pre></div>
+
+
+<p>That second line is trying to check out the most recent version of Mastodon, and we're not here for that. I cheated by taking the commit hash for v2.9.3 from the Hometown instructions, which is gonna give us this instead:</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/tootsuite/mastodon.git live &amp;&amp; cd live
+git checkout 06f906acace5770fc10f333a203b036c5b72c849
+</pre></div>
+
+
+<p>You can sanity-check this has produced the correct version with</p>
+<div class="highlight"><pre><span></span>git describe --tags
+</pre></div>
+
+
+<p>where it will dutifully give you <code>v2.9.3</code>, probably.</p>
+<p>The rest of the Mastodon instructions are basically as-is. </p>
+<p>Before you do the interactive setup wizard</p>
+<div class="highlight"><pre><span></span>RAILS_ENV=production bundle exec rake mastodon:setup
+</pre></div>
+
+
+<p>you should probably do step 1.5, though.</p>
+<h3>Step 1.5: Get a domain and mail server</h3>
+<p>The Mastodon server running on the VPS needs some way of being known to the outside world, and domain names are a recent technology purporting to improve on the otherwise-flawless system of memorising ipv4 addresses.</p>
+<p>I use <a href="https://www.namecheap.com/">Namecheap</a> for my domains (including apeiroto.pe and my Mastodon server). The basic idea is you rent a domain from them, because they're internet landlords I guess. Once you own your domain you can update its A Record (for me this is in the domain management page) to include the IP address of your VPS.</p>
+<p>I'm including 'get a mail server' in here because I did that with Namecheap as well. I briefly considered running my own mail server on the VPS, but I'm not at that level of running my own things. Not yet.
+During the mastodon setup wizard it will ask for various details of your mail server, which should be available from whatever provider you go with (e.g SMTP address, username and password and such). I'm like 30% sure the way I set this up has left it open to harvesting by spambots, so I'm not going to give any further advice in case the spambots find me.</p>
+<p>The reason you are giving it an email address is so it can send things like Forgot Password? emails to your users.</p>
+<h3>Step 2.05: Finish step 2 and then check</h3>
+<p>Before proceeding, go to your new domain in the browser and check that:</p>
+<ul>
+<li>mastodon is working</li>
+<li>mastodon is version 2.9.3 (near the bottom of the page)</li>
+</ul>
+<p>You could stop here and be content with your Mastodon server running a slightly out of date version of Mastodon. You could be happy.</p>
+<h3>Step 3: Migrate to hometown</h3>
+<p>Now we refer back to <a href="https://github.com/hometown-fork/hometown/wiki/Initial-migration">the hometown wiki page on migrating from mastodon</a> mentioned before.</p>
+<p>Because we ensured to install version 2.9.3 before, this should mostly Just Work.
+The only slightly odd thing for me was getting this error:</p>
+<div class="highlight"><pre><span></span>&gt; git fetch --tags
+&gt; git merge v1.0.1+2.9.3
+merge: v1.0.1+2.9.3 - not something we can merge
+</pre></div>
+
+
+<p>This might be some git config issue but changing to</p>
+<div class="highlight"><pre><span></span>git fetch --tags -all
+</pre></div>
+
+
+<p>and then merging as described fixed it.</p>
+<p>Following the rest of instructions as they are should result in your Mastodon server now including a mention of hometown at the bottom, indicating that it works. </p>
+<h3>Step 4 (optional): Make local-only posting default</h3>
+<p>For me, the reason to use hometown was that sweet local-only posting, but it's still possible for users to post publicly. Following all the above steps, it ended up that public (or <em>federated</em> to be more specific) posting was the default. Having to toggle local-only on every tweet (I refuse to say toot because it sounds stupid as hell) was a pain and could easily result in accidental public posts. Thus began a saga of trying to figure out how to change this behaviour.</p>
+<p>I don't know much Javascript and I know even less Ruby, so after some fruitless attempts to reverse-engineer the codebase I got some friends involved, who are faster at reverse-engineering and who did not repeatedly pause their progress with games of starcraft 2. Eventually (like, four hours later) Paddy realised that this is just an option you can set in a config file:</p>
+<p><a href="https://github.com/hometown-fork/hometown/blob/hometown-dev/config/settings.yml#L20">here is the line</a></p>
+<p>In case of link rot, this is the <code>settings.yml</code> file in the <code>config</code> subfolder of the repository. The config option is <code>default_federation</code>, and you want it to be <code>false</code> for local-only to be default. I'm looking forward to discovering what the other options do.</p>
+<h3>Step 5: Give back to community</h3>
+<p><em>... by using acquired wisdom to update their documentation (maybe)</em></p>
+<p>While double-checking things for this post I realised that the hometown installation document seems to be out of date.</p>
+<p>Remember how we painstakingly made sure we had v2.9.3 of Mastodon installed, so we could use hometown? It looks like there's already <a href="https://github.com/hometown-fork/hometown/releases/tag/v1.0.3%2B3.1.2">hometown v1.0.3 for mastodon v3.1.2</a> so that was actually unnecessary and we could have just installed whatever Mastodon version we wanted. Anyway I hope you enjoyed this blog post, I'm going to go mass queens <a href="https://starcraft2.com/en-gb/news/23405326">before they get nerfed</a>.</p>
+      </div><!-- .entry-content -->
+      <br /><br />
+      <div class="article_meta">
+        Tags:
+          <a href="../tag/sysadmin.html">sysadmin</a>,          <a href="../tag/mastodon.html">mastodon</a>,          <a href="../tag/social-media.html">social media</a>,          <a href="../tag/vps.html">vps</a>      </div>
+    </div>
+  </div>
+</article><!-- #post-## -->
+                </div>
+              </div><!-- #main -->
+          </div><!-- #primary -->
+        </div>
+      </div><!-- close .row -->
+    </div><!-- close .container -->
+  </div><!-- close .site-content -->
+
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="scroll-to-top" style="display: none;"><i class="fa fa-angle-up"></i></div><!-- .scroll-to-top -->
+    </footer><!-- #colophon -->
+
+  <script type="text/javascript">
+    window.addEventListener('load', function(){
+    if (window.location.pathname != '/' && window.location.pathname != '/index.html'){
+      window.scroll(0, document.getElementById('main').offsetTop);
+    }})
+  </script>
+
+
+</body>
+</html>

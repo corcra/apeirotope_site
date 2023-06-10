@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>AAAI 2016 by the day</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/theme/css/pure-min.css" />
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css" />
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/atom/ml.xml" type="application/atom+xml" rel="alternate" title="apeirotope Categories Atom Feed" />
+        <link href="/feeds/rss/ml.xml" type="application/rss+xml" rel="alternate" title="apeirotope Categories RSS Feed" />
+
+
+</head>
+<body>
+
+    <div class="navigation pure-menu pure-menu-horizontal">
+        <a href="/" class="pure-menu-heading  pure-menu-link apeirotope">apeirotope</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"></li>
+
+            <li class="pure-menu-item"><a href="/pages/about.html" class="pure-menu-link pages">about</a></li>
+            <li class="pure-menu-item"><a href="/biomed/" class="pure-menu-link biomed">biomed</a></li>
+            <li class="pure-menu-item"><a href="/lang/" class="pure-menu-link lang">lang</a></li>
+            <li class="pure-menu-item"><a href="/life/" class="pure-menu-link life">life</a></li>
+            <li class="pure-menu-item"><a href="/making/" class="pure-menu-link making">making</a></li>
+            <li class="pure-menu-item"><a href="/meta/" class="pure-menu-link meta">meta</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="/ml/" class="pure-menu-link ml">ml</a></li>
+            <li class="pure-menu-item"><a href="/sec/" class="pure-menu-link sec">sec</a></li>
+            <li class="pure-menu-item"><a href="/tips/" class="pure-menu-link tips">tips</a></li>
+        </ul>
+    </div>
+
+
+<div class="page-container">
+    <div class="entry-content">
+        <div class="post-meta pure-g">
+            <div class="pure-u-3-4 meta-data">
+                <a href="/ml/" class="ml">ml</a><br />
+
+                <a class="author" href="/author/corcra.html">corcra</a>
+                &mdash; <abbr title="2016-02-17T00:00:00+00:00">Wed 17 February 2016</abbr>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-header-container">
+        <div class="background-image-container">
+
+            <div class="background-image-small">
+                <div class="title-container">
+                    <h1>AAAI 2016 by the day</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="entry-content">
+        <p>I started writing this in Phoenix airport, so if the <a href="/ml/nips-2015-by-the-day.html">current trend</a> (n=2) continues, I'll start recounting my next conference half-way through, with interesting implications for the latter half of the post. This was my first time attending the Association for the Advancement of Artificial Intelligence Conference <a href="https://www.aaai.org/Conferences/AAAI/aaai16.php">(AAAI)</a>, so I made sure to spend most of it comparing it to NIPS. I stopped taking notes towards the end, so this coverage is a bit skewed.</p>
+<h2>Thursday</h2>
+<p>Shameless plug for a great vegan restaurant in Phoenix: <a href="http://greenvegetarian.com/">Green</a>. I would have eaten there a lot more if it were a bit closer to the conference centre. I ended up going to <a href="http://www.veganhouseaz.com/">Vegan House</a> a few times. A fair runner up in the list of Best Vegan(-ish) Restaurants in Downtown Phoenix (there are two).</p>
+<h2>Friday</h2>
+<p>Shortly before dawn, it became cold enough to sleep. I appreciated the vastness of the Arizona sky and the eerie absence of fellow pedestrians as I relocated to my downtown hotel. Coming from Dublin and then New York City, I find empty paths unsettling, especially coupled with wide roads and low buildings. I passed by a man selling paintings of owls from a rucksack, and order was restored.</p>
+<p>Friday and Saturday of the conference were tutorial/workshop days (the distinction between these categories is not clear). On Friday morning I went to...</p>
+<h3><a href="https://www.cs.cmu.edu/~sandholm/organExchangeTutorials/organExchangeTutorial.aaai16.html">Organ Exchanges: A Success Story of AI in Healthcare: John Dickerson and Tuomas Sandholm</a></h3>
+<p>I'd seen John Dickerson speaking at the <a href="https://sites.google.com/site/nipsmlhc15/">NIPS 2015 Workshop on Machine Learning in Healthcare</a> (some thoughts on MLHC in my <a href="https://corcra.github.io/ml/2015/12/14/NIPS2015.html">NIPS 2015 post</a>), so I was already somewhat familiar with this work. I think he's a good speaker, so even though this topic is not <em>entirely</em> relevant to me, I figured I'd get something out of the tutorial. This was true to some extent - my attention started to flag at some point into what was essentially a 3.5 hour lecture.</p>
+<p>The link to the slides is above and <a href="https://www.cs.cmu.edu/~sandholm/organExchangeTutorials/organExchangeTutorial.aaai16.html">here</a>, so I will just outline the main idea and skip the algorithmic details.</p>
+<p>Kidney exchanges: you need a kidney, and a family member/friend/loved one is willing to donate one. Unfortunately, they may not be compatible. The solution is to 'trade' donors with someone else: "I'll give you my mother's kidney for your girlfriend's kidney", or, "I'll give you my mother's kidney so your girlfriend can give her kidney to that other person, and their friend can give <em>me</em> their kidney", and so on. This amounts to finding cycles in a graph (the second example being a 3-cycle), which brings us into the wonderful world of combinatorial optimisation. The exchange actually requires everyone to go under the knife at the same time (something about trading organs I don't quite recall), so there are physical and logistical limits on the length of the cycle.</p>
+<p>They mentioned some other barter-exchange markets, such as</p>
+<ul>
+<li>holiday homes (<a href="www.intervac-homeexchange.com/">intervac</a>)</li>
+<li>books (<a href="http://www.paperbackswap.com/index.php">paperback swap</a>, <a href="http://www.bookcrossing.com/">book crossing</a>)</li>
+<li>odd shoes (<a href="http://www.oddshoe.org/">national (US) odd shoe exchange</a>)</li>
+</ul>
+<p>These are neat. People exchanging used items instead of buying new/throwing away is obviously great, and I approve of anyone supporting such efforts. It's what the 'sharing economy' should have been... and now back to organs.</p>
+<p>An interesting (and amazing!) thing can happen in these kidney exchanges: sometimes an altruistic donor will show up; someone who just has too many kidneys and wants to help out. These produce 'never-ending altruistic donor' chains ("a gift that gives forever"), and have apparently become more important than cycles for the kidney-matching problem.</p>
+<p>I zoned out of the tutorial for a bit to discuss the feasibility of simultaneous translation, prompted by this article: <a href="http://www.wsj.com/articles/the-language-barrier-is-about-to-fall-1454077968">The Language Barrier is About to Fall</a>. My gut reaction is to say 'it's too hard', but that's motivated by my enjoyment of learning languages - part of me (selfishly) doesn't <em>want</em> this problem solved. I'm however learning to temper my skepticism when it comes to what machine learning can achieve, and we're actually getting pretty good at translation (for <em>some</em> language pairs) so I'm pretty optimistic about this. And breaking language barriers, if it can be done cheaply, could be immense. I emphasize the relevance of cost because I see language most prohibitive not for holiday-goers but for migrants, who may not have the resources to buy a <a href="https://en.wikipedia.org/wiki/List_of_races_and_species_in_The_Hitchhiker's_Guide_to_the_Galaxy#Babel_fish">babelfish</a>.</p>
+<p>There are a lot of subtleties to consider in the kidney exchange problem, and much work has been done: see the slides.</p>
+<p>They concluded the tutorial with a discussion of other organ exchanges. Kidneys are sort of 'easy' because the cost to the donor is quite minimal, unlike in e.g. lung exchanges where the donor's quality of life (and life expectancy) are impacted. One can also do living donor liver exchanges, where some <em>fraction</em> of the donor's liver is removed. There are essentially no altruistic donors here. Dickerson suggested combining multiple organs, so you thread a liver and kidney chain together. Perhaps a kidney patient's donor would be willing to donate liver to someone whose donor would give a kidney, and so on.</p>
+<p>My plan was to go to <a href="http://www.inf.kcl.ac.uk/staff/danmag/aaai16tutorial_aips.html"><strong>AI Planning and Scheduling for Real-World Applications</strong> (Steve Chien and Daniele Magazzeni)</a> in the afternoon, but I made the mistake of being outside for slightly too long during lunch, and I spent the rest of the afternoon recovering in a dark and cool hotel room. Irish people: handle with care, keep out of direct sunlight.</p>
+<h3>Student Welcome Reception</h3>
+<p>One really nice thing about AAAI was the student activities. Being a student at a conference can be bewildering: there are so many people who seem to know each other, talking about things they seem to know about! I was also there by myself (my group does not typically attend AAAI), so the icebreakers they ran saved me from spending the rest of the conference lurking in corners and hissing at people.</p>
+<p>The actual ice-breaker activity was weird (although seemingly effective): we had to take photographs with a AI/AAAI/Phoenix theme (artificially intelligent <em>fire</em>, maybe) featuring ourselves. A ploy to get pictures for a website? Possibly. We never did find out who won the fabled prize.</p>
+<h2>Saturday</h2>
+<p><img src="/images/aaai2016_01.png" class="floatl" style="width: 24vw;"></p>
+<p>Excluding a brief foray into the tutorial about 'Learning and Inference in Structured Prediction Models', and fruitless wandering in search of coffee shops open on a Sunday, I spent much of the day at...</p>
+<h3><a href="https://www.cse.unsw.edu.au/~tw/aiethics/AI_Ethics/Introduction.html">Workshop on AI, Ethics, and Society</a></h3>
+<p>This workshop had overlap in content/speakers/organisers with the 'Algorithms Among Us' symposium at NIPS 2015 (some thoughts <a href="https://corcra.github.io/ml/2015/12/14/NIPS2015.html">here</a>). My interests might be obvious by now.</p>
+<p>This was an interesting workshop. There was a mix of machine learners, AI researchers, (possibly) philosophers and miscellaneous other. There were fewer arguments than I would have expected. It's not that that I particularly <em>wanted</em> to see (verbal) fighting, but people seem quite passionate about, e.g. whether or not The Singularity is something to worry about, so I expected more gloves on the floor.</p>
+<p>People are concerned about dangerous (powerful) AIs - how do we ensure they don't enslave us all in pursuit of paperclip-making? Do we have moral responsibility towards them? Should they feel pain? Should we be allowed to turn them off, once they're active/alive(?)? Are simulations of humans humans? These were some questions raised.</p>
+<p>Some more, uhh, <em>short-term</em> concerns included the risks of adversarial machine learning, the effects of AI on labour markets (more on this later), the difficulty of measuring progress towards AGI, and enough other things that I didn't leave the workshop thinking <em>everyone</em> is feeling Existentially Threatened. I certainly am not. </p>
+<p>I'm glad some people are thinking about long term threats (diversity of tactics!), but I am much more worried about the present and near future. AI (rather machine learning) already influences people, in potentially <a href="http://arstechnica.co.uk/security/2016/02/the-nsas-skynet-program-may-be-killing-thousands-of-innocent-people/">irreversibly life-altering ways</a> (to put it mildly), and I fear the technology is becoming integrated into society faster than anyone can measure its harm (see also: vaping). It's also quite easy for us as researchers to pretend our work is apolitical, that we simply explore and create things, blissfully ignorant of negative consequences should our creations be <em>misused</em>. Positive applications presumably motivate much great work, and I don't wish that people <em>stop</em> this work, necessarily. We just need to acknowledge that we cannot <i>un</i>-discover things, and that people who don't understand the limitations of technology may still use it. </p>
+<p>I am meandering to a point: efforts such as the <a href="https://www.stopkillerrobots.org/">Campaign to Stop Killer Robots</a> are good and should be publicised and discussed. Perhaps the <a href="http://www.ucsusa.org/">Union of Concerned Scientists</a> should start thinking about 'algorithmic/autonomous threats' (to human lives, livelihoods and the environment). My ideas here are half-formed, which is all the more reason I'd like to see discussions about such issues at similar workshops. It's certainly important that AIs have ethics, but what about the ethics of AI <em>researchers</em>?</p>
+<h2>Sunday</h2>
+<p>The conference begins in earnest!</p>
+<h3>Steps Toward Robust Artificial Intelligence - Thomas G. Dietterich</h3>
+<p>Quantifying our uncertainty (as probabilistic approaches to AI attempt to do) is about <em>known unknowns</em>: rather, the thing we know we are uncertain about has to appear somewhere in the model. Dietterich drew attention to <em>unknown unknowns</em>: things outside the model, perhaps outside our algorithm's model of the environment.</p>
+<p>One way to tackle this is to expand the model: keep adding terms to account for things <a href="https://xkcd.com/793/">we just thought of</a>. A risk of this is that these terms may introduce errors if we mismodel them. He suggested that we instead build <em>causal models</em>, because causal relations are more likely to be robust, require less data and transfer to new situations more easily.</p>
+<p>Regarding new situations: what happens if at 'test' (deployment, perhaps) time, our algorithm encounters something wildly different to what it has seen before? Perhaps instead of allowing it to perform suboptimally (and worse still, to not know it is performing badly), it should recognise this <em>anomaly</em> and seek assistance. This prompts an open question, "when an agent decides it has entered an anomalous state, what should it do? Is there a general theory of safety?"</p>
+<h3>Session: Learning Preferences and Behaviour</h3>
+<p>I'll not lie: I went to this session because it sounded creepy in a Skynet, Minority Report sort of way.</p>
+<p>My favourite talk of the session was <a href="https://www.aaai.org/Conferences/AAAI/2016/Papers/03Evans12476.pdf">Learning the Preferences of Ignorant, Inconsistent Agents</a> - <em>Owain Evans, Andreas Stuhlmueller and Noah D. Goodman</em>. Roughly, they are concerned with inverse reinforcement learning (IRL) (so learning utility/reward functions) from <em>suboptimal</em> agents, as humans often might be. A specific case they look at is time inconsistency, which is where agents make plans they later abandon. Seemingly any non-exponential discounting implies time-inconsistency, if my notes are correct. See paper for details. And a related project page: <a href="http://agentmodels.org/">agentmodels.org</a></p>
+<p>I spent the early afternoon finishing up my 'plain English explanation' for the work I was presenting at AAAI, see the page <a href="https://corcra.github.io/bf2/">here</a>. I wanted to have something to point my family/friends at when they ask what I work on. Also, making science accessible is good, probably.</p>
+<h3>Session: Word/Phrase Embedding</h3>
+<p>I went to this because I was speaking (briefly) at it. Also, because it is relevant to my interests, so I'll list everything.</p>
+<p>The oral spotlights:</p>
+<ul>
+<li><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/15Sun11783.pdf">Inside Out: Two Jointly Predictive Models for Word Representations and Phrase Representations</a> - <em>Fei Sun, Jiafeng Guo, Yanyan Lan, Jun Xu and Xueqi Cheng</em>: Modification of the word2vec-style skip-gram/continuous-bag-of-words model including morphology, project page: <a href="http://ofey.me/projects/InsideOut/">InsideOut</a>.</li>
+<li><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/15Wick12464.pdf">Minimally-Constrained Multilingual Embeddings via Artificial Code-Switching</a> - <em>Michael Wick, Pallika Kanani and Adam Pocock</em>: using artificial code-switching to help rapidly create multilingual tools, borrowing information across languages essentially.</li>
+<li><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/12Derczynski11779.pdf">Generalised Brown Clustering and Roll-Up Feature Generation</a> - <em>Leon Derczynski and Sean Chester</em>: I am shamefully ignorant about Brown clustering, so a lot of this was lost on me. <a href="https://github.com/sean-chester/generalised-brown">Link to project repository, anyway.</a></li>
+</ul>
+<p><a href="https://github.com/corcra/bf2/tree/master/media"><img src="https://raw.githubusercontent.com/corcra/bf2/master/media/aaai_spotlight_p2.png" class="floatr" style="width: 25vw;"></a></p>
+<p>The poster spotlights:</p>
+<ul>
+<li><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/15Zhang12227.pdf">Building Earth Mover's Distance on Bilingual Word Embeddings for Machine Translation</a> - <em>Meng Zhang, Yang Liu, Huanbo Luan, Maosong Sun, Tatsuya Izuha and Jie Hao</em>: I may have spent this spotlight worrying about my spotlight.</li>
+<li><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/14Hyland12446.pdf">A Generative Model of Words and Relationships from Multiple Sources</a> - <em>Stephanie L. Hyland</em> (that's me) , <em>Theofanis Karaletsos and Gunnar Rätsch</em>: People seemed to like the slides I made for this spotlight, so I put them in the project repository with some other 'media', see <a href="https://github.com/corcra/bf2/tree/master/media">here</a>.</li>
+<li><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/14Goikoetxea11777.pdf">Single or Multiple? Combining Word Representations Independently Learned from Text and WordNet</a> - <em>Josu Goikoetxea, Eneko Agirre and Aitor Soroa</em>: work in a similar vein to mine, in the sense of combining information from 'free text' and 'structured data' (in this case WordNet).</li>
+</ul>
+<h3>From Proteins to Robots: Learning to Optimize with Confidence - Andreas Krause</h3>
+<p>Some interesting and important questions:</p>
+<ul>
+<li>how can an AI system autonomously explore while guaranteeing <em>safety?</em></li>
+<li>how can we do optimised information gathering?</li>
+</ul>
+<p>The former question is quite important for 'learning in the wild', and moving beyond the existing (rather successful) paradigm of test/train/validation that we have in machine learning - what happens when the data the algorithm sees depends on actions it takes?</p>
+<p>The latter is quite interesting for cases where we want to probe some nearly-black-box system, but probing is expensive. One can use the framework of <em>Bayesian Optimisation</em> (Močkus, 1978), and score possible locations (to probe) by their utility in resolving the exploration/exploitation trade-off (via some kind of acquisition function, of which many have been proposed).</p>
+<p>He discussed how one can use Gaussian processes and confidence bounds to help with this, and I'll include a pointer to <a href="http://arxiv.org/abs/0912.3995">Srinivas et al, 2010.</a></p>
+<p>Some more paper pointers:</p>
+<ul>
+<li><a href="http://colt2008.cs.helsinki.fi/papers/80-Dani.pdf">Stochastic Linear Optimization under Bandit Feedback</a> - Varsha Dani, Thomas P. Hayes, Sham M. Kakade</li>
+<li><a href="https://las.inf.ethz.ch/files/gotovos13active-long.pdf">Active Learning for Level Set Estimation</a> - Alkis Gotovos, Nathalie Casati, Gregory Hitz, Andreas Krause</li>
+<li><a href="http://jmlr.org/proceedings/papers/v37/sui15.pdf">Safe Exploration for Optimization with Gaussian Processes</a> - Yanan Sui, Alkis Gotovos, Joel Burdick, Andreas Krause </li>
+<li><a href="https://las.inf.ethz.ch/files/krause11contextual.pdf">Contextual Gaussian Process Bandit Optimization</a> - Andreas Krause, Cheng Soon Ong</li>
+</ul>
+<p>(I am quite fond of Gaussian processes, in case that wasn't already obvious.)</p>
+<p>The conclusions were:</p>
+<ul>
+<li>feedback loops abound in modern ML applications  </li>
+<li>exploration is central but also delicate, and safety is crucial  </li>
+<li>statistical confidence bounds allow navigating exploration-exploitation tradeoffs in a principled manner</li>
+</ul>
+<h3>Poster Session 1</h3>
+<p>I was presenting at this session (see my poster <a href="https://github.com/corcra/bf2/blob/master/media/aaai_poster.pdf">here</a>), so I didn't get to look at anything else. I struggled to eat bean tacos one-handed, and I talked a <em>lot</em>.</p>
+<h2>Monday</h2>
+<h3>Learning Treatment Policies in Mobile Health - Susan Murphy</h3>
+<p>I have Susan Murphy's paper <a href="http://dept.stat.lsa.umich.edu/~samurphy/papers/optimal.pdf">Optimal dynamic treatment regimes</a> on my desk <em>as I write this</em>, so I was pretty excited to see her speaking. And on mHealth, too! Double excitement.</p>
+<p>It turns out that she is also involved in the <a href="http://www.psc.isr.umich.edu/research/project-detail/36366">Heart Steps</a> project with Ambuj Tewari, which I wrote about a little in my <a href="https://corcra.github.io/ml/2015/12/14/NIPS2015.html">NIPS post</a>, so I'm not going to repeat myself.</p>
+<p>The 'treatment optimisation' aspects of mHealth are interesting because it gets into the realm of HCI and psychology. You want to send the patient reminders to do a thing, but you don't want them to become habituated and ignore them, or irritated, or distracted. She mentioned the need to avoid pointlessly reminding the patient to go for a walk while they're <em>already</em> walking, or dangerously alerting them while they're driving. I find it uncomfortable to be reminded that my phone knows when I'm walking/driving, but if the information is being recorded <em>anyway</em>, you might as well use it, right? Insert something about dragnets here.</p>
+<p>But really, mHealth provides some very exciting opportunities to do reinforcement learning. She mentioned non-stationarity as a general challenge, and suggested one could perhaps do transfer learning within a user to tackle it.</p>
+<h3>Session: Active Learning</h3>
+<p><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/17Wray12000.pdf">A POMDP Formulation of Proactive Learning</a> <em>(Kyle Hollins Wray and Shlomo Zilberstein)</em> was interesting. The idea is that the agent must decide which <em>oracle</em> to query to label a particular data point, where the underlying state is the <em>correctness</em> of the current set of labels. I'm not familiar enough with the active learning field to say if this formulation is especially novel, but I liked it, possibly because I like POMDPs.</p>
+<h3>Session: Privacy</h3>
+<p>I experimented with taking no notes during this session to see how it would influence my recall of the material. The trade-off here is that taking notes is a little distracting for me (as well as providing many opportunities to notice Slack/email/etc.), but does provide a lasting record.</p>
+<p><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/10CuencaGrau12253.pdf">Logical Foundations of Privacy-Preserving Publishing of Linked Data</a> <em>(Bernardo Cuenca Grau and Egor V. Kostylev)</em> was strangely fascinating. They were talking about anonymisations of RDF graphs (a data type I'd been working with for my word embedding work). I'm also quite interested in information linkage (see e.g. <a href="https://corcra.github.io/sec/2015/10/27/radical-networks.html">my talk at Radical Networks 2015</a>), so this was up my alley.</p>
+<p>Not sure how the experiment worked out, further data required.</p>
+<h3>Session: Cognitive Systems</h3>
+<p>I was <em>heavily</em> overbooked for this time-slot: I wanted to see Deep Learning 1, Discourse and Question Answering (NLP 6), the RSS talks (for my friend <a href="https://cs.stanford.edu/people/asaxena/papers/sener_saxena_rCRF_rss15.pdf">Ozan's talk</a>), Cognitive Systems (largely for Kazjon's talk - see below), and Machine Learning/Data Mining in Healthcare. Time turners have yet to be invented, unfortunately.</p>
+<p>One of the recurring themes of my AAAI v. NIPS pronouncements was that AAAI has, well... more <strong>AI</strong> stuff. This session was probably the closest I got to that (unless you count the AI and Ethics workshop: I'd consider it meta-AI). People were doing reasoning <em>without</em> probability distributions, using first order logic! One of the presentations included <a href="https://www.youtube.com/watch?v=n9TWwG4SFWQ">this video</a> which I found strangely distressing (to me it is - spoilers! - clearly about domestic abuse).</p>
+<p>The talk I had come to see, <a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/22Grace12456.pdf">Surprise-Triggered Reformulation of Design Goals</a> <em>(Kazjon Grace and Mary Lou Maher)</em>, along with numerous chats with Kazjon throughout the conference made me realise that computational creativity is a <em>thing</em>. OK, full disclosure: I am loosely involved with some <a href="https://twitter.com/hashtag/botally">generative art folks</a> so I did sort of know this, but it hadn't occurred to me that one might use machine learning to represent or understand mental processes surrounding creativity. Neat! The idea here is that the way humans design things is iterative: you have some loosely-formed idea, and through the process of realising it, notice things you hadn't expected (experience <em>surprise</em>, as it were), and modify your idea accordingly. So there is interplay between the internal representation (perhaps this is the design goal) and the external representation (the realisation). So they're interested in understanding <em>surprises</em>: perhaps an element of a design is <em>unusual</em> given other elements of the design, for example. I am going to have to actually read the paper before I elaborate any further on this, but the experiments involved generating weird (but edible) recipes so I'm looking forward to it.</p>
+<p>Very deep question raised by all of this: "can computers be creative?"<br>
+Related: what is creativity? What is art? What are computers?</p>
+<h3>AI's Impact on Labor Markets - Nick Bostrom, Erik Brynjolfsoon, Oren Etzioni, Moshe Vardi</h3>
+<p>I managed to take no notes during this panel (my notes from AAAI actually dry up around here, I hit peak exasperation with keeping my devices charged).</p>
+<p>I have a lot of feelings about AI and labour, but I'm first going to direct attention to the Panel on Near-term Issues from the <a href="https://corcra.github.io/ml/2015/12/14/NIPS2015.html">NIPS Algorithms Among Us Symposium</a>, which had a similar lineup. </p>
+<p>Ultimately, it is hard to solve social and political issues using technology alone, especially if those issues arise as a result of the technology itself. I'd love to automate away all the mind-numbingly boring and unfulfilling jobs humans currently do, but I don't want to remove anyone's livelihood in the process. I don't think it's sufficient to say that society will 'figure it out somehow', especially in countries such as the USA where there is so little protection from poverty and homelessness. That said, I don't know what the solution is (except for some rather radical ideas with limited empirical support for their efficacy), and I don't know if it will, or should, come from the AI research community.</p>
+<h3>Poster Session 2</h3>
+<p>I got slightly side-tracked by ranting about how broken academic publishing is. Shoutout to the <a href="https://www.mozillascience.org/contributorship-badges-a-new-project">Mozilla Contributorship Badges project</a> for trying to deal with the credit-assignment problem, for one.</p>
+<h2>Tuesday</h2>
+<h3>Towards Artificial General Intelligence - Demis Hassabis</h3>
+<p>Google DeepMind are arguably the machine learning success story of the last year, given their <a href="www.nature.com/nature/journal/v518/n7540/full/nature14236.html">Atari Nature paper</a> and <a href="http://deepmind.com/alpha-go.html">AlphaGo</a> result (although the match against Lee Sedol in March will be more interesting). I'm very happy to see computer games featuring so prominently for evaluating and developing AGI: so much that I spent the session after this talk sketching out a project involving <a href="https://en.wikipedia.org/wiki/Dota_2">Dota 2</a>, which I think could be a very interesting application of deep reinforcement learning, if only the metagame would stabilise long enough to allow for acquisition of sufficient training data!</p>
+<p>Anyway, this talk mostly convinced me that DeepMind are doing cool stuff, which I imagine was the intended effect. Hassabis was coming from a pleasantly principled place. They do seem genuinely interested in AGI, rather than for example, beating benchmarks with <em>yet deeper</em> networks. I don't mean to imply that beating benchmarks isn't important, but I think the types of discoveries one makes in the pursuit of larger/more abstract goals are quite important for the intellectual development of a field which can easily become dominated by engineering successes. So yes, the talk had the intended effect.</p>
+<h3>Session: Reinforcement Learning I</h3>
+<p><a href="https://twitter.com/__hylandSL/status/699716539147137024"><img src="/images/aaai_GIRL.png" class="floatl" style="width: 25vw;"></a></p>
+<p><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/19Burchfiel11917.pdf">Distance Minimization for Reward Learning from Scored Trajectories</a> - <em>Benjamin Burchfiel, Carlo Tomasi and Ronald Parr</em>: this is about IRL with suboptimal experts (a popular and interesting topic). In this case, the 'demonstrator' need not be an expert but can operate as a judge, assigning scores to demonstrators. The real-world example would be of a sports coach who's no longer capable of creating expert trajectories (that is, demonstrating optimally) but who can still accurately <em>rate</em> demonstrations from others, if they're available. They also study the case where the judge's scores are noisy and find the algorithm robust.</p>
+<p><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/12Pirotta12482.pdf">Inverse Reinforcement Learning through Policy Gradient Minimization</a> - <em>Matteo Pirotta and Marcello Restelli</em>: more IRL through parametrising the expert's reward function, but here it is no longer necessarily to repeatedly compute optimal policies, so this should be quite efficient. Also, this algorithm is called GIRL.</p>
+<h3>Poster Session 3</h3>
+<p>Some interesting posters (highly non-exhaustive list, but I'm exhausted):</p>
+<ul>
+<li><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/01Luo11843.pdf">Predicting ICU Mortality Risk by Grouping Temporal Trends from a Multivariate Panel of Physiologic Measurements</a> - <em>Yuan Luo, Yu Xin, Rohit Joshi, Leo Celi and Peter Szolovits</em></li>
+<li><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/12Masson11981.pdf">Reinforcement Learning with Parameterized Actions</a> - <em>Warwick Masson, Pravesh Ranchod and George Konidaris</em></li>
+<li><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/15Mueller12195.pdf">Siamese Recurrent Architectures for Learning Sentence Similarity</a> - <em>Jonas Mueller and Aditya Thyagarajan</em></li>
+</ul>
+<h2>Wednesday</h2>
+<h3>Sessions: Reinforcement Learning II &amp; III</h3>
+<ul>
+<li>
+<p><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/12Wirth12247.pdf">Model-Free Preference-Based Reinforcement Learning</a> - <em>Christian Wirth, Johannes Fürnkranz and Gerhard Neumann</em>: I didn't actually see this talk, but the paper has a number of interesting words in its title, so it must be good.  </p>
+</li>
+<li>
+<p><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/12Bellemare12428.pdf">Increasing the Action Gap: New Operators for Reinforcement Learning</a> - <em>Marc G. Bellemare, Georg Ostrovski, Arthur Guez, Philip S. Thomas and Remi Munos</em>: this was a good talk. Basically, during value iteration one applies the Bellman operator to the state-action value function (Q-function). The fixed point of the operator is the optimal Q-function, which induces (greedily) the optional policy. They argue that this operator is <em>inconsistent</em>, in that it suggests <em>nonstationary</em> policies. They resolve this by definining a 'consistent Bellman operator' which preserves local stationarity and show that it increases the <em>action gap</em> (the value difference between the best and second best actions). The action gap is relevant because it can allow for selecting the same (optimal) action even when estimates of the value function are noisy. And a link to the <a href="http://www.arcadelearningenvironment.org/">Arcade Learning Environment</a>.</p>
+</li>
+</ul>
+<p><a href="https://www.instagram.com/p/BBqx2fHDQM6/?taken-by=c0rcr4"><img src="/images/aaai2016_phoenix.jpg" class="floatr" style="width: 25vw;"></a></p>
+<ul>
+<li><a href="http://www.aaai.org/Conferences/AAAI/2016/Papers/12vanHasselt12389.pdf">Deep Reinforcement Learning with Double Q-Learning</a> - <em>Hado van Hasselt, Arthur Guez and David Silver</em>: more from DeepMind. I swear I am not a DeepMind fangirl. Setup here: Q-learning can result in overestimates for some action values. Using DQN (deep Q-learning algorithm) they find that this happens often and impacts performance. They solve the problem by showing how to generalise Double Q-learning to arbitrary function approximation (rather than just tabular Q functions). So this paper seems like a natural progression for Double Q-learning.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Exploration-exploitation trade-offs are everywhere. At this stage in my career, I consider going to conferences a largely exploratory activity: I can learn a little (or more) about a lot of things and get an idea for the kinds of research going on. For the people who spend conferences meeting with their collaborators, it's more about exploitation. <em>(For the appropriate interpretation of that word.)</em> I am a little fatigued of exploration right now - I'm still processing things I saw at NIPS, so I was not well positioned to make the most out of AAAI. I kept wanting to run off and write code in a corner, but who does that? Well, I do that. I do that right now.</p>
+    </div>
+
+    <footer>
+        <div class="tags">
+            <a href="/tag/phoenix.html">phoenix</a>
+            <a href="/tag/conference.html">conference</a>
+            <a href="/tag/aaai.html">aaai</a>
+            <a href="/tag/ethics.html">ethics</a>
+        </div>
+        <div class="pure-g post-footer">
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="pure-g poster-info">
+                    <div class="pure-u-3-4">
+                        <h3 class="author-name"><a href="/author/corcra.html">corcra</a></h3>
+                        <p class="author-description">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+
+    <footer class="index-footer">
+
+        <a href="/" title="apeirotope" class="apeirotope">apeirotope</a>
+        <a href="/biomed/" class="biomed">biomed</a>
+        <a href="/lang/" class="lang">lang</a>
+        <a href="/life/" class="life">life</a>
+        <a href="/making/" class="making">making</a>
+        <a href="/meta/" class="meta">meta</a>
+        <a href="/ml/" class="ml">ml</a>
+        <a href="/sec/" class="sec">sec</a>
+        <a href="/tips/" class="tips">tips</a>
+
+    </footer>
+
+</body>
+</html>

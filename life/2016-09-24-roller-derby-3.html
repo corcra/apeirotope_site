@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="corcra">
+  <meta name="description" content="roller derby week 3 | See week 2 here. Having discovered and then fixed an embarassingly serious bug in my code on Friday, I spent the weekend before the...">
+<!--
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">  
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+--> 
+  <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="../theme/css/font.css" type="text/css" media="all">
+  <link rel="stylesheet" href="../theme/css/all.css"> <!-- font awesome -->
+  <link rel="stylesheet" href="../theme/css/style.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="../theme/js/modernizr.min.js"></script>
+<script type="text/javascript" src="../theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../theme/js/functions.js"></script>
+
+  
+ 
+
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="apeirotope Full Atom Feed" />
+
+<meta name="keywords" content="roller derby, tensorflow">
+
+
+
+  <title>roller derby week 3 | apeirotope</title>
+
+</head>
+
+<body class="home blog">
+  <div>
+    <header class="site-header">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="row">
+            <div class="site-navigation-inner col-sm-12">
+              <div class="navbar-header">
+                <button type="button" class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse navbar-ex1-collapse">
+              <ul id="menu-all-pages" class="nav navbar-nav">
+                <li class="menu-item"><a href="/index.html" >apeiroto.pe
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/pages/about.html" >About
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/categories.html" >Categories
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/tags.html" >Tags
+<i class="fa  fa-lg"></i></a></li>
+                <li class="menu-item"><a href="/archives.html" >Archive
+<i class="fa  fa-lg"></i></a></li>
+              </ul>
+              </div>
+              <div class="social">   
+                <a href="https://apeiroto.pe/feeds/all.atom.xml" title="Feed" >
+<i class="fa fa-rss fa-lg"></i></a>
+                <a href="test" title="Another link" >
+<i class="fa  fa-lg"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav><!-- .site-navigation -->
+
+      <div class="container">
+        <!--<div class="tagline">
+            •
+                <a href="../biomed/" >biomed (2)</a> •
+                <a href="../lang/" >lang (5)</a> •
+                <a href="../life/" >life (7)</a> •
+                <a href="../making/" >making (1)</a> •
+                <a href="../meta/" >meta (7)</a> •
+                <a href="../ml/" >ml (9)</a> •
+                <a href="../sec/" >sec (4)</a> •
+                <a href="../tips/" >tips (9)</a> •
+-->
+            <!--                 <a href="../archives.html" >archives (44)</a>
+ -->
+                <!--</div>-->
+    </div>
+
+  </header><!-- #masthead -->
+  </div>
+    <div id="content" class="site-content">
+      <div class="container main-content-area">
+        <div class="row">
+          <div class="main-content-inner col-sm-12 col-md-12">
+            <div id="primary" class="content-area">
+              <div id="main" class="site-main" role="main">
+                <div class="article-container">
+<article>
+  <div class="blog-item-wrap">
+    <div class="post-inner-content">
+      <header class="entry-header page-header">
+          <span class="cat-item life"><time datetime="2016-09-24 00:00:00+01:00">24 Sep, 2016</time></span>
+        <h1 class="entry-title"><a href="../life/2016-09-24-roller-derby-3.html">roller derby week 3</a></h1>
+      </header><!-- .entry-header -->
+      <div class="entry-content">
+        <p><em>See week 2 <a href="../life/2016-09-15-roller-derby-2.html">here</a>.</em></p>
+<p>Having discovered and then fixed an embarassingly serious bug in my code on Friday, I spent the weekend before the paper deadline at the office rerunning experiments. This is a slow process - for whatever reason, tensorflow takes several minutes to fully initialise the computation graph for my experiments, so there's a decent lag before even first results start coming out. Delays like this are frustrating because they're too long to spend staring at the screen or otherwise doing nothing, yet too short to properly do anything else. Sure, I could practice mindfulness meditation or skim abstracts or read emails or temporarily intensify the attention I am paying to the Hamilton soundtrack constantly playing in the background, but I am a human and I have limits. That weekend, I capitalised on the solitude of a Swiss office on a Sunday to practice some skating. That means putting on all my gear, sitting quietly at my desk typing, and then doing laps up and down the corridor while tensorflow backpropagates through time.</p>
+<p>The corridor is long and smooth and mostly empty, but it's not especially <em>wide</em>, so corners and crossovers and such were out of the question. I skated up and down and bumped gracelessly into walls on either end and then I somehow, just, sort of <em>got</em> stickyfeet. What had been demanding and somehow counterproductive became obvious and natural. What did I figure out? Physical actions are hard to explain, but here goes. It has to do with the distribution of weight/balance on the different wheels. So the situation with basic stickyfeet is that you're keeping both skates on the ground, but propelling yourself forward by moving your legs 'out', while your toes point out a bit (if your toes point in, you go backwards and then die). But it's not just 'move your legs out'. <em>For me</em>, it seems that I need to release some weight from my <em>front</em> wheels to facilitate the forward moving. I asked Natalie and she thought it might be outer/inner wheels, so maybe mileage varies here. Whatever it is, I'm pretty sure the DerbyNoob Stance of attempting to cling to the ground through one's skates is directly in opposition to the kind of subtle balance shifts required to actually do anything beyond scrabble desperately.</p>
+<p>I also did a bit of backwards stickyfeet-skating, because the movement is the same, just reversed somehow. If I thought I would have been skating backwards (for some definition of skating - I am bad at backwards) within a month of putting skates on, I would not have believed.</p>
+<p>In class week three, we did:</p>
+<ul>
+<li>slalom: This is something from skiing, I think? I did cross-country skiing once. When I was growing up, skiing was the domain of private school kids and my family in Chile. In derby it's weaving between cones. Current status: nah, not really, nope. I just can't turn that tightly. I tried weaving between every <em>second</em> cone and that was almost possible. However, bizarrely, later in the class we had to weave between skaters and I could do that. Maybe staring at cones on the ground makes skating harder. Maybe I'm just afraid of cones. </li>
+<li>hopping: I mentioned in <a href="../life/2016-08-28-roller-derby-0.html">week 0</a> that I'm able to jump on the surface at the gym. This is true. You know what happens when I jump on other surfaces? I'd upload a picture of The Bruise but it's on that part of the leg where ass becomes thigh, the part of the leg you can't just display unless you're at a beach or in a sexually liberated society. The forbidden leg zone. Let me give myself some credit here. We had to jump over a small pile of cones (<em>cones</em>, you mysterious bastards). My initial reaction was "no, hell no, jesus no" but then I remembered that all is meaningless and came to peace with the jumble of bones and gristle that would soon constitute my body, and I gave it a go. The first few times I basically just landed too hard on the front wheels and kept going, either hitting my toe stops or falling on my knees. A goldilocks siuation was afoot - that was too much front, so I overcompensated the next time and went too much back. Instead of getting eaten by bears or whatever it is that happened to goldilocks, I landed on my back wheels and fell arms-flailingly backwards onto my thigh. Apparently my left upper thigh is just where I fall. I think I crawled off the track and climbed onto a chair, because the initial impact caused my leg to go various kinds of numb. The resulting bruise was mysteriously round and violently purple, probably about eight cm in diameter. More on this later.</li>
+<li>focus: this was really fun. We assembled a pack (roughly, 'be within arms distance of two people at all times') and then had to skate around while identifying colours and numbers from various teachers/refs who were possibly behind us. Apparently I skate better when I am slightly distracted. I am reminded of a cognitive test I had done some years earlier at the <a href="https://dublin.sciencegallery.com/">Science Gallery</a> where I had to memorise numbers said aloud while also solving a maze puzzle. They tested both tasks independently and then together, and I did better doing both at once. My explanation for this is that while free to either look or listen (i.e. no maze or no numbers) I got distracted by things in the environment (this was happening in a fairly busy room) which broke my concentration, whereas doing both at once required focus but not in a way that excluded my capacity at the other task. Another example: I find it very helpful to draw/doodle/fidget while listening to things, but unfortunately that comes across badly in meetings. </li>
+</ul>
+<p>Another amazing thing during the class was that I did a crossover. How? Well, I just... sort of... did it. I had been trying to first practice crossing my feet over while standing still, or skating on one foot, or whatever. But then one of the teachers was like 'just try it' and I was probably already delirious from all the blood pooling in my thigh so I went for it, and it happened, and everything was beautiful and nothing hurt. And then I fell on my knees, but I think that's because I had no end-game for the move. I assumed I would try and fall, so once I wasn't falling I didn't know where to go, and I fell. So a holy grail (there are many) of skating seemed within reach. I had done it once, and I could - in theory - do it again. So that Sunday, after The Bruise had recovered enough that I could walk mostly normally again, I hit the gym.</p>
+<p>Insert a wheel-switching montage here. Did I mention I ordered bearings for the new wheels, to make switching easier? And I forgot how to do numbers, so I got half as many as I needed? Masters degree in mathematics right here.</p>
+<p>I had been at the gym for about twenty minutes when it happened. I had skated in circles, I had skidded weirdly on stripes on the floor (it's one of those multipurpose courts covered in every sports marking), and then I went for the crossover. And I fell. straight. onto. the. bruise. I wanted to yell at everyone and no one in particular that I already had a bruise there, that I already had a massive, deep bruise, so they would not judge me for crawling back to the bench, trying not to cry. It hurt, it hurt so bad and I felt repulsed and yet obsessed by the idea of pressing on that mess of blood and broken veins. </p>
+<p>I sat on the bench and breathed deliberately, waiting for the waves of pain and dizzying shock to subside, psyching myself up to try <em>again</em> because I was so determined to get this, and then a man appeared. He was not in sports attire. He did not have a smiling face. He communicated in limited English that rollerblading is not permitted in the hall. I asked if there was somewhere else I could go. He said no. I asked again and he said he would get someone who spoke better English. He retrieved one of the basketball players who had been in the hall beside me. The basketball player told me that skating was not allowed. The skates would damage the surface. I asked if there was somewhere else I could practice. He said no. I nodded. I thanked the men. I ripped off my knee pads and elbow pads and wrist pads. I took off my skates. I looked at the pile of gear sitting beside me. I looked at the changing room door on the far side of the hall. I tried to shove my gear into my helmet and it didn't fit, so I put my helmet on and grabbed the shoes by the laces and looped my keys around a finger as I held my bottle under my arm, knee pads cupping the shoulder pads, the skates getting heavier as I left sweaty footprints on the floor.</p>
+      </div><!-- .entry-content -->
+      <br /><br />
+      <div class="article_meta">
+        Tags:
+          <a href="../tag/roller-derby.html">roller derby</a>,          <a href="../tag/tensorflow.html">tensorflow</a>      </div>
+    </div>
+  </div>
+</article><!-- #post-## -->
+                </div>
+              </div><!-- #main -->
+          </div><!-- #primary -->
+        </div>
+      </div><!-- close .row -->
+    </div><!-- close .container -->
+  </div><!-- close .site-content -->
+
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="scroll-to-top" style="display: none;"><i class="fa fa-angle-up"></i></div><!-- .scroll-to-top -->
+    </footer><!-- #colophon -->
+
+  <script type="text/javascript">
+    window.addEventListener('load', function(){
+    if (window.location.pathname != '/' && window.location.pathname != '/index.html'){
+      window.scroll(0, document.getElementById('main').offsetTop);
+    }})
+  </script>
+
+
+</body>
+</html>

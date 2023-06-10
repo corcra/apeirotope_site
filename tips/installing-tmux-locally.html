@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>installing tmux locally</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/theme/css/pure-min.css" />
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css" />
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/atom/tips.xml" type="application/atom+xml" rel="alternate" title="apeirotope Categories Atom Feed" />
+        <link href="/feeds/rss/tips.xml" type="application/rss+xml" rel="alternate" title="apeirotope Categories RSS Feed" />
+
+
+</head>
+<body>
+
+    <div class="navigation pure-menu pure-menu-horizontal">
+        <a href="/" class="pure-menu-heading  pure-menu-link apeirotope">apeirotope</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"></li>
+
+            <li class="pure-menu-item"><a href="/pages/about.html" class="pure-menu-link pages">about</a></li>
+            <li class="pure-menu-item"><a href="/biomed/" class="pure-menu-link biomed">biomed</a></li>
+            <li class="pure-menu-item"><a href="/lang/" class="pure-menu-link lang">lang</a></li>
+            <li class="pure-menu-item"><a href="/life/" class="pure-menu-link life">life</a></li>
+            <li class="pure-menu-item"><a href="/making/" class="pure-menu-link making">making</a></li>
+            <li class="pure-menu-item"><a href="/meta/" class="pure-menu-link meta">meta</a></li>
+            <li class="pure-menu-item"><a href="/ml/" class="pure-menu-link ml">ml</a></li>
+            <li class="pure-menu-item"><a href="/sec/" class="pure-menu-link sec">sec</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="/tips/" class="pure-menu-link tips">tips</a></li>
+        </ul>
+    </div>
+
+
+<div class="page-container">
+    <div class="entry-content">
+        <div class="post-meta pure-g">
+            <div class="pure-u-3-4 meta-data">
+                <a href="/tips/" class="tips">tips</a><br />
+
+                <a class="author" href="/author/corcra.html">corcra</a>
+                &mdash; <abbr title="2016-03-13T00:00:00+00:00">Sun 13 March 2016</abbr>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-header-container">
+        <div class="background-image-container">
+
+            <div class="background-image-small">
+                <div class="title-container">
+                    <h1>installing tmux locally</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="entry-content">
+        <p>I have been setting myself up on a new computing cluster (CentOS 6.7), so I'm in the lovely land of installing things without root. <code>tmux</code> proved a bit frustrating, so here's what I ended up doing:</p>
+<h2>install libevent</h2>
+<p><code>tmux</code> needs this, I didn't have it (you <em>might</em>, so try installing <code>tmux</code> first). Grabbed it from the repository, then:</p>
+<div class="highlight"><pre><span></span>$ git clone https://github.com/libevent/libevent
+$ cd libevent
+$ ./configure --prefix=$HOME
+$ make
+$ make verify       # this failed for me, oh well
+$ make install
+</pre></div>
+
+
+<p>Choose your <code>prefix</code> as you desire.</p>
+<p>Now <code>libevent</code> should be installed in <code>$HOME</code>. Easy y0.</p>
+<h2>install tmux</h2>
+<p>Git all the things.</p>
+<div class="highlight"><pre><span></span>$ git clone https://github.com/tmux/tmux
+$ cd tmux
+$ zsh autogen.sh
+</pre></div>
+
+
+<p>Now for the thing which was <em>required to make everything work</em>, a slightly augmented version of the <a href="http://unix.stackexchange.com/a/17918">winning answer</a> from <a href="https://unix.stackexchange.com/questions/17907/why-cant-gcc-find-libevent-when-building-tmux-from-source">this Stack Exchange post</a>...</p>
+<div class="highlight"><pre><span></span>$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/lib         # possibly optional, see below
+$ DIR=$HOME
+$ ./configure CFLAGS=&quot;-I$DIR/include&quot; LDFLAGS=&quot;-L$DIR/lib&quot; --prefix=$DIR
+</pre></div>
+
+
+<p>Obviously I could have used <code>$HOME</code> there instead of <code>$DIR</code>, but I am staying consistent.</p>
+<div class="highlight"><pre><span></span>$ make
+$ make install
+</pre></div>
+
+
+<p>And everything should Just Work now. This probably shouldn't have posed the difficulty that it did, but I'm a scientist, not a sysadmin.</p>
+<h2>final thing</h2>
+<p>Does the <code>LD_LIBRARY_PATH</code> line seem redundant to you? It seems redundant to me, but I had to add it to my <code>.zshenv</code> (or, try <code>.bashrc</code>) after this to get <code>tmux</code> to continue working. May or may not have been necessary during installation (what with all that redundancy) but I'm not going to uninstall just to check, because tmux is <em>actually working</em> and if I look at it too closely it will <em>definitely break</em>.</p>
+    </div>
+
+    <footer>
+        <div class="tags">
+            <a href="/tag/unix.html">unix</a>
+            <a href="/tag/tmux.html">tmux</a>
+        </div>
+        <div class="pure-g post-footer">
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="pure-g poster-info">
+                    <div class="pure-u-3-4">
+                        <h3 class="author-name"><a href="/author/corcra.html">corcra</a></h3>
+                        <p class="author-description">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+
+    <footer class="index-footer">
+
+        <a href="/" title="apeirotope" class="apeirotope">apeirotope</a>
+        <a href="/biomed/" class="biomed">biomed</a>
+        <a href="/lang/" class="lang">lang</a>
+        <a href="/life/" class="life">life</a>
+        <a href="/making/" class="making">making</a>
+        <a href="/meta/" class="meta">meta</a>
+        <a href="/ml/" class="ml">ml</a>
+        <a href="/sec/" class="sec">sec</a>
+        <a href="/tips/" class="tips">tips</a>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>vortidplenigilo</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/theme/css/pure-min.css" />
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css" />
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/atom/lang.xml" type="application/atom+xml" rel="alternate" title="apeirotope Categories Atom Feed" />
+        <link href="/feeds/rss/lang.xml" type="application/rss+xml" rel="alternate" title="apeirotope Categories RSS Feed" />
+
+
+</head>
+<body>
+
+    <div class="navigation pure-menu pure-menu-horizontal">
+        <a href="/" class="pure-menu-heading  pure-menu-link apeirotope">apeirotope</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"></li>
+
+            <li class="pure-menu-item"><a href="/pages/about.html" class="pure-menu-link pages">about</a></li>
+            <li class="pure-menu-item"><a href="/biomed/" class="pure-menu-link biomed">biomed</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="/lang/" class="pure-menu-link lang">lang</a></li>
+            <li class="pure-menu-item"><a href="/life/" class="pure-menu-link life">life</a></li>
+            <li class="pure-menu-item"><a href="/making/" class="pure-menu-link making">making</a></li>
+            <li class="pure-menu-item"><a href="/meta/" class="pure-menu-link meta">meta</a></li>
+            <li class="pure-menu-item"><a href="/ml/" class="pure-menu-link ml">ml</a></li>
+            <li class="pure-menu-item"><a href="/sec/" class="pure-menu-link sec">sec</a></li>
+            <li class="pure-menu-item"><a href="/tips/" class="pure-menu-link tips">tips</a></li>
+        </ul>
+    </div>
+
+
+<div class="page-container">
+    <div class="entry-content">
+        <div class="post-meta pure-g">
+            <div class="pure-u-3-4 meta-data">
+                <a href="/lang/" class="lang">lang</a><br />
+
+                <a class="author" href="/author/corcra.html">corcra</a>
+                &mdash; <abbr title="2015-11-21T00:00:00+00:00">Sat 21 November 2015</abbr>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-header-container">
+        <div class="background-image-container">
+
+            <div class="background-image-small">
+                <div class="title-container">
+                    <h1>vortidplenigilo</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="entry-content">
+        <p>I have been learning Esperanto lately (see <a href="/lang/esperanto-in-forty-five-seconds.html">here</a>).
+One of the really cool features of the language is <a href="http://en.lernu.net/lernado/gramatiko/konciza/afiksoj.php">affixes</a>.
+Basically, you can create new words using some simple morphological rules, e.g.:</p>
+<blockquote>
+<p>bona (good) → bonulo (good person)<br>
+juna (young) → junulo (young person)</p>
+<p>vorto (word) → vortaro (group of words = dictionary/vocabulary)<br>
+arbo (tree) → arbaro (group of trees = forest)</p>
+</blockquote>
+<p>There are a lot of affixes <em>(at time of writing I have 48 suffixes and 18 
+prefixes)</em>, so I thought it might be useful to write a small program to create 
+new words by  randomly attaching these affixes, then quizzing myself on them.</p>
+<h3><a href="https://github.com/corcra/esperanto">Here it is.</a> (see <a href="https://github.com/corcra/esperanto/blob/master/soup.py"><code>soup.py</code></a>)</h3>
+<p>Usage is like this, for example:</p>
+<div class="highlight"><pre><span></span>&gt; soup(root=u&#39;hundo&#39;, n_p=1, n_s=4, cheat=True)
+hundo   + pseŭdo : false
+        + uj : container for objects described by root
+        + esk : similar to/in the manner of whatever is described by root
+        + eg : augments or strengthens idea shown by root affix(opposite of -et)
+        + ec : quality/characteristic defined by root
+pseŭdohundujeskegeco
+</pre></div>
+
+
+<p><code>n_p</code> is the number of prefixes, <code>n_s</code> suffixes.
+The <code>cheat</code> flag toggles printing the explanation.</p>
+<p>So let's interpret <code>pseŭdohundujeskegeco</code>... this is an abstract noun, the
+quality/characteristic of being a large thing similar to a container for false
+dogs. Or a false quality of being a large thing similar to a container for dogs.
+The order of interpretation is clear for suffixes <em>or</em> prefixes, I'm not sure
+how to resolve it when both are present.</p>
+<p>This is obviously a ridiculous word which no normal person would use, but I
+find generating and interpreting these very entertaining. Another example...</p>
+<p><a href="https://twitter.com/corcra/status/666986280199262209">
+<img src="/images/ballet_eo.png" class="center"></a></p>
+<blockquote>
+<p><code>baledejarinegestro</code>: boss of an enormous, somehow female collection of ballet theatres</p>
+</blockquote>
+<p>I could go on all day. To save myself the effort of doing this, I automated it.
+So now there's a...</p>
+<h3><a href="https://twitter.com/vortidplenigilo">Twitter bot: vortidplenigilo</a></h3>
+<p><code>vortidplenigilo</code>:<br>
+<em>tool to make [something] full of word derivatives</em>, from <code>vorto + ido + plena + igi + ilo</code>.</p>
+<p>Every hour (or so), it tweets a random root (grabbed from a <a href="http://www.esperanto-panorama.net/vortaro/eoen.htm">dictionary</a>)
+with a random number of suffixes and prefixes. Code is in the same repo as
+before, see <a href="https://github.com/corcra/esperanto/blob/master/vortidplenigilo.py"><code>vortidplenigilo.py</code></a>. It chooses how many affixes to use based on
+two draws from Poisson distributions, preferring fewer prefixes. Since it's 
+limited by Twitter's 140 character limit, those with <code>n_s</code> or <code>n_p</code> above 1 tend
+not to make it, unfortunately. Future work will shorten the descriptions so I 
+can squeeze more in. The selection of <em>which</em> affix is not entirely random, 
+however...</p>
+<h3>Making affixes make sense</h3>
+<p>Not every affix can go on every type of word. Some take nouns and output nouns,
+other take nouns and output adjectives, etc. The <a href="http://donh.best.vwh.net/Esperanto/affixes.html">page I grabbed the affixes from</a>
+thankfully lists which <code>transformations</code> are valid, so I encoded that. See <code>affixes.py</code>
+for what is essentially a rendering of aforementioned page into python. The 
+sort of information I recorded is explicit in this class definition:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">affix</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;undefined&#39;</span><span class="p">,</span> 
+                 <span class="n">transformations</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;x&#39;</span><span class="p">},</span> 
+                 <span class="n">explanation</span><span class="o">=</span><span class="s1">&#39;undefined&#39;</span><span class="p">,</span> 
+                 <span class="n">conflicts</span><span class="o">=</span><span class="p">{},</span>
+                 <span class="n">category</span><span class="o">=</span><span class="s1">&#39;undefined&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transformations</span> <span class="o">=</span> <span class="n">transformations</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">explanation</span> <span class="o">=</span> <span class="n">explanation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conflicts</span> <span class="o">=</span> <span class="n">conflicts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">category</span> <span class="o">=</span> <span class="n">category</span>
+</pre></div>
+
+
+<ul>
+<li>
+<p><code>transformations</code> is a dict of valid word-type maps, based on word-endings
+(since Esperanto is so very regular in this regard). In practice these
+dictionaries either have one element (e.g. <code>'a': 'o'</code>) or all (<code>'i':'i' for 'i'
+in valid_word_endings</code>), but in theory one could have an affix which turns
+adjectives into verbs and nouns into adjectives, I suppose. Or something like
+that. My code is future-proofed against complicated Esperanto dystopias. The
+point is that as the compound word is created, I keep track of its current 'word
+type' and make sure I only accept affixes which are compatible with that (and
+then it gets a new type from its new affix, and so on). This all takes place in 
+the <code>make_soup</code> function in <code>soup.py</code>.</p>
+</li>
+<li>
+<p><code>explanation</code> is just the string explaining the affix.</p>
+</li>
+<li>
+<p><code>conflicts</code> is a list of other affixes (by <code>name</code>) which I forbid to co-exist
+in a compound word. The idea is to prevent illogical things like</p>
+</li>
+</ul>
+<blockquote>
+<p><code>arbarero</code>: one of a collection of trees... a tree<br>
+<code>dormigiĝi</code>: to become made to be asleep... to sleep</p>
+</blockquote>
+<p>I'm not entirely convinced I want this, though. For example,</p>
+<blockquote>
+<p><code>hundetego</code>: huge small dog</p>
+</blockquote>
+<p>sort of makes sense. Jury is out on this decision.</p>
+<ul>
+<li>The final attribute, <code>category</code>, records what <em>type</em> of affix it is, and is
+currently not used. Future version could restrict to <em>true affixes</em> or
+<em>adjective suffixes</em> or something. Future proof, yo. Maybe.</li>
+</ul>
+<p>One of its first tweets was beautifully meta:
+<a href="https://twitter.com/vortidplenigilo/status/666914030615928832"><img src="/images/vortidplenigilo.png" class="center"></a></p>
+<blockquote>
+<p><code>morfologiido</code>: offspring of morphology</p>
+</blockquote>
+<hr>
+<h3>Feedback</h3>
+<p>I would gladly welcome comments/ideas on the <a href="https://github.com/corcra/esperanto">GitHub repository</a>,
+be it language suggestions or corrections (since I am still a <em>komencisto</em>), code
+fixes, ideas for automatically producing 'interpretations' of the generated
+words, or anything else. The contents of <a href="https://github.com/corcra/esperanto/blob/master/affixes.py"><code>affixes.py</code></a> might also be useful
+for other people doing things with Esperanto. </p>
+    </div>
+
+    <footer>
+        <div class="tags">
+            <a href="/tag/esperanto.html">esperanto</a>
+            <a href="/tag/twitter.html">twitter</a>
+            <a href="/tag/bot.html">bot</a>
+            <a href="/tag/grammar.html">grammar</a>
+        </div>
+        <div class="pure-g post-footer">
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="pure-g poster-info">
+                    <div class="pure-u-3-4">
+                        <h3 class="author-name"><a href="/author/corcra.html">corcra</a></h3>
+                        <p class="author-description">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+
+    <footer class="index-footer">
+
+        <a href="/" title="apeirotope" class="apeirotope">apeirotope</a>
+        <a href="/biomed/" class="biomed">biomed</a>
+        <a href="/lang/" class="lang">lang</a>
+        <a href="/life/" class="life">life</a>
+        <a href="/making/" class="making">making</a>
+        <a href="/meta/" class="meta">meta</a>
+        <a href="/ml/" class="ml">ml</a>
+        <a href="/sec/" class="sec">sec</a>
+        <a href="/tips/" class="tips">tips</a>
+
+    </footer>
+
+</body>
+</html>

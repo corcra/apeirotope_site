@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>moved to pelican</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/theme/css/pure-min.css" />
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css" />
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/atom/meta.xml" type="application/atom+xml" rel="alternate" title="apeirotope Categories Atom Feed" />
+        <link href="/feeds/rss/meta.xml" type="application/rss+xml" rel="alternate" title="apeirotope Categories RSS Feed" />
+
+
+</head>
+<body>
+
+    <div class="navigation pure-menu pure-menu-horizontal">
+        <a href="/" class="pure-menu-heading  pure-menu-link apeirotope">apeirotope</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"></li>
+
+            <li class="pure-menu-item"><a href="/pages/about.html" class="pure-menu-link pages">about</a></li>
+            <li class="pure-menu-item"><a href="/biomed/" class="pure-menu-link biomed">biomed</a></li>
+            <li class="pure-menu-item"><a href="/lang/" class="pure-menu-link lang">lang</a></li>
+            <li class="pure-menu-item"><a href="/life/" class="pure-menu-link life">life</a></li>
+            <li class="pure-menu-item"><a href="/making/" class="pure-menu-link making">making</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="/meta/" class="pure-menu-link meta">meta</a></li>
+            <li class="pure-menu-item"><a href="/ml/" class="pure-menu-link ml">ml</a></li>
+            <li class="pure-menu-item"><a href="/sec/" class="pure-menu-link sec">sec</a></li>
+            <li class="pure-menu-item"><a href="/tips/" class="pure-menu-link tips">tips</a></li>
+        </ul>
+    </div>
+
+
+<div class="page-container">
+    <div class="entry-content">
+        <div class="post-meta pure-g">
+            <div class="pure-u-3-4 meta-data">
+                <a href="/meta/" class="meta">meta</a><br />
+
+                <a class="author" href="/author/corcra.html">corcra</a>
+                &mdash; <abbr title="2016-05-17T00:00:00+01:00">Tue 17 May 2016</abbr>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-header-container">
+        <div class="background-image-container">
+
+            <div class="background-image-small">
+                <div class="title-container">
+                    <h1>moved to pelican</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="entry-content">
+        <p>Here's what happened:</p>
+<p>My phone started acting up. The lock button turned into a 'maybe turn the phone off' button. The unlock button turned into a 'maybe turn the phone off, <em>or</em> open the camera?' button. I impulse-purchased a new phone, and the old one magically fixed itself. New phone went into a box and my SIM remained micro-sized for a little longer.</p>
+<p>I moved to Switzerland, got a nano SIM, started dual-wielding phones. New phone for new SIM, old phone for everything else. I migrated my apps to new phone (this was surprisingly tricky and there's an entire story in there about me conveniently being in the USA to receive a single text message, but it's a tangent), so I got a new Signal fingerprint. (Then my old phone bricked itself, as they do.)</p>
+<p>I went to put my new Signal fingerprint on my lovely SSLy Github-pages website and noticed it was broken. For how long this was the case I don't know. I think it was a Jekyll update? Who knows. The time had come. I'd been thinking of leaving gh-pages for a while, so this was a good excuse.</p>
+<p>Reasons for wanting to leave:</p>
+<ul>
+<li>using plugins with Jekyll and gh-pages is mildly painful</li>
+<li>the solution, and/or Jekyll itself was <em>increasingly frustratingly slow</em></li>
+<li>gh-pages was too mysterious</li>
+</ul>
+<p>and the new reason:</p>
+<ul>
+<li>website was mysteriously broken</li>
+</ul>
+<p>These are probably fixable, I am sure. Maybe my solution isn't the best, but it's mine. I decided to: <strong>move from Jekyll to <a href="link to pelican">Pelican</a></strong> and <strong>host my site myself</strong>. By the time you're reading this, I'll have achieved that second part. At the time I'm writing it, I haven't even started.</p>
+<p>Why did I do this?</p>
+<ul>
+<li>Jekyll uses Ruby, Pelican uses Python, I know Python a <em>lot</em> better than Ruby</li>
+<li>I never knew Jekyll very well, so there were no temptingly sunk costs to care about</li>
+<li>I saw a site using Pelican during an impressionable moment</li>
+<li>self-hosting (in a VPS, let's not be unreasonable) affords a level of control that I apparently want</li>
+</ul>
+<p>So, this site now looks <em>rather different</em>. That's because another thing happened: I realised that I'm not a front-end web developer, or designer, or basically a person who has touched HTML since she was making Pokémon fansites as a ten-year-old. But I'd also like my site to look good. The old version, [which I should screenshot for posterity] was my first adventure into CSS and was unsurprisingly minimalist. I got some compliments on the design of it (yay!) but it was very hand-crafted and it looked it. </p>
+<p>Now I am balancing competing desires: a site which <strong>looks good</strong> (and works well), and a site which is <strong>my creation</strong>. The solution for now is to use an existing Pelican theme, made by someone who presumably knows a lot more about websiting than I do, and modify it to my own purposes. Apparently the one I picked was intended to look like <a href="...">Medium</a> so now after several hours of mucking around I have a Medium blog with no features. Excellent. </p>
+<p>I'm modifying the theme (see <a href="https://github.com/corcra/medius">my fork</a>) and I will continue to do so until I get distracted by <a href="http://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds/">something else</a>.</p>
+<p><em>This post brought to you by an internet outage at the AirBnB I currently live in.</em></p>
+    </div>
+
+    <footer>
+        <div class="tags">
+            <a href="/tag/webdev.html">webdev</a>
+            <a href="/tag/python.html">python</a>
+            <a href="/tag/pelican.html">pelican</a>
+            <a href="/tag/css.html">css</a>
+            <a href="/tag/phone.html">phone</a>
+            <a href="/tag/so-many-tags-why.html">so many tags why</a>
+            <a href="/tag/ipa.html">IPA</a>
+        </div>
+        <div class="pure-g post-footer">
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="pure-g poster-info">
+                    <div class="pure-u-3-4">
+                        <h3 class="author-name"><a href="/author/corcra.html">corcra</a></h3>
+                        <p class="author-description">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+
+    <footer class="index-footer">
+
+        <a href="/" title="apeirotope" class="apeirotope">apeirotope</a>
+        <a href="/biomed/" class="biomed">biomed</a>
+        <a href="/lang/" class="lang">lang</a>
+        <a href="/life/" class="life">life</a>
+        <a href="/making/" class="making">making</a>
+        <a href="/meta/" class="meta">meta</a>
+        <a href="/ml/" class="ml">ml</a>
+        <a href="/sec/" class="sec">sec</a>
+        <a href="/tips/" class="tips">tips</a>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>setting up pond on yosemite</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/theme/css/pure-min.css" />
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css" />
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/atom/sec.xml" type="application/atom+xml" rel="alternate" title="apeirotope Categories Atom Feed" />
+        <link href="/feeds/rss/sec.xml" type="application/rss+xml" rel="alternate" title="apeirotope Categories RSS Feed" />
+
+
+</head>
+<body>
+
+    <div class="navigation pure-menu pure-menu-horizontal">
+        <a href="/" class="pure-menu-heading  pure-menu-link apeirotope">apeirotope</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"></li>
+
+            <li class="pure-menu-item"><a href="/pages/about.html" class="pure-menu-link pages">about</a></li>
+            <li class="pure-menu-item"><a href="/biomed/" class="pure-menu-link biomed">biomed</a></li>
+            <li class="pure-menu-item"><a href="/lang/" class="pure-menu-link lang">lang</a></li>
+            <li class="pure-menu-item"><a href="/life/" class="pure-menu-link life">life</a></li>
+            <li class="pure-menu-item"><a href="/making/" class="pure-menu-link making">making</a></li>
+            <li class="pure-menu-item"><a href="/meta/" class="pure-menu-link meta">meta</a></li>
+            <li class="pure-menu-item"><a href="/ml/" class="pure-menu-link ml">ml</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="/sec/" class="pure-menu-link sec">sec</a></li>
+            <li class="pure-menu-item"><a href="/tips/" class="pure-menu-link tips">tips</a></li>
+        </ul>
+    </div>
+
+
+<div class="page-container">
+    <div class="entry-content">
+        <div class="post-meta pure-g">
+            <div class="pure-u-3-4 meta-data">
+                <a href="/sec/" class="sec">sec</a><br />
+
+                <a class="author" href="/author/corcra.html">corcra</a>
+                &mdash; <abbr title="2015-01-30T00:00:00+00:00">Fri 30 January 2015</abbr>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-header-container">
+        <div class="background-image-container">
+
+            <div class="background-image-small">
+                <div class="title-container">
+                    <h1>setting up pond on yosemite</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="entry-content">
+        <p>This is about <a href="https://pond.imperialviolet.org/">Pond</a>. If you have no idea what that is but don't want to click on the link, I shall quote directly;</p>
+<p><em>Pond is not email. Pond is forward secure, asynchronous messaging for the discerning. Pond messages are asynchronous, but are not a record; they expire automatically a week after they are received. Pond seeks to prevent leaking traffic information against everyone except a global passive attacker.</em></p>
+<p>If that seems interesting, go back and click on the link. Otherwise get out while you still can.</p>
+<p>My goal here is to get Pond running. I unfortunately don't have any Pond secrets to hand right now, so testing its messaging functionality will have to come later. The instructions on the main Pond page for OSX are fairly good, so this is just a slight elaboration/modification on those. This is going to look longer than it should because I haven't solved formatting code snippets on this blog yet.</p>
+<h2>System</h2>
+<p>I'm using a ~2012 Macbook Pro 13inch Retina blah blah, running OSX Yosemite (version 10.10.1). It's a fairly recent install, so I haven't had time to ruin everything yet. That said, I have <a href="https://www.torproject.org/projects/torbrowser.html.en">Tor Browser</a> installed and running. Obviously.</p>
+<h2>tl;dr</h2>
+<p>GUI is b0rked, CLI seems to work. From <a href="https://pond.imperialviolet.org/">the site</a>, for a CLI-version:</p>
+<div class="highlight"><pre><span></span>&gt; brew install go
+&gt; <span class="nb">export</span> <span class="nv">GOPATH</span><span class="o">=</span><span class="nv">$HOME</span>/gopkg
+&gt; <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$GOPATH</span>/bin
+&gt; go get -tags nogui github.com/agl/pond/client
+&gt; <span class="nb">alias</span> <span class="nv">pond</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$GOPATH</span><span class="s2">/bin/client&quot;</span>
+</pre></div>
+
+
+<p>But now for <em>how I spent my Friday evening:</em></p>
+<h2>Dependencies</h2>
+<h3>Go</h3>
+<div class="highlight"><pre><span></span>&gt; brew install go
+</pre></div>
+
+
+<p>Painless success, version: go1.4.1 darwin/amd64. Then make a folder for <a href="http://golang.org/doc/code.html#GOPATH">Go packages</a>,</p>
+<div class="highlight"><pre><span></span>&gt; mkdir <span class="nv">$HOME</span>/gopkg
+</pre></div>
+
+
+<p>Export some environment variables to keep Go happy, (I also added these to my .bash_profile)</p>
+<div class="highlight"><pre><span></span>&gt; <span class="nb">export</span> <span class="nv">GOPATH</span><span class="o">=</span><span class="nv">$HOME</span>/gopkg
+&gt; <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$GOPATH</span>/bin
+</pre></div>
+
+
+<p>One more for good measure,</p>
+<div class="highlight"><pre><span></span>&gt; <span class="nb">export</span> <span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span>/opt/X11/lib/pkgconfig:/usr/local/lib/pkgconfig:<span class="nv">$PKG_CONFIG_PATH</span>
+</pre></div>
+
+
+<h3>gtk+3</h3>
+<p><em>(These other dependencies are probably a bit pointless until I figure out how to get the GUI to reliably work, but for the sake of completeness they are here.)</em></p>
+<div class="highlight"><pre><span></span>&gt; brew install gtk+3
+</pre></div>
+
+
+<p>It complains that it needs XQuartz 2.5, so that is resolved (as it suggests) with</p>
+<div class="highlight"><pre><span></span>&gt; brew install Caskroom/cask/xquartz
+</pre></div>
+
+
+<h3>gtkspell3</h3>
+<div class="highlight"><pre><span></span>&gt; brew install gtkspell3
+</pre></div>
+
+
+<p>This installed a whole pile of dependencies (including, concerningly, Python: the number of Pythons I have installed grows by the day), and my laptop crashed shortly after they finished, but I think that was random.</p>
+<h3>mercurial</h3>
+<div class="highlight"><pre><span></span>&gt; brew install mercurial
+</pre></div>
+
+
+<h2>Pond</h2>
+<div class="highlight"><pre><span></span>&gt; go get github.com/agl/pond/client
+</pre></div>
+
+
+<p>It produces lots of warnings, but seemingly no errors. And who reads warnings? Since it's already in my path (see above), running it is simply (I think this could do with being more descriptive):</p>
+<div class="highlight"><pre><span></span>&gt; client
+</pre></div>
+
+
+<p>Disaster strikes.</p>
+<div class="highlight"><pre><span></span>&gt;Dynamic session lookup supported but failed: launchd did not provide a socket path, verify that org.freedesktop.dbus-session.plist is loaded!
+</pre></div>
+
+
+<p>and</p>
+<div class="highlight"><pre><span></span>&gt;<span class="o">(</span>&lt;unknown&gt;:917<span class="o">)</span>: GdkPixbuf-WARNING **: Cannot open pixbuf loader module file <span class="s1">&#39;[$GOPATH]/bin/../lib/gdk-pixbuf-2.0/2.10.0/loaders.cache&#39;</span>: No such file or directory
+
+&gt;This likely means that your installation is broken.
+&gt;Try running the <span class="nb">command</span> gdk-pixbuf-query-loaders &gt; <span class="o">[</span><span class="nv">$GOPATH</span><span class="o">]</span>/bin/../lib/gdk-pixbuf-2.0/2.10.0/loaders.cache to make things work again <span class="k">for</span> the <span class="nb">time</span> being.
+</pre></div>
+
+
+<p>(I'm using rectangular brackets to denote that I manually replaced its output with the logical meaning, so you don't have to look at my home directory path :)</p>
+<h3>dbus</h3>
+<p>First problem is where in the hell is <code>org.freedesktop.dbus-session.plist</code>?</p>
+<p>(it's not in in /Library/LaunchAgents or /Library/LaunchDaemons, or ~/Library/LaunchAgents)</p>
+<p>The answer, if you <code>brew reinstall dbus</code> to find out (or use some other kind of sorcery) is:</p>
+<p>To have launchd start d-bus at login:</p>
+<div class="highlight"><pre><span></span>ln -sfv /usr/local/opt/d-bus/*.plist ~/Library/LaunchAgents
+</pre></div>
+
+
+<p>That's where it is.</p>
+<p>Then to load d-bus now:</p>
+<div class="highlight"><pre><span></span>launchctl load ~/Library/LaunchAgents/org.freedesktop.dbus-session.plist
+</pre></div>
+
+
+<h3>pixbuf</h3>
+<p>So the folder it's expecting (<code>lib/gdk-pixbuf...</code>) is certainly not found at <code>[$GOPATH]/bin/...</code>, since that's just <code>$GOPATH</code>.</p>
+<p>By running <code>gdk-pixbuf-query-loaders</code> I can see it's probably expecting this path or something:</p>
+<div class="highlight"><pre><span></span>/usr/local/Cellar/gdk-pixbuf/2.31.2/lib/gdk-pixbuf-2.0/2.10.0/loaders/
+</pre></div>
+
+
+<p>Which would only be appropriate if <code>$GOPATH=/usr/local/Cellar/gdk-pixbuf/2.31.2/</code>, which it is not by construction. I can get around this as it suggests by creating a bunch of empty folders and then running</p>
+<div class="highlight"><pre><span></span>&gt; gdk-pixbuf-query-loaders &gt; <span class="nv">$GOPATH</span>/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+</pre></div>
+
+
+<p>Which gets rid of the warnings. Now when I run</p>
+<div class="highlight"><pre><span></span>&gt; client
+</pre></div>
+
+
+<p>I get no (immediate) errors! Success! Maybe!</p>
+<h2>GUI-sadness</h2>
+<p>Empowered by the graphics, I set a password and create an account on the default server.</p>
+<p>. . . and it <em>panics</em>. That is to say, the GUI vanishes (although X11 is still running) and I get a <a href="https://corcra.github.io/assets/pond-panic.txt">lot of errors</a>. Not only that, but now if I try to run it again,</p>
+<div class="highlight"><pre><span></span>&gt; client
+    Jan <span class="m">30</span> <span class="m">23</span>:46:58: Fatal error: state file is too small to be valid
+</pre></div>
+
+
+<p>Shit.</p>
+<p>Maybe I just need the gentle embrace of the command line?</p>
+<div class="highlight"><pre><span></span>&gt; client -cli<span class="o">=</span><span class="nb">true</span>
+
+&gt;&gt;&gt; Pond...
+&gt;&gt;&gt; &gt;&gt;&gt; state file is too small to be valid
+</pre></div>
+
+
+<p>Abort, abort!</p>
+<div class="highlight"><pre><span></span>&gt; rm <span class="nv">$HOME</span>/.pond
+&gt; client -cli<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+
+
+<p>And now, everything is beautiful and nothing hurts.</p>
+<p><img src="https://corcra.github.io/assets/pond_screenshot.png" style="width: 40vw; border:5px solid #000000;"/></p>
+    </div>
+
+    <footer>
+        <div class="tags">
+            <a href="/tag/osx.html">osx</a>
+            <a href="/tag/golang.html">golang</a>
+            <a href="/tag/pond.html">pond</a>
+            <a href="/tag/anonymity.html">anonymity</a>
+        </div>
+        <div class="pure-g post-footer">
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="pure-g poster-info">
+                    <div class="pure-u-3-4">
+                        <h3 class="author-name"><a href="/author/corcra.html">corcra</a></h3>
+                        <p class="author-description">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+
+    <footer class="index-footer">
+
+        <a href="/" title="apeirotope" class="apeirotope">apeirotope</a>
+        <a href="/biomed/" class="biomed">biomed</a>
+        <a href="/lang/" class="lang">lang</a>
+        <a href="/life/" class="life">life</a>
+        <a href="/making/" class="making">making</a>
+        <a href="/meta/" class="meta">meta</a>
+        <a href="/ml/" class="ml">ml</a>
+        <a href="/sec/" class="sec">sec</a>
+        <a href="/tips/" class="tips">tips</a>
+
+    </footer>
+
+</body>
+</html>
