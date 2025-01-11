@@ -125,16 +125,14 @@ the Evernote URI. Zotero gracefully handles this, you just right-click on the
 reference and Add Attachment → Attach Link to URI...</p>
 <p>The hard part is then <em>getting</em> the URI. In (my currently-up-to-date version of)
 Evernote, the Copy Note Link gives you a HTTP(S) link:</p>
-<div class="highlight"><pre><span></span><span class="c">https://www.evernote.com/shard/asdfgh</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>https://www.evernote.com/shard/asdfgh
+</code></pre></div>
 
 <p><em>This converts to the Evernote URI link if you paste it <strong>inside</strong> Evernote,
 which is pretty cool I guess but also not useful here.</em></p>
 <p>I use the Evernote client and I don't want this, I want the URI like:</p>
-<div class="highlight"><pre><span></span><span class="c">evernote:///view/adfgh</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>evernote:///view/adfgh
+</code></pre></div>
 
 <p>This is (for now, probably) known as <strong>Classic</strong> Note Link in Evernote, and you
 get it by holding down <code>Alt</code> on the menu after right-clicking on the note.
@@ -145,14 +143,12 @@ Zotero and it'll open the note (in my Evernote client) with my notes on it.</p>
 <p>Now, we want to get the Zotero URI (to the reference) and include it in an
 Evernote note. The 'normal' URI you'd get from Zotero (using Item URI as your
 Default Output Format under Preferences → Export → Quick Copy) is:</p>
-<div class="highlight"><pre><span></span><span class="c">http://zotero.org/users/local/asdfgh/items/asdfgh</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>http://zotero.org/users/local/asdfgh/items/asdfgh
+</code></pre></div>
 
 <p>What I really want is the non-HTTP URI, e.g.</p>
-<div class="highlight"><pre><span></span><span class="c">zotero://select/items/asdfgh</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>zotero://select/items/asdfgh
+</code></pre></div>
 
 <p><em>However</em>, if you paste that into Evernote it doesn't recognise it as a URI
 or anything that should be linkish. It just sits there, flat and idle and useless. <em>This is pretty annoying given it can
@@ -162,12 +158,12 @@ do this for Evernote URIs, as above, but whatever...</em></p>
 Connecting Zotero and Evernote</a> and <a href="http://blog.cdhq.de/archive/1396">RTF-Links from Zotero in Evernote</a>. This post isn't just a link to that blog because I fear link rot.</em></p>
 <p>The workaround is pretty gross but bear with me. First, you modify Zotero
 so that its Quick Copy gives you a HTML-formatted URI, e.g.</p>
-<div class="highlight"><pre><span></span><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;zotero://select/items/asdfgh&quot;</span><span class="nt">&gt;</span>Paper Title<span class="nt">&lt;/a&gt;&lt;br</span> <span class="nt">/&gt;</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;a</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;zotero://select/items/asdfgh&quot;</span><span class="nt">&gt;</span>Paper<span class="w"> </span>Title<span class="nt">&lt;/a&gt;&lt;br</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
 
 <p>then convert the HTML in your clipboard to RTF, which can be pasted into Evernote and will act 'as desired'. The intermediate RTF representation looks something like this, btw, so clearly there's scope for further customisation:</p>
-<div class="highlight"><pre><span></span>{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf130  
+<div class="highlight"><pre><span></span><code>:::text
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf130  
 {\fonttbl\f0\froman\fcharset0 Times-Roman;}  
 {\colortbl;\red255\green255\blue255;\red0\green0\blue233;\red0\green0\blue0;}  
 \deftab720  
@@ -177,8 +173,7 @@ so that its Quick Copy gives you a HTML-formatted URI, e.g.</p>
 \ul \ulc2 \outl0\strokewidth0 \strokec2 Paper Title}}  
 \f0\fs24 \cf3 \expnd0\expndtw0\kerning0  
 \outl0\strokewidth0 \strokec3 \  
-</pre></div>
-
+</code></pre></div>
 
 <p>Ew. But you never need to look at this.</p>
 <h3>Specific Steps</h3>

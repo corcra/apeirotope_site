@@ -122,15 +122,15 @@ prefixes)</em>, so I thought it might be useful to write a small program to crea
 new words by  randomly attaching these affixes, then quizzing myself on them.</p>
 <h3><a href="https://github.com/corcra/esperanto">Here it is.</a> (see <a href="https://github.com/corcra/esperanto/blob/master/soup.py"><code>soup.py</code></a>)</h3>
 <p>Usage is like this, for example:</p>
-<div class="highlight"><pre><span></span>&gt; soup(root=u&#39;hundo&#39;, n_p=1, n_s=4, cheat=True)
+<div class="highlight"><pre><span></span><code>:::text
+<span class="k">&gt; </span><span class="ge">soup(root=u&#39;hundo&#39;, n_p=1, n_s=4, cheat=True)</span>
 hundo   + pseŭdo : false
         + uj : container for objects described by root
         + esk : similar to/in the manner of whatever is described by root
         + eg : augments or strengthens idea shown by root affix(opposite of -et)
         + ec : quality/characteristic defined by root
 pseŭdohundujeskegeco
-</pre></div>
-
+</code></pre></div>
 
 <p><code>n_p</code> is the number of prefixes, <code>n_s</code> suffixes.
 The <code>cheat</code> flag toggles printing the explanation.</p>
@@ -165,19 +165,19 @@ other take nouns and output adjectives, etc. The <a href="http://donh.best.vwh.n
 thankfully lists which <code>transformations</code> are valid, so I encoded that. See <code>affixes.py</code>
 for what is essentially a rendering of aforementioned page into python. The 
 sort of information I recorded is explicit in this class definition:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">affix</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;undefined&#39;</span><span class="p">,</span> 
-                 <span class="n">transformations</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;x&#39;</span><span class="p">},</span> 
-                 <span class="n">explanation</span><span class="o">=</span><span class="s1">&#39;undefined&#39;</span><span class="p">,</span> 
-                 <span class="n">conflicts</span><span class="o">=</span><span class="p">{},</span>
-                 <span class="n">category</span><span class="o">=</span><span class="s1">&#39;undefined&#39;</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">transformations</span> <span class="o">=</span> <span class="n">transformations</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">explanation</span> <span class="o">=</span> <span class="n">explanation</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">conflicts</span> <span class="o">=</span> <span class="n">conflicts</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">category</span> <span class="o">=</span> <span class="n">category</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>:::python
+class affix(object):
+    def __init__(self, name=u&#39;undefined&#39;, 
+                 transformations={&#39;x&#39;: &#39;x&#39;}, 
+                 explanation=&#39;undefined&#39;, 
+                 conflicts={},
+                 category=&#39;undefined&#39;):
+        self.name = name
+        self.transformations = transformations
+        self.explanation = explanation
+        self.conflicts = conflicts
+        self.category = category
+</code></pre></div>
 
 <ul>
 <li>

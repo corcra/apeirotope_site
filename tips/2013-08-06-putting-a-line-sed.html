@@ -111,12 +111,11 @@
         <p><em>"How can I cut a line from a file and paste the rest into a file whose title is the line I just cut?"</em></p>
 <p>If you find yourself asking yourself this question with any degree of regularity, you may have issues. Luckily for you, the help you so desperately need is at hand. It is not the help you want, but it is the help you deserve. For added complication let's assume you want to do this for every line in the file.</p>
 <p>Solution (bash):</p>
-<div class="highlight"><pre><span></span><span class="err">    &gt; for i in $(seq `wc -l &lt; FILENAME`)</span>
-<span class="err">    &gt; do</span>
-<span class="err">    &gt;   sed &#39;&#39;$i&#39;d&#39; FILENAME &gt; something_else_maybe-`sed -n &#39;&#39;$i&#39;p&#39; FILENAME`</span>
-<span class="err">    &gt; done</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="k">    &gt; </span><span class="ge">for i in $(seq `wc -l &lt; FILENAME`)</span>
+<span class="k">    &gt; </span><span class="ge">do</span>
+<span class="k">    &gt; </span><span class="ge">  sed &#39;&#39;$i&#39;d&#39; FILENAME &gt; something_else_maybe-`sed -n &#39;&#39;$i&#39;p&#39; FILENAME`</span>
+<span class="k">    &gt; </span><span class="ge">done</span>
+</code></pre></div>
 
 <p>What is going on here is the following:</p>
 <ul>
