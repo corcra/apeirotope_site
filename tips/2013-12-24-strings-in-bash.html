@@ -109,72 +109,61 @@
       </header><!-- .entry-header -->
       <div class="entry-content">
         <p>I try to record useful one-liners for future reference. I forgot to write down what this one does:</p>
-<div class="highlight"><pre><span></span>    mv <span class="nv">$f</span> <span class="cp">${</span><span class="n">f</span><span class="c1">##START</span><span class="cp">}</span>.<span class="cp">${</span><span class="n">f</span><span class="o">%%</span><span class="err">$</span><span class="p">{</span><span class="n">f</span><span class="c1">##START</span><span class="cp">}</span>}
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="w">    </span>mv<span class="w"> </span><span class="nv">$f</span><span class="w"> </span><span class="cp">${</span><span class="n">f</span><span class="c1">##START</span><span class="cp">}</span>.<span class="cp">${</span><span class="n">f</span><span class="o">%%</span><span class="err">$</span><span class="p">{</span><span class="n">f</span><span class="c1">##START</span><span class="cp">}</span>}
+</code></pre></div>
 
 <p>This awkwardly-timed (time-zone troubles) blog post is atonement for my carelessness. Like all one-liners it looks complicated but is pretty simple. It does this:</p>
-<div class="highlight"><pre><span></span>    &gt; f=STARTonetwothree 
-    &gt; echo <span class="cp">${</span><span class="n">f</span><span class="c1">##START</span><span class="cp">}</span>.<span class="cp">${</span><span class="n">f</span><span class="o">%%</span><span class="err">$</span><span class="p">{</span><span class="n">f</span><span class="c1">##START</span><span class="cp">}</span>}
-    onetwothree.START
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="w">    </span>&gt;<span class="w"> </span>f=STARTonetwothree<span class="w"> </span>
+<span class="w">    </span>&gt;<span class="w"> </span>echo<span class="w"> </span><span class="cp">${</span><span class="n">f</span><span class="c1">##START</span><span class="cp">}</span>.<span class="cp">${</span><span class="n">f</span><span class="o">%%</span><span class="err">$</span><span class="p">{</span><span class="n">f</span><span class="c1">##START</span><span class="cp">}</span>}
+<span class="w">    </span>onetwothree.START
+</code></pre></div>
 
 <p>The <code>${...}</code> construction is brace expansion, which allows us to generate strings. In stages we have</p>
-<div class="highlight"><pre><span></span>    <span class="cp">${</span><span class="n">f</span><span class="c1">##START</span><span class="cp">}</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="cp">${</span><span class="n">f</span><span class="c1">##START</span><span class="cp">}</span>
+</code></pre></div>
 
 <p>This takes the string <code>f</code> and deletes the substring <code>START</code> from the beginning. In fact, it deletes the longest match to the substring, which makes sense when you allow your substring to be something interesting including wildcards (which may have numerous matches). A single <code>#</code> would delete the shortest match: try</p>
-<div class="highlight"><pre><span></span>    &gt; echo <span class="cp">${</span><span class="n">f</span><span class="c1">#S*T</span><span class="cp">}</span>
-    ARTonetwothree
+<div class="highlight"><pre><span></span><code><span class="w">    </span>&gt;<span class="w"> </span>echo<span class="w"> </span><span class="cp">${</span><span class="n">f</span><span class="c1">#S*T</span><span class="cp">}</span>
+<span class="w">    </span>ARTonetwothree
 
-    &gt; echo <span class="cp">${</span><span class="n">f</span><span class="c1">##S*T</span><span class="cp">}</span>
-    onetwothree
-</pre></div>
-
+<span class="w">    </span>&gt;<span class="w"> </span>echo<span class="w"> </span><span class="cp">${</span><span class="n">f</span><span class="c1">##S*T</span><span class="cp">}</span>
+<span class="w">    </span>onetwothree
+</code></pre></div>
 
 <p>To delete the substring from the end of the string, we would use <code>%%</code> or <code>%</code>, where once again two means longest and one means shortest.</p>
 <p>So my horrible code fragment creates <code>f'</code> by removing <code>START</code> from the start of <code>f</code>, then creates <code>f''</code> by removing <code>f'</code> from the end of<code>f</code>, combines these with a period in the middle and renames the file named <code>f</code> with this new string-aberration. An easier way to achieve the same result would have been</p>
-<div class="highlight"><pre><span></span>   mv <span class="nv">$f</span> <span class="cp">${</span><span class="n">f</span><span class="c1">##START</span><span class="cp">}</span>.START
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="w">   </span>mv<span class="w"> </span><span class="nv">$f</span><span class="w"> </span><span class="cp">${</span><span class="n">f</span><span class="c1">##START</span><span class="cp">}</span>.START
+</code></pre></div>
 
 <p>but this does not generalise to the case of an arbitrary substring.</p>
 <p>The obvious application of this is removing/modifying file extensions. To rename all <code>.tgz</code> files as <code>.tar.gz</code>, for example:</p>
-<div class="highlight"><pre><span></span>    for f in *.tgz do mv <span class="nv">$f</span> <span class="cp">${</span><span class="n">f</span><span class="o">%%</span><span class="n">tgz</span><span class="cp">}</span>tar.gz done
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="w">    </span>for<span class="w"> </span>f<span class="w"> </span>in<span class="w"> </span>*.tgz<span class="w"> </span>do<span class="w"> </span>mv<span class="w"> </span><span class="nv">$f</span><span class="w"> </span><span class="cp">${</span><span class="n">f</span><span class="o">%%</span><span class="n">tgz</span><span class="cp">}</span>tar.gz<span class="w"> </span>done
+</code></pre></div>
 
 <p>If the offending substring is not at the beginning or end, you could use replacement:</p>
-<div class="highlight"><pre><span></span>    &gt; f=all_workERROR_and_ERRORno_playERROR
-    &gt; echo <span class="cp">${</span><span class="n">f</span><span class="o">//</span><span class="n">ERROR</span><span class="o">/</span><span class="cp">}</span>
-    all_work_and_no_play
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="w">    </span>&gt;<span class="w"> </span>f=all_workERROR_and_ERRORno_playERROR
+<span class="w">    </span>&gt;<span class="w"> </span>echo<span class="w"> </span><span class="cp">${</span><span class="n">f</span><span class="o">//</span><span class="n">ERROR</span><span class="o">/</span><span class="cp">}</span>
+<span class="w">    </span>all_work_and_no_play
+</code></pre></div>
 
 <p>The syntax is <code>${string/substring/newsubstring}</code>, where a double first slash (as in previous example) replaces all instances of substring. We can also do partial matching</p>
-<div class="highlight"><pre><span></span>    &gt; echo <span class="cp">${</span><span class="n">f</span><span class="o">/</span><span class="n">E</span><span class="o">*</span><span class="n">R</span><span class="o">/</span><span class="cp">}</span>
-    all_work
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="w">    </span>&gt;<span class="w"> </span>echo<span class="w"> </span><span class="cp">${</span><span class="n">f</span><span class="o">/</span><span class="n">E</span><span class="o">*</span><span class="n">R</span><span class="o">/</span><span class="cp">}</span>
+<span class="w">    </span>all_work
+</code></pre></div>
 
 <p>and of course replacement with something other than an empty string:</p>
-<div class="highlight"><pre><span></span>    &gt; fp=<span class="cp">${</span><span class="n">f</span><span class="o">/</span><span class="n">E</span><span class="o">*</span><span class="n">R</span><span class="o">/</span><span class="n">_and_all_play</span><span class="cp">}</span> 
-    &gt; echo <span class="cp">${</span><span class="n">fp</span><span class="o">/</span><span class="nb">all</span><span class="o">/</span><span class="n">no</span><span class="cp">}</span>
-    no_work_and_all_play
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="w">    </span>&gt;<span class="w"> </span>fp=<span class="cp">${</span><span class="n">f</span><span class="o">/</span><span class="n">E</span><span class="o">*</span><span class="n">R</span><span class="o">/</span><span class="n">_and_all_play</span><span class="cp">}</span><span class="w"> </span>
+<span class="w">    </span>&gt;<span class="w"> </span>echo<span class="w"> </span><span class="cp">${</span><span class="n">fp</span><span class="o">/</span><span class="nb">all</span><span class="o">/</span><span class="n">no</span><span class="cp">}</span>
+<span class="w">    </span>no_work_and_all_play
+</code></pre></div>
 
 <p>So if you have a bunch of messy gzipped files like</p>
-<div class="highlight"><pre><span></span><span class="err">    data.gz.modified.gz.why.gz.did.gz.i.do.this.gz</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nv">data</span>.<span class="nv">gz</span>.<span class="nv">modified</span>.<span class="nv">gz</span>.<span class="nv">why</span>.<span class="nv">gz</span>.<span class="nv">did</span>.<span class="nv">gz</span>.<span class="nv">i</span>.<span class="k">do</span>.<span class="nv">this</span>.<span class="nv">gz</span>
+</code></pre></div>
 
 <p>the solution is</p>
-<div class="highlight"><pre><span></span>    for f in *.gz do mv <span class="nv">$f</span> <span class="cp">${</span><span class="n">f</span><span class="o">//.</span><span class="n">gz</span><span class="o">/</span><span class="cp">}</span>.gz done
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="w">    </span>for<span class="w"> </span>f<span class="w"> </span>in<span class="w"> </span>*.gz<span class="w"> </span>do<span class="w"> </span>mv<span class="w"> </span><span class="nv">$f</span><span class="w"> </span><span class="cp">${</span><span class="n">f</span><span class="o">//.</span><span class="n">gz</span><span class="o">/</span><span class="cp">}</span>.gz<span class="w"> </span>done
+</code></pre></div>
 
 <p>and to wonder how you got into that mess in the first place.</p>
       </div><!-- .entry-content -->

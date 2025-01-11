@@ -43,15 +43,15 @@ prefixes)&lt;/em&gt;, so I thought it might be useful to write a small program t
 new words by  randomly attaching these affixes, then quizzing myself on them.&lt;/p&gt;
 &lt;h3&gt;&lt;a href="https://github.com/corcra/esperanto"&gt;Here it is.&lt;/a&gt; (see &lt;a href="https://github.com/corcra/esperanto/blob/master/soup.py"&gt;&lt;code&gt;soup.py&lt;/code&gt;&lt;/a&gt;)&lt;/h3&gt;
 &lt;p&gt;Usage is like this, for example:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; soup(root=u&amp;#39;hundo&amp;#39;, n_p=1, n_s=4, cheat=True)
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;:::text
+&lt;span class="k"&gt;&amp;gt; &lt;/span&gt;&lt;span class="ge"&gt;soup(root=u&amp;#39;hundo&amp;#39;, n_p=1, n_s=4, cheat=True)&lt;/span&gt;
 hundo   + pseŭdo : false
         + uj : container for objects described by root
         + esk : similar to/in the manner of whatever is described by root
         + eg : augments or strengthens idea shown by root affix(opposite of -et)
         + ec : quality/characteristic defined by root
 pseŭdohundujeskegeco
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;code&gt;n_p&lt;/code&gt; is the number of prefixes, &lt;code&gt;n_s&lt;/code&gt; suffixes.
 The &lt;code&gt;cheat&lt;/code&gt; flag toggles printing the explanation.&lt;/p&gt;
@@ -86,19 +86,19 @@ other take nouns and output adjectives, etc. The &lt;a href="http://donh.best.vw
 thankfully lists which &lt;code&gt;transformations&lt;/code&gt; are valid, so I encoded that. See &lt;code&gt;affixes.py&lt;/code&gt;
 for what is essentially a rendering of aforementioned page into python. The 
 sort of information I recorded is explicit in this class definition:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;affix&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;undefined&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
-                 &lt;span class="n"&gt;transformations&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; 
-                 &lt;span class="n"&gt;explanation&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;undefined&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
-                 &lt;span class="n"&gt;conflicts&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{},&lt;/span&gt;
-                 &lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;undefined&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;transformations&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;transformations&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;explanation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;explanation&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conflicts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;conflicts&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;category&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;category&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;:::python
+class affix(object):
+    def __init__(self, name=u&amp;#39;undefined&amp;#39;, 
+                 transformations={&amp;#39;x&amp;#39;: &amp;#39;x&amp;#39;}, 
+                 explanation=&amp;#39;undefined&amp;#39;, 
+                 conflicts={},
+                 category=&amp;#39;undefined&amp;#39;):
+        self.name = name
+        self.transformations = transformations
+        self.explanation = explanation
+        self.conflicts = conflicts
+        self.category = category
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;

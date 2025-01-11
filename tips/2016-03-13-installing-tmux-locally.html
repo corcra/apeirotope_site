@@ -111,37 +111,37 @@
         <p>I have been setting myself up on a new computing cluster (CentOS 6.7), so I'm in the lovely land of installing things without root. <code>tmux</code> proved a bit frustrating, so here's what I ended up doing:</p>
 <h2>install libevent</h2>
 <p><code>tmux</code> needs this, I didn't have it (you <em>might</em>, so try installing <code>tmux</code> first). Grabbed it from the repository, then:</p>
-<div class="highlight"><pre><span></span>$ git clone https://github.com/libevent/libevent
-$ cd libevent
-$ ./configure --prefix=$HOME
-$ make
-$ make verify       # this failed for me, oh well
-$ make install
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>:::<span class="nv">text</span>
+$<span class="w"> </span><span class="nv">git</span><span class="w"> </span><span class="nv">clone</span><span class="w"> </span><span class="nv">https</span>:<span class="o">//</span><span class="nv">github</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">libevent</span><span class="o">/</span><span class="nv">libevent</span>
+$<span class="w"> </span><span class="nv">cd</span><span class="w"> </span><span class="nv">libevent</span>
+$<span class="w"> </span>.<span class="o">/</span><span class="nv">configure</span><span class="w"> </span><span class="o">--</span><span class="nv">prefix</span><span class="o">=</span>$<span class="nv">HOME</span>
+$<span class="w"> </span><span class="nv">make</span>
+$<span class="w"> </span><span class="nv">make</span><span class="w"> </span><span class="nv">verify</span><span class="w">       </span>#<span class="w"> </span><span class="nv">this</span><span class="w"> </span><span class="nv">failed</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">me</span>,<span class="w"> </span><span class="nv">oh</span><span class="w"> </span><span class="nv">well</span>
+$<span class="w"> </span><span class="nv">make</span><span class="w"> </span><span class="nv">install</span>
+</code></pre></div>
 
 <p>Choose your <code>prefix</code> as you desire.</p>
 <p>Now <code>libevent</code> should be installed in <code>$HOME</code>. Easy y0.</p>
 <h2>install tmux</h2>
 <p>Git all the things.</p>
-<div class="highlight"><pre><span></span>$ git clone https://github.com/tmux/tmux
+<div class="highlight"><pre><span></span><code>:::text
+$ git clone https://github.com/tmux/tmux
 $ cd tmux
 $ zsh autogen.sh
-</pre></div>
-
+</code></pre></div>
 
 <p>Now for the thing which was <em>required to make everything work</em>, a slightly augmented version of the <a href="http://unix.stackexchange.com/a/17918">winning answer</a> from <a href="https://unix.stackexchange.com/questions/17907/why-cant-gcc-find-libevent-when-building-tmux-from-source">this Stack Exchange post</a>...</p>
-<div class="highlight"><pre><span></span>$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/lib         # possibly optional, see below
-$ DIR=$HOME
-$ ./configure CFLAGS=&quot;-I$DIR/include&quot; LDFLAGS=&quot;-L$DIR/lib&quot; --prefix=$DIR
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="p">:::</span><span class="n">text</span>
+<span class="o">$</span><span class="w"> </span><span class="k">export</span><span class="w"> </span><span class="n">LD_LIBRARY_PATH</span><span class="o">=$</span><span class="n">LD_LIBRARY_PATH</span><span class="p">:</span><span class="o">$</span><span class="n">HOME</span><span class="o">/</span><span class="n">lib</span><span class="w">         </span><span class="c1"># possibly optional, see below</span>
+<span class="o">$</span><span class="w"> </span><span class="n">DIR</span><span class="o">=$</span><span class="n">HOME</span>
+<span class="o">$</span><span class="w"> </span><span class="o">./</span><span class="n">configure</span><span class="w"> </span><span class="n">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-I$DIR/include&quot;</span><span class="w"> </span><span class="n">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-L$DIR/lib&quot;</span><span class="w"> </span><span class="o">--</span><span class="n">prefix</span><span class="o">=$</span><span class="n">DIR</span>
+</code></pre></div>
 
 <p>Obviously I could have used <code>$HOME</code> there instead of <code>$DIR</code>, but I am staying consistent.</p>
-<div class="highlight"><pre><span></span>$ make
+<div class="highlight"><pre><span></span><code>:::text
+$ make
 $ make install
-</pre></div>
-
+</code></pre></div>
 
 <p>And everything should Just Work now. This probably shouldn't have posed the difficulty that it did, but I'm a scientist, not a sysadmin.</p>
 <h2>final thing</h2>

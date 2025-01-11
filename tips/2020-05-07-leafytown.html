@@ -128,36 +128,36 @@ Also, the hometown migration doc warns that it's not for beginners, so maybe I c
 <p><a href="https://docs.joinmastodon.org/admin/prerequisites/">Preparing the machine</a> is all fine.</p>
 <p><a href="https://docs.joinmastodon.org/admin/install/">Installing from source</a> is fine <em>until</em> it comes to installing Ruby.
 They recommend this:</p>
-<div class="highlight"><pre><span></span>&gt; RUBY_CONFIGURE_OPTS=--with-jemalloc rbenv install 2.6.6
-&gt; rbenv global 2.6.6
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>:::text
+<span class="k">&gt; </span><span class="ge">RUBY_CONFIGURE_OPTS=--with-jemalloc rbenv install 2.6.6</span>
+<span class="k">&gt; </span><span class="ge">rbenv global 2.6.6</span>
+</code></pre></div>
 
 <p>This version of Ruby is too new! I went for version 2.6.1. I don't remember how I figured out this version would work, a dream maybe?</p>
 <p>Postgres installation instructions are all fine. Be careful if you already have the remnants of failed installations lying around (who would have that?!) with misleading table names. In a way, losing everything to the big VPS wipe was a gift.</p>
 <p>Vigilance is once again required while checking out the Mastodon codebase. They tell you to do this:</p>
-<div class="highlight"><pre><span></span>git clone https://github.com/tootsuite/mastodon.git live &amp;&amp; cd live
+<div class="highlight"><pre><span></span><code>:::text
+git clone https://github.com/tootsuite/mastodon.git live &amp;&amp; cd live
 git checkout $(git tag -l | grep -v &#39;rc[0-9]*$&#39; | sort -V | tail -n 1)
-</pre></div>
-
+</code></pre></div>
 
 <p>That second line is trying to check out the most recent version of Mastodon, and we're not here for that. I cheated by taking the commit hash for v2.9.3 from the Hometown instructions, which is gonna give us this instead:</p>
-<div class="highlight"><pre><span></span>git clone https://github.com/tootsuite/mastodon.git live &amp;&amp; cd live
+<div class="highlight"><pre><span></span><code>:::text
+git clone https://github.com/tootsuite/mastodon.git live &amp;&amp; cd live
 git checkout 06f906acace5770fc10f333a203b036c5b72c849
-</pre></div>
-
+</code></pre></div>
 
 <p>You can sanity-check this has produced the correct version with</p>
-<div class="highlight"><pre><span></span>git describe --tags
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>:::text
+git describe --tags
+</code></pre></div>
 
 <p>where it will dutifully give you <code>v2.9.3</code>, probably.</p>
 <p>The rest of the Mastodon instructions are basically as-is. </p>
 <p>Before you do the interactive setup wizard</p>
-<div class="highlight"><pre><span></span>RAILS_ENV=production bundle exec rake mastodon:setup
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>:::text
+RAILS_ENV=production bundle exec rake mastodon:setup
+</code></pre></div>
 
 <p>you should probably do step 1.5, though.</p>
 <h3>Step 1.5: Get a domain and mail server</h3>
@@ -177,16 +177,16 @@ During the mastodon setup wizard it will ask for various details of your mail se
 <p>Now we refer back to <a href="https://github.com/hometown-fork/hometown/wiki/Initial-migration">the hometown wiki page on migrating from mastodon</a> mentioned before.</p>
 <p>Because we ensured to install version 2.9.3 before, this should mostly Just Work.
 The only slightly odd thing for me was getting this error:</p>
-<div class="highlight"><pre><span></span>&gt; git fetch --tags
+<div class="highlight"><pre><span></span><code>:::text
+&gt; git fetch --tags
 &gt; git merge v1.0.1+2.9.3
 merge: v1.0.1+2.9.3 - not something we can merge
-</pre></div>
-
+</code></pre></div>
 
 <p>This might be some git config issue but changing to</p>
-<div class="highlight"><pre><span></span>git fetch --tags -all
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>:::text
+git fetch --tags -all
+</code></pre></div>
 
 <p>and then merging as described fixed it.</p>
 <p>Following the rest of instructions as they are should result in your Mastodon server now including a mention of hometown at the bottom, indicating that it works. </p>

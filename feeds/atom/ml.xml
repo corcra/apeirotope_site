@@ -985,69 +985,61 @@ Deeper networks are more better, but training them is hard (vanishing gradients 
 &lt;p&gt;Initialising …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Background: I am running python with &lt;a href="http://deeplearning.net/software/theano/index.html"&gt;Theano&lt;/a&gt; on a GPU, and I care about speed.&lt;/p&gt;
 &lt;p&gt;Scenario: I have a largeish matrix (&lt;code&gt;C&lt;/code&gt;) which is stored as a shared variable, and I need to update a subset of the rows (&lt;code&gt;modified_rows&lt;/code&gt;) by some other matrix (&lt;code&gt;C_delta&lt;/code&gt;). What should I do?&lt;/p&gt;
 &lt;p&gt;Initialising, e.g.:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;  
-    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;theano&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;function&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shared&lt;/span&gt;  
-    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;theano.tensor&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;fmatrix&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ivector&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;set_subtensor&lt;/span&gt;  
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;numpy&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;np&lt;/span&gt;  
+    &lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;theano&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;function&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shared&lt;/span&gt;  
+    &lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;theano.tensor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;fmatrix&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ivector&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;set_subtensor&lt;/span&gt;  
     &lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;shared&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;normal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;70000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;  
     &lt;span class="n"&gt;modified_rows&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="kp"&gt;randint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;low&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;high&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;70000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  
     &lt;span class="n"&gt;C_delta&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;normal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;modified_rows&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;  
     &lt;span class="n"&gt;C_d&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fmatrix&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;C_delta&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  
     &lt;span class="n"&gt;mod_rows&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ivector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;modified_rows&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Slow method: manually reset the values:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;    C_temp = C.get_value()&lt;/span&gt;
-&lt;span class="err"&gt;    C_temp[modified_rows, :] = C_temp[modified_rows, :] + C_delta&lt;/span&gt;
-&lt;span class="err"&gt;    C.set_value(C_temp)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    C_temp = C.get_value()
+    C_temp[modified_rows, :] = C_temp[modified_rows, :] + C_delta
+    C.set_value(C_temp)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Speed:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;    32 function calls in 0.055 seconds&lt;/span&gt;
-&lt;span class="err"&gt;    ncalls  tottime  percall  cumtime  percall filename:lineno(function)&lt;/span&gt;
-&lt;span class="err"&gt;    ...&lt;/span&gt;
-&lt;span class="err"&gt;    1 0.000 0.000 0.026 0.026 sharedvalue.py:100(set_value)&lt;/span&gt;
-&lt;span class="err"&gt;    1 0.000 0.000 0.027 0.027 sharedvalue.py:80(get_value)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    32 function calls in 0.055 seconds
+    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    ...
+    1 0.000 0.000 0.026 0.026 sharedvalue.py:100(set_value)
+    1 0.000 0.000 0.027 0.027 sharedvalue.py:80(get_value)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;This is bad because it requires unpacking and repacking the value in the shared variable (via &lt;code&gt;get_value&lt;/code&gt; and &lt;code&gt;set_value&lt;/code&gt;). We only need to modify a small number of the rows (200 out of 70k) so having to update every single one seems extremely wasteful.&lt;/p&gt;
 &lt;p&gt;Part of the 'nice thing' about shared variables is that they can be updated by functions which use them, so you might try:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;    update_C = function([C_d, mod_rows], [],&lt;/span&gt;
-&lt;span class="err"&gt;                        updates=[(C[mod_rows, :], C[mod_rows, :] + C_d)], &lt;/span&gt;
-&lt;span class="err"&gt;                        allow_input_downcast=True)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    update_C = function([C_d, mod_rows], [],
+                        updates=[(C[mod_rows, :], C[mod_rows, :] + C_d)], 
+                        allow_input_downcast=True)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;(remember, &lt;code&gt;C_d&lt;/code&gt; and &lt;code&gt;mod_rows&lt;/code&gt; are &lt;em&gt;symbolic variables&lt;/em&gt; (specifically &lt;code&gt;fmatrix&lt;/code&gt; and ivector) defined above).
 The &lt;code&gt;allow_input_downcast=True&lt;/code&gt; will deal with numpy's love of dealing in double-precision floats, which Theano rejects for GPU work. This loss of precision &lt;em&gt;may&lt;/em&gt; be important to you.&lt;/p&gt;
 &lt;p&gt;So then a simple call to &lt;code&gt;update_C(C_delta, modified_rows)&lt;/code&gt; will do what you want, except that what I just wrote won't work. You can't update shared variables like that. I think it's because the first element of the tuple is not &lt;em&gt;really&lt;/em&gt; the shared variable, so Theano freaks out. (Full disclosure: little idea of theano's inner workings.)&lt;/p&gt;
 &lt;p&gt;Focusing solely on the &lt;code&gt;updates=[...]&lt;/code&gt; part (everything else should be OK), you need to do:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;updates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;(C, set_subtensor(C[modified_rows&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;C_delta&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="err"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;updates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;(C, set_subtensor(C[modified_rows&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;C_delta&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="err"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;So the full command (if you are lazily copying and pasting this into iPython to test speed):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;    update_C = function([C_d, mod_rows], [],  &lt;/span&gt;
-&lt;span class="err"&gt;                        updates=[(C, set_subtensor(C[mod_rows, :] + C_d))],  &lt;/span&gt;
-&lt;span class="err"&gt;                        allow_input_downcast=True)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    update_C = function([C_d, mod_rows], [],  
+                        updates=[(C, set_subtensor(C[mod_rows, :] + C_d))],  
+                        allow_input_downcast=True)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Things which won't work (for reasons unknown to me):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;modified_rows&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;modified_rows, :&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;C_delta&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;C_delta&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;:, :&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;modified_rows&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;modified_rows, :&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;C_delta&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;C_delta&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;:, :&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;As for the speed for this method: well,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;    28 function calls in 0.001 seconds&lt;/span&gt;
-&lt;span class="err"&gt;    ncalls tottime percall cumtime percall filename:lineno(function)&lt;/span&gt;
-&lt;span class="err"&gt;    ...&lt;/span&gt;
-&lt;span class="err"&gt;    1 0.001 0.001 0.001 0.001 subtensor.py:1644(perform)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    28 function calls in 0.001 seconds
+    ncalls tottime percall cumtime percall filename:lineno(function)
+    ...
+    1 0.001 0.001 0.001 0.001 subtensor.py:1644(perform)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;I think that solves the problem.&lt;/p&gt;
 &lt;p&gt;Related:&lt;br&gt;

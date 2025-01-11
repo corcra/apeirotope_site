@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="corcra">
-  <meta name="description" content="quotes in awk | Lazily trying to paste a long list of strings into python, which means I need things wrapped in quotes (and commas, but I&#39;m excluding...">
+  <meta name="description" content="reccomendations podcast review 2020 other personal sites cloakie blog psychonomad.space myself from the past">
 <!--
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">  
@@ -26,11 +26,9 @@
 
   <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="apeirotope Full Atom Feed" />
 
-<meta name="keywords" content="awk, bash, unix, shell">
+  <meta name="keywords" content="environment, board games, webdev, css, podcasts, recommendations, politics, history, design, linguistics, science fiction, pelican, research, sysadmin, mastodon, social media, vps, travel, phd, trains, papers, variational inference, evaluation, nips, conference, long beach, california, usa, MLHC, dota, cosplay, costume, foam, sewing, barcelona, spain, AI, law, roller derby, tensorflow, cycling, moving, overwatch, IPA, books, atwood, accent, dogs, gifs, ssl, encryption, icml, nyc, geometry, reinforcement learning, personalistion, EHR, open access, lol, dating, python, phone, so many tags why, unix, tmux, phoenix, aaai, ethics, zotero, evernote, osx, citations, montreal, canada, esperanto, twitter, bot, grammar, opsec, anonymity, tor, class, life, poster, bayesian, awk, bash, shell, ggplot2, R, vis, graphics, categories, LDA, bayesian nonparametrics, pgp, tutorial, cryptography, animation, visualisation, embedding, nlp, irish, ireland, wordpress, time travel, biology, medicine, data, links, meta, golang, pond, gtk, ccc, nostalgia, theano, gpu, optimisation, strings, regex, sed, hangul, sc2, starcraft, alphabet, korean, cut, find, grep">
 
-
-
-  <title>quotes in awk | apeirotope</title>
+  <title>links | apeirotope</title>
 
 </head>
 
@@ -104,27 +102,21 @@
   <div class="blog-item-wrap">
     <div class="post-inner-content">
       <header class="entry-header page-header">
-          <span class="cat-item tips"><time datetime="2015-05-27 00:00:00+01:00">27 May, 2015</time></span>
-        <h1 class="entry-title"><a href="../tips/2015-05-27-quotes-in-awk.html">quotes in awk</a></h1>
+        <h1 class="entry-title"><a href="../pages/links.html">links</a></h1>
       </header><!-- .entry-header -->
       <div class="entry-content">
-        <p>Lazily trying to paste a long list of strings into python, which means I need things wrapped in quotes (and commas, but I'm excluding them from this example cause they're easy). Grabbing the strings from a file using <code>awk</code>, but since quotes (apostrophes) are special in <code>awk</code> this messes things up a little. The way to do it is either</p>
-<div class="highlight"><pre><span></span><code>:::text
-awk &#39;{ print &quot;&#39;&quot;&#39;&quot;&#39;&quot;$F&quot;&#39;&quot;&#39;&quot;&#39;&quot; }&#39; file.txt
-</code></pre></div>
-
-<p>(I kid you not), or</p>
-<div class="highlight"><pre><span></span><code>:::text
-awk &#39;{ print &quot;\047&quot;$F }&#39; file.txt
-</code></pre></div>
-
-<p>where <code>$F</code> is whatever field of <code>file.txt</code> is interesting.</p>
-<p>I think the second method might be a bit nicer.</p>
+        <h3>reccomendations</h3>
+<ul>
+<li><a href="../tips/2020-11-29-podcasts-2020.html">podcast review 2020</a></li>
+</ul>
+<h3>other personal sites</h3>
+<ul>
+<li><a href="https://cloakie.blog/">cloakie blog</a></li>
+<li><a href="https://psychonomad.space/">psychonomad.space</a></li>
+<li><a href="https://www.maths.tcd.ie/~hylandst/">myself from the past</a></li>
+</ul>
       </div><!-- .entry-content -->
       <br /><br />
-      <div class="article_meta">
-        Tags:
-          <a href="../tag/awk.html">awk</a>,          <a href="../tag/bash.html">bash</a>,          <a href="../tag/unix.html">unix</a>,          <a href="../tag/shell.html">shell</a>      </div>
     </div>
   </div>
 </article><!-- #post-## -->
@@ -147,7 +139,6 @@ awk &#39;{ print &quot;\047&quot;$F }&#39; file.txt
       window.scroll(0, document.getElementById('main').offsetTop);
     }})
   </script>
-
 
 </body>
 </html>
